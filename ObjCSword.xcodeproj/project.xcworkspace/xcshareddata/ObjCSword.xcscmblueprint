@@ -1,0 +1,32 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "bcd7d363-81e1-0310-97ec-a550e20fc99c++505+++1CF6D7C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "bcd7d363-81e1-0310-97ec-a550e20fc99c++505+++1CF6D7C" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "0EED6FB8500D5BF1374BC796D3F8248D3C7AA86F+++00BD80B" : 0,
+    "bcd7d363-81e1-0310-97ec-a550e20fc99c++505+++1CF6D7C" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C90086CF-8C58-403E-8FEE-9C3D260DB1C4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "0EED6FB8500D5BF1374BC796D3F8248D3C7AA86F+++00BD80B" : "..",
+    "bcd7d363-81e1-0310-97ec-a550e20fc99c++505+++1CF6D7C" : "sword-trunk\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ObjCSword",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "bindings\/objc\/ObjCSword.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/mdbergmann\/Eloquent.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0EED6FB8500D5BF1374BC796D3F8248D3C7AA86F+++00BD80B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/crosswire.org\/svn\/sword",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "bcd7d363-81e1-0310-97ec-a550e20fc99c++505+++1CF6D7C"
+    }
+  ]
+}
