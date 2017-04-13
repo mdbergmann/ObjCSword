@@ -2884,7 +2884,7 @@
 		A96C2354176AF19C008D714B /* osisglosses.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = osisglosses.cpp; sourceTree = "<group>"; };
 		A96C2355176AF19C008D714B /* osisreferencelinks.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = osisreferencelinks.cpp; sourceTree = "<group>"; };
 		A975EAC411C77862007C1532 /* ObjCSword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjCSword.h; sourceTree = "<group>"; };
-		A975ED9811C7925C007C1532 /* imp2gbs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imp2gbs.cpp; sourceTree = "<group>"; };
+		A975ED9811C7925C007C1532 /* imp2gbs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = imp2gbs.cpp; path = dependencies/sword_trunk/utilities/imp2gbs.cpp; sourceTree = SOURCE_ROOT; };
 		A975ED9911C7925C007C1532 /* imp2ld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imp2ld.cpp; sourceTree = "<group>"; };
 		A975ED9A11C7925C007C1532 /* imp2vs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imp2vs.cpp; sourceTree = "<group>"; };
 		A975ED9B11C7925C007C1532 /* installmgr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = installmgr.cpp; sourceTree = "<group>"; };
@@ -3156,7 +3156,7 @@
 		A9D271F714D718F500DA8926 /* xml2gbs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = xml2gbs; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D4360311C4FE97007AFE83 /* SwordModule+Index.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SwordModule+Index.h"; path = "src/SwordModule+Index.h"; sourceTree = "<group>"; };
 		A9D4360411C4FE97007AFE83 /* SwordModule+Index.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "SwordModule+Index.mm"; path = "src/SwordModule+Index.mm"; sourceTree = "<group>"; };
-		A9D437CE11C52947007AFE83 /* locales.d */ = {isa = PBXFileReference; lastKnownFileType = folder; name = locales.d; path = ../../locales.d; sourceTree = SOURCE_ROOT; };
+		A9D437CE11C52947007AFE83 /* locales.d */ = {isa = PBXFileReference; lastKnownFileType = folder; name = locales.d; path = dependencies/sword_trunk/locales.d; sourceTree = SOURCE_ROOT; };
 		A9D8FD2C19E2EC0E0055700C /* introtest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = introtest.cpp; path = ../../tests/introtest.cpp; sourceTree = "<group>"; };
 		A9D8FD3719E2EC5B0055700C /* introtest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = introtest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9E9C5ED16806A2B00ECEB39 /* teixhtml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = teixhtml.cpp; sourceTree = "<group>"; };
@@ -4353,9 +4353,7 @@
 		A954A7EB13EE96FC0094E3FE /* Sword */ = {
 			isa = PBXGroup;
 			children = (
-				A9A1291B19DF144D005BCBC1 /* include */,
 				A954A7F313EE98570094E3FE /* Deps */,
-				A954A7F513EE98B30094E3FE /* src */,
 			);
 			name = Sword;
 			sourceTree = "<group>";
@@ -4363,6 +4361,7 @@
 		A954A7F313EE98570094E3FE /* Deps */ = {
 			isa = PBXGroup;
 			children = (
+				A9F106621EA00387005AF2E9 /* sword */,
 				A90152A219A9E8E100F7FC7D /* icu */,
 				A954A9E013EE9A2B0094E3FE /* clucene */,
 			);
@@ -4378,8 +4377,7 @@
 				A954A82B13EE98B30094E3FE /* modules */,
 				A954A8CF13EE98B30094E3FE /* utilfuns */,
 			);
-			name = src;
-			path = ../../src;
+			path = src;
 			sourceTree = "<group>";
 		};
 		A954A7F613EE98B30094E3FE /* frontend */ = {
@@ -5087,9 +5085,8 @@
 			children = (
 				A982038819A09BC000DD808C /* ztext4.cpp */,
 			);
-			name = ztext4;
-			path = "/Users/mbergmann/Development/MySources/crosswire/Eloquent_MacOS/trunk/sword_src/sword-trunk/src/modules/texts/ztext4";
-			sourceTree = "<absolute>";
+			path = ztext4;
+			sourceTree = "<group>";
 		};
 		A995E6251C876E9700843E13 /* TestResources */ = {
 			isa = PBXGroup;
@@ -5289,8 +5286,7 @@
 				A9A129D919DF144D005BCBC1 /* zverse.h */,
 				A9A129DA19DF144D005BCBC1 /* zverse4.h */,
 			);
-			name = include;
-			path = ../../include;
+			path = include;
 			sourceTree = "<group>";
 		};
 		A9A1294F19DF144D005BCBC1 /* internal */ = {
@@ -5402,6 +5398,16 @@
 				A9EE8A8E19E286E500CFFE6A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A9F106621EA00387005AF2E9 /* sword */ = {
+			isa = PBXGroup;
+			children = (
+				A954A7F513EE98B30094E3FE /* src */,
+				A9A1291B19DF144D005BCBC1 /* include */,
+			);
+			name = sword;
+			path = dependencies/sword_trunk;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -7640,7 +7646,7 @@
 				GCC_PREFIX_HEADER = ObjCSword_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = "";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/dependencies/sword/include";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/Frameworks";
@@ -7689,7 +7695,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ObjCSword_Prefix.pch;
 				GCC_VERSION = "";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/dependencies/sword/include";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/Frameworks";
@@ -7799,7 +7805,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -7846,7 +7852,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",

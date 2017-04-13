@@ -20,7 +20,7 @@
 
 NSString *testConfigPath = @"/tmp/testmodinst";
 NSString *testModuleManagerPath = @"/tmp/testmodmgr";
-NSString *localInstallSourcePath = @"/Users/mbergmann/Development/MySources/crosswire/Eloquent_MacOS/trunk/sword_src/sword-trunk/bindings/objc/LocalTestInstallSource";
+NSString *localInstallSourcePath = @"/Users/mbergmann/Development/MySources/crosswire/ObjCSword/LocalTestInstallSource";
 
 - (void)setUp {
     NSFileManager *fm = [NSFileManager defaultManager];
