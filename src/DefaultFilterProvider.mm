@@ -9,7 +9,6 @@
 @implementation DefaultFilterProvider
 
 - (SwordFilter *)newOsisRenderFilter {
-//    return [SwordOsisXHtmlFilter filter];
     return [SwordOsisHtmlRefFilter filter];
 }
 
