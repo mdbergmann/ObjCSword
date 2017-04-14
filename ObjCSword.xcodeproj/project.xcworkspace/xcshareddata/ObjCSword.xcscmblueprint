@@ -1,17 +1,20 @@
 {
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2EF0FB82BE0C1962F096EF241D7DA94524590E4E",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
     "bcd7d363-81e1-0310-97ec-a550e20fc99c++505" : {
 
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "bcd7d363-81e1-0310-97ec-a550e20fc99c++505" : 9223372036854775807,
     "0EED6FB8500D5BF1374BC796D3F8248D3C7AA86F" : 0,
-    "bcd7d363-81e1-0310-97ec-a550e20fc99c++505" : 9223372036854775807
+    "2EF0FB82BE0C1962F096EF241D7DA94524590E4E" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C90086CF-8C58-403E-8FEE-9C3D260DB1C4",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "bcd7d363-81e1-0310-97ec-a550e20fc99c++505" : "ObjCSword\/dependencies\/sword_trunk\/",
     "0EED6FB8500D5BF1374BC796D3F8248D3C7AA86F" : "..\/..\/..",
-    "bcd7d363-81e1-0310-97ec-a550e20fc99c++505" : "ObjCSword\/dependencies\/sword_trunk\/"
+    "2EF0FB82BE0C1962F096EF241D7DA94524590E4E" : "ObjCSword\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "ObjCSword",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -21,6 +24,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/mdbergmann\/Eloquent.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0EED6FB8500D5BF1374BC796D3F8248D3C7AA86F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/mdbergmann\/ObjCSword.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2EF0FB82BE0C1962F096EF241D7DA94524590E4E"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/crosswire.org\/svn\/sword",

@@ -15,7 +15,7 @@
 
 @implementation FilterProviderFactory
 
-+ (FilterProviderFactory *)providerFactory {
++ (instancetype)factory {
     static FilterProviderFactory *singleton = nil;
 
     if(singleton == nil) {
@@ -30,6 +30,9 @@
 }
 
 - (id <FilterProvider>)get {
+    if(self.filterProvider == nil) {
+        ALog(@"FilterProvider is nil!");
+    }
     return self.filterProvider;
 }
 

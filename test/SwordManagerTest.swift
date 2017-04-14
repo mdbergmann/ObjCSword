@@ -6,6 +6,7 @@
 //
 //
 
+import Foundation
 import XCTest
 
 class SwordManagerTest: XCTestCase {
@@ -15,41 +16,41 @@ class SwordManagerTest: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        let modulesDir = NSBundle(forClass:self.dynamicType).resourcePath!.stringByAppendingString("/TestModules")
+        let modulesDir = Bundle(for:type(of: self)).resourcePath!.appending("/TestModules")
         NSLog("modulesDir: \(modulesDir)")
         
-        Configuration.configWithImpl(OSXConfiguration())
-        FilterProviderFactory().initWithImpl(DefaultFilterProvider())
+        Configuration.config(withImpl: OSXConfiguration())
+        FilterProviderFactory.factory().initWithImpl(DefaultFilterProvider())
         mgr = SwordManager(path:modulesDir)
     }
     
     func testAvailableModules() {
         XCTAssert(mgr != nil)
-        XCTAssert(mgr?.modules.count > 0)
-        NSLog("modules: \(mgr?.modules.count)")
+        XCTAssert((mgr?.allModules().count)! > 0)
+        NSLog("modules: \(mgr?.allModules().count ?? -1)")
     }
     
     func testGetModule() {
-        let mod = mgr?.moduleWithName("kjv")
+        let mod = mgr?.module(withName: "kjv")
         XCTAssert(mod != nil)
         XCTAssert(mod?.name() == "KJV")
     }
 
     func testReload() {
-        var mod = mgr?.moduleWithName("kjv")
+        var mod = mgr?.module(withName: "kjv")
         
-        mgr?.reloadManager()
-        mod = mgr?.moduleWithName("kjv")
+        mgr?.reload()
+        mod = mgr?.module(withName: "kjv")
         
         XCTAssert(mod != nil)
         XCTAssert(mod?.name() == "KJV")
     }
 
     func testReloadWithKeyString() {
-        var mod = mgr?.moduleWithName("kjv")
+        var mod = mgr?.module(withName: "kjv")
         
-        let te = mod?.renderedTextEntriesForRef("Gen 1")
-        XCTAssert(te?.count > 0)
+        let te = mod?.renderedTextEntries(forRef: "Gen 1")
+        XCTAssert((te?.count)! > 0)
         NSLog(te![0] as! String)
         
 //        mod?.setKeyString("Gen 1")
@@ -58,8 +59,8 @@ class SwordManagerTest: XCTestCase {
 //        XCTAssert(text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0)
 //        NSLog(text!)
         
-        mgr?.reloadManager()
-        mod = mgr?.moduleWithName("kjv")
+        mgr?.reload()
+        mod = mgr?.module(withName: "kjv")
         
         XCTAssert(mod != nil)
         XCTAssert(mod?.name() == "KJV")

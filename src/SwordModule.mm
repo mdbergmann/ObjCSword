@@ -117,12 +117,12 @@
 
 #pragma mark - Filters
 
-- (void)addRenderFilter:(SwordFilter *)aFilter {
+- (void)setRenderFilter:(SwordFilter *)aFilter {
     swModule->removeRenderFilter([aFilter swFilter]);
     swModule->addRenderFilter([aFilter swFilter]);
 }
 
-- (void)addStripFilter:(SwordFilter *)aFilter {
+- (void)setStripFilter:(SwordFilter *)aFilter {
     swModule->addStripFilter([aFilter swFilter]);
 }
 

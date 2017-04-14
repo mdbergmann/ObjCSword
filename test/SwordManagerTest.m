@@ -21,7 +21,7 @@
     [super setUp];
 
     [Configuration configWithImpl:[[OSXConfiguration alloc] init]];
-    [[FilterProviderFactory providerFactory] initWithImpl:[[DefaultFilterProvider alloc] init]];
+    [[FilterProviderFactory factory] initWithImpl:[[DefaultFilterProvider alloc] init]];
     
     NSString *modulePath = [[[NSBundle bundleForClass:[self class]] resourcePath] stringByAppendingPathComponent:@"TestModules"];
     

@@ -17,7 +17,7 @@ class SwordBibleTest: XCTestCase {
         super.setUp()
     
         Configuration.config(withImpl: OSXConfiguration())
-        FilterProviderFactory().initWithImpl(DefaultFilterProvider())
+        FilterProviderFactory.factory().initWithImpl(DefaultFilterProvider())
         mgr = SwordManager(path:Configuration.config().defaultModulePath())
     }
     

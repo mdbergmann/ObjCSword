@@ -24,7 +24,7 @@ using std::list;
 @property (strong, readwrite) NSDictionary *modules;
 @property (readwrite) BOOL deleteSWMgr;
 
-- (void)addFiltersToModule:(SwordModule *)mod;
+- (void)setFiltersToModule:(SwordModule *)mod;
 
 @end
 
@@ -84,8 +84,6 @@ static SwordManager *instance = nil;
         swManager = aSWMgr;
         self.deleteSWMgr = NO;
         self.managerLock = (id) [[NSRecursiveLock alloc] init];
-        
-		[self applyFilters];
     }
     
     return self;
@@ -139,8 +137,6 @@ static SwordManager *instance = nil;
                     }
                 }
             }
-            
-            [self applyFilters];
         }
     }
 	[self.managerLock unlock];
@@ -148,9 +144,7 @@ static SwordManager *instance = nil;
 
 - (void)reloadManager {
     if(swManager != NULL) {
-        
         swManager->Load();
-        [self applyFilters];
     }
 }
 
@@ -164,42 +158,39 @@ static SwordManager *instance = nil;
 - (void)addModulesPath:(NSString *)path {
 	[self.managerLock lock];
 	swManager->augmentModules([path UTF8String]);
-	
-	[self applyFilters];
 	[self.managerLock unlock];
 }
 
-- (void)applyFilters {
-    for(SwordModule *mod in [[self allModules] allValues]) {
-        [self addFiltersToModule:mod];
-    }
-}
-
-- (void)addFiltersToModule:(SwordModule *)mod {
+- (void)setFiltersToModule:(SwordModule *)mod {
     // prepare display filters
 
-    id<FilterProvider> filterProvider = [[FilterProviderFactory providerFactory] get];
+    // only add if empty
+    if(![mod swModule]->getRenderFilters().empty()) {
+        return;
+    }
+    
+    id<FilterProvider> filterProvider = [[FilterProviderFactory factory] get];
 
     switch([mod swModule]->getMarkup()) {
         case sword::FMT_GBF:
-            [mod addRenderFilter:[filterProvider newGbfRenderFilter]];
-            [mod addStripFilter:[filterProvider newGbfPlainFilter]];
+            [mod setRenderFilter:[filterProvider newGbfRenderFilter]];
+            [mod setStripFilter:[filterProvider newGbfPlainFilter]];
             break;
         case sword::FMT_THML:
-            [mod addRenderFilter:[filterProvider newThmlRenderFilter]];
-            [mod addStripFilter:[filterProvider newThmlPlainFilter]];
+            [mod setRenderFilter:[filterProvider newThmlRenderFilter]];
+            [mod setStripFilter:[filterProvider newThmlPlainFilter]];
             break;
         case sword::FMT_OSIS:
-            [mod addRenderFilter:[filterProvider newOsisRenderFilter]];
-            [mod addStripFilter:[filterProvider newOsisPlainFilter]];
+            [mod setRenderFilter:[filterProvider newOsisRenderFilter]];
+            [mod setStripFilter:[filterProvider newOsisPlainFilter]];
             break;
         case sword::FMT_TEI:
-            [mod addRenderFilter:[filterProvider newTeiRenderFilter]];
-            [mod addStripFilter:[filterProvider newTeiPlainFilter]];
+            [mod setRenderFilter:[filterProvider newTeiRenderFilter]];
+            [mod setStripFilter:[filterProvider newTeiPlainFilter]];
             break;
         case sword::FMT_PLAIN:
         default:
-            [mod addRenderFilter:[filterProvider newOsisPlainFilter]];
+            [mod setRenderFilter:[filterProvider newOsisPlainFilter]];
             break;
     }
 }
@@ -216,7 +207,10 @@ static SwordManager *instance = nil;
         NSString *type = [NSString stringWithUTF8String:mod->getType()];
         
         ModuleType aType = [SwordModule moduleTypeForModuleTypeString:type];
-        return [SwordModule moduleForType:aType swModule:mod];
+        SwordModule* swMod = [SwordModule moduleForType:aType swModule:mod];
+        [self setFiltersToModule:swMod];
+        
+        return swMod;
     }
 }
 
@@ -245,12 +239,8 @@ static SwordManager *instance = nil;
     sword::SWModule *mod;
     for(sword::ModMap::iterator it = swManager->Modules.begin(); it != swManager->Modules.end(); it++) {
         mod = it->second;
-        
         if(mod) {
-            NSString *type = [NSString stringWithUTF8String:mod->getType()];
-            
-            ModuleType aType = [SwordModule moduleTypeForModuleTypeString:type];
-            SwordModule *swMod = [SwordModule moduleForType:aType swModule:mod];
+            SwordModule *swMod = [self moduleWithName:[NSString stringWithUTF8String:mod->getName()]];
             [dict setObject:swMod forKey:[swMod name]];
         }
     }

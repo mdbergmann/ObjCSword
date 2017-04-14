@@ -23,7 +23,7 @@
 - (void)setUp {
     [Configuration configWithImpl:[[OSXConfiguration alloc] init]];
 
-    [[FilterProviderFactory providerFactory] initWithImpl:[[DefaultFilterProvider alloc] init]];
+    [[FilterProviderFactory factory] initWithImpl:[[DefaultFilterProvider alloc] init]];
     
     mgr = [SwordManager managerWithPath:[[[NSBundle bundleForClass:[self class]] resourcePath] stringByAppendingPathComponent:@"TestModules"]];
     mod = [mgr moduleWithName:@"KJV"];
@@ -77,10 +77,13 @@
     XCTAssertNotNil(bible, @"Module is nil");
 
     [mgr setGlobalOption:SW_OPTION_REDLETTERWORDS value:SW_ON];
+    
     SwordBibleTextEntry *text = (SwordBibleTextEntry *) [bible renderedTextEntryForRef:@"Mat 4:4"];
     XCTAssertTrue(text != nil);
-    NSLog(@"Mat 4:4: %@", [text text]);
+    NSLog(@"%@: %@", [text key], [text text]);
     XCTAssertTrue([[text text] containsString:@"But he answered and said, <font color=\"red\"> It is written, Man shall not live by bread alone, but by every word that proceedeth out of the mouth of God.</font>"]);
+
+    [mgr setGlobalOption:SW_OPTION_REDLETTERWORDS value:SW_OFF];
 }
 
 - (void)testStrongsNumberHebrewRetrieval {
@@ -146,7 +149,7 @@
 }
 
 - (void)testPreverseHeading {
-    SwordBible *bible = (SwordBible *)[mgr moduleWithName:@"KJV"];
+    SwordBible *bible = (SwordBible *)[mgr moduleWithName:@"GerNeUe"];
 
     [mgr setGlobalOption:SW_OPTION_HEADINGS value:SW_ON];
     SwordBibleTextEntry *text = (SwordBibleTextEntry *) [bible renderedTextEntryForRef:@"Numbers 1:47"];

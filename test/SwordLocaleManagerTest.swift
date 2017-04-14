@@ -23,7 +23,7 @@ class SwordLocaleManagerTest: XCTestCase {
         locMgr?.initLocale()
         
         let defaultLocName = locMgr?.getDefaultLocaleName()
-        print(defaultLocName)
+        print(defaultLocName!)
         XCTAssert(defaultLocName != nil)
         XCTAssert(defaultLocName == "de")
     }

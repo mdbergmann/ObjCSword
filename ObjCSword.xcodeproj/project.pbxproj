@@ -836,6 +836,17 @@
 		A929619F16B1BA240094E5BE /* SwordListKey.h in Headers */ = {isa = PBXBuildFile; fileRef = A929619916B1BA240094E5BE /* SwordListKey.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A92961A016B1BA240094E5BE /* SwordListKey.mm in Sources */ = {isa = PBXBuildFile; fileRef = A929619A16B1BA240094E5BE /* SwordListKey.mm */; };
 		A92961A116B1BA240094E5BE /* SwordVerseKey.h in Headers */ = {isa = PBXBuildFile; fileRef = A929619B16B1BA240094E5BE /* SwordVerseKey.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A93EC1661EA0F0F6001508A3 /* zverse4.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129DA19DF144D005BCBC1 /* zverse4.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		A93EC1671EA0F0FA001508A3 /* ztext4.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129D819DF144D005BCBC1 /* ztext4.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		A93EC1681EA0F108001508A3 /* zcom4.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129D119DF144D005BCBC1 /* zcom4.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		A93EC1691EA0F127001508A3 /* teilatex.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129A219DF144D005BCBC1 /* teilatex.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		A93EC16A1EA0F127001508A3 /* thmllatex.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129AB19DF144D005BCBC1 /* thmllatex.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		A93EC16B1EA0F127001508A3 /* utf8scsu.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129C719DF144D005BCBC1 /* utf8scsu.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		A93EC1761EA0F1B2001508A3 /* gbflatex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A93EC16C1EA0F1AB001508A3 /* gbflatex.cpp */; };
+		A93EC1771EA0F1B2001508A3 /* osislatex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A93EC16D1EA0F1AB001508A3 /* osislatex.cpp */; };
+		A93EC1781EA0F1B2001508A3 /* teilatex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A93EC16E1EA0F1AB001508A3 /* teilatex.cpp */; };
+		A93EC1791EA0F1B2001508A3 /* thmllatex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A93EC16F1EA0F1AB001508A3 /* thmllatex.cpp */; };
+		A93EC17A1EA0F1B2001508A3 /* utf8scsu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A93EC1701EA0F1AB001508A3 /* utf8scsu.cpp */; };
 		A94EAC0B117B28920018B06F /* SwordBible.h in Headers */ = {isa = PBXBuildFile; fileRef = A94EABE3117B28910018B06F /* SwordBible.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A94EAC0C117B28920018B06F /* SwordBible.mm in Sources */ = {isa = PBXBuildFile; fileRef = A94EABE4117B28910018B06F /* SwordBible.mm */; };
 		A94EAC0D117B28920018B06F /* SwordBibleBook.h in Headers */ = {isa = PBXBuildFile; fileRef = A94EABE5117B28920018B06F /* SwordBibleBook.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1103,6 +1114,16 @@
 		A954ACCA13EEA5340094E3FE /* ftplib.c in Sources */ = {isa = PBXBuildFile; fileRef = A954A8D013EE98B30094E3FE /* ftplib.c */; };
 		A954ACCB13EEA5340094E3FE /* ftpparse.c in Sources */ = {isa = PBXBuildFile; fileRef = A954A8D113EE98B30094E3FE /* ftpparse.c */; };
 		A954ACDD13EEA6780094E3FE /* libsword.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A954ABC313EE9AB00094E3FE /* libsword.dylib */; };
+		A9568D0D1EA0CA6000D758C4 /* SwordFilterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9568D0C1EA0CA6000D758C4 /* SwordFilterTest.swift */; };
+		A9568D0E1EA0D95C00D758C4 /* SwordManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A995E6091C8763B800843E13 /* SwordManagerTest.swift */; };
+		A9568D131EA0F09700D758C4 /* zverse4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A982037719A09B5C00DD808C /* zverse4.cpp */; };
+		A9568D141EA0F0A200D758C4 /* ztext4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A982038819A09BC000DD808C /* ztext4.cpp */; };
+		A9568D151EA0F0BF00D758C4 /* zcom4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A982037319A09AE500DD808C /* zcom4.cpp */; };
+		A9568D161EA0F0D100D758C4 /* canon_calvin.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A94A351DCB21AB00F69260 /* canon_calvin.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		A9568D171EA0F0D300D758C4 /* canon_darbyfr.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A94A361DCB21AB00F69260 /* canon_darbyfr.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		A9568D181EA0F0D500D758C4 /* canon_segond.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A94A371DCB21AB00F69260 /* canon_segond.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		A9568D191EA0F0DB00D758C4 /* gbflatex.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A1294019DF144D005BCBC1 /* gbflatex.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		A9568D1A1EA0F0DE00D758C4 /* osislatex.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A1296119DF144D005BCBC1 /* osislatex.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A967FB5616806B16004ED73C /* teixhtml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9E9C5ED16806A2B00ECEB39 /* teixhtml.cpp */; };
 		A968BE4D19DFF832002C9B78 /* SwordBibleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A968BE4C19DFF832002C9B78 /* SwordBibleTest.swift */; };
 		A969DC7B1DA1289100C8E976 /* SwordLocaleManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A969DC7A1DA1289100C8E976 /* SwordLocaleManagerTest.swift */; };
@@ -1112,20 +1133,12 @@
 		A975EAC511C77862007C1532 /* ObjCSword.h in Headers */ = {isa = PBXBuildFile; fileRef = A975EAC411C77862007C1532 /* ObjCSword.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A975EEE511C79308007C1532 /* mod2osis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A975EDAC11C7925C007C1532 /* mod2osis.cpp */; };
 		A982036D19A08B7C00DD808C /* osisreferencelinks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A96C2355176AF19C008D714B /* osisreferencelinks.cpp */; };
-		A982038A19A09BC000DD808C /* ztext4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A982038819A09BC000DD808C /* ztext4.cpp */; };
-		A982038B19A09C3C00DD808C /* zcom4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A982037319A09AE500DD808C /* zcom4.cpp */; };
-		A982038C19A09C3C00DD808C /* zverse4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A982037719A09B5C00DD808C /* zverse4.cpp */; };
-		A982038D19A09C3C00DD808C /* gbflatex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A982037919A09B7800DD808C /* gbflatex.cpp */; };
-		A982038E19A09C3C00DD808C /* osislatex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A982037A19A09B7800DD808C /* osislatex.cpp */; };
 		A982038F19A09C3C00DD808C /* osisxlit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A982037B19A09B7800DD808C /* osisxlit.cpp */; };
-		A982039019A09C3C00DD808C /* teilatex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A982037C19A09B7800DD808C /* teilatex.cpp */; };
-		A982039119A09C3C00DD808C /* thmllatex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A982037D19A09B7800DD808C /* thmllatex.cpp */; };
 		A982039419A09FFD00DD808C /* libbz2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A982039319A09FFD00DD808C /* libbz2.dylib */; };
 		A982039819A0A02300DD808C /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A982039719A0A02300DD808C /* libstdc++.dylib */; };
 		A982039A19A0A02C00DD808C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A982039919A0A02C00DD808C /* libz.dylib */; };
 		A982039C19A0A03A00DD808C /* libcurl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A982039B19A0A03A00DD808C /* libcurl.dylib */; };
 		A982039F19A0A5FA00DD808C /* scsuutf8.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A982039D19A0A5FA00DD808C /* scsuutf8.cpp */; };
-		A98203A019A0A5FA00DD808C /* utf8scsu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A982039E19A0A5FA00DD808C /* utf8scsu.cpp */; };
 		A995E6241C876E8900843E13 /* TestModules in Resources */ = {isa = PBXBuildFile; fileRef = A995E6231C876E8900843E13 /* TestModules */; };
 		A995E6271C877DD000843E13 /* SwordManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A995E6261C877DD000843E13 /* SwordManagerTest.m */; };
 		A999FF3F17951CCE00E65919 /* bz2comprs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A999FF3917951C8900E65919 /* bz2comprs.cpp */; };
@@ -1168,7 +1181,6 @@
 		A9A129FC19DF144E005BCBC1 /* gbfheadings.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A1293D19DF144D005BCBC1 /* gbfheadings.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A129FD19DF144E005BCBC1 /* gbfhtml.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A1293E19DF144D005BCBC1 /* gbfhtml.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A129FE19DF144E005BCBC1 /* gbfhtmlhref.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A1293F19DF144D005BCBC1 /* gbfhtmlhref.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		A9A129FF19DF144E005BCBC1 /* gbflatex.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A1294019DF144D005BCBC1 /* gbflatex.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A0019DF144E005BCBC1 /* gbfmorph.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A1294119DF144D005BCBC1 /* gbfmorph.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A0119DF144E005BCBC1 /* gbfosis.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A1294219DF144D005BCBC1 /* gbfosis.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A0219DF144E005BCBC1 /* gbfplain.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A1294319DF144D005BCBC1 /* gbfplain.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -1197,7 +1209,6 @@
 		A9A12A1B19DF144F005BCBC1 /* osisglosses.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A1295E19DF144D005BCBC1 /* osisglosses.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A1C19DF144F005BCBC1 /* osisheadings.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A1295F19DF144D005BCBC1 /* osisheadings.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A1D19DF1450005BCBC1 /* osishtmlhref.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A1296019DF144D005BCBC1 /* osishtmlhref.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		A9A12A1E19DF1450005BCBC1 /* osislatex.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A1296119DF144D005BCBC1 /* osislatex.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A1F19DF1450005BCBC1 /* osislemma.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A1296219DF144D005BCBC1 /* osislemma.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A2019DF1450005BCBC1 /* osismorph.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A1296319DF144D005BCBC1 /* osismorph.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A2119DF1450005BCBC1 /* osismorphsegmentation.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A1296419DF144D005BCBC1 /* osismorphsegmentation.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -1259,7 +1270,6 @@
 		A9A12A5B19DF1456005BCBC1 /* swversion.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A1299E19DF144D005BCBC1 /* swversion.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A5D19DF1456005BCBC1 /* sysdata.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129A019DF144D005BCBC1 /* sysdata.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A5E19DF1456005BCBC1 /* teihtmlhref.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129A119DF144D005BCBC1 /* teihtmlhref.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		A9A12A5F19DF1456005BCBC1 /* teilatex.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129A219DF144D005BCBC1 /* teilatex.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A6019DF1457005BCBC1 /* teiplain.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129A319DF144D005BCBC1 /* teiplain.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A6119DF1457005BCBC1 /* teirtf.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129A419DF144D005BCBC1 /* teirtf.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A6219DF1457005BCBC1 /* teixhtml.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129A519DF144D005BCBC1 /* teixhtml.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -1268,7 +1278,6 @@
 		A9A12A6519DF1457005BCBC1 /* thmlheadings.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129A819DF144D005BCBC1 /* thmlheadings.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A6619DF1457005BCBC1 /* thmlhtml.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129A919DF144D005BCBC1 /* thmlhtml.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A6719DF1458005BCBC1 /* thmlhtmlhref.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129AA19DF144D005BCBC1 /* thmlhtmlhref.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		A9A12A6819DF1458005BCBC1 /* thmllatex.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129AB19DF144D005BCBC1 /* thmllatex.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A6919DF1458005BCBC1 /* thmllemma.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129AC19DF144D005BCBC1 /* thmllemma.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A6A19DF1458005BCBC1 /* thmlmorph.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129AD19DF144D005BCBC1 /* thmlmorph.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A6B19DF1458005BCBC1 /* thmlosis.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129AE19DF144D005BCBC1 /* thmlosis.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -1296,7 +1305,6 @@
 		A9A12A8119DF145C005BCBC1 /* utf8latin1.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129C419DF144D005BCBC1 /* utf8latin1.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A8219DF145C005BCBC1 /* utf8nfc.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129C519DF144D005BCBC1 /* utf8nfc.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A8319DF145C005BCBC1 /* utf8nfkd.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129C619DF144D005BCBC1 /* utf8nfkd.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		A9A12A8419DF145C005BCBC1 /* utf8scsu.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129C719DF144D005BCBC1 /* utf8scsu.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A8519DF145D005BCBC1 /* utf8transliterator.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129C819DF144D005BCBC1 /* utf8transliterator.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A8619DF145D005BCBC1 /* utf8utf16.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129C919DF144D005BCBC1 /* utf8utf16.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A8719DF145D005BCBC1 /* utilstr.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129CA19DF144D005BCBC1 /* utilstr.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -1306,23 +1314,17 @@
 		A9A12A8B19DF145E005BCBC1 /* versificationmgr.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129CE19DF144D005BCBC1 /* versificationmgr.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A8C19DF145E005BCBC1 /* xzcomprs.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129CF19DF144D005BCBC1 /* xzcomprs.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A8D19DF145E005BCBC1 /* zcom.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129D019DF144D005BCBC1 /* zcom.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		A9A12A8E19DF145E005BCBC1 /* zcom4.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129D119DF144D005BCBC1 /* zcom4.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A8F19DF145F005BCBC1 /* zconf.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129D219DF144D005BCBC1 /* zconf.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A9019DF145F005BCBC1 /* zipcomprs.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129D319DF144D005BCBC1 /* zipcomprs.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A9119DF145F005BCBC1 /* zld.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129D419DF144D005BCBC1 /* zld.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A9219DF145F005BCBC1 /* zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129D519DF144D005BCBC1 /* zlib.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A9319DF145F005BCBC1 /* zstr.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129D619DF144D005BCBC1 /* zstr.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A9419DF1460005BCBC1 /* ztext.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129D719DF144D005BCBC1 /* ztext.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		A9A12A9519DF1460005BCBC1 /* ztext4.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129D819DF144D005BCBC1 /* ztext4.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A12A9619DF1460005BCBC1 /* zverse.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129D919DF144D005BCBC1 /* zverse.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		A9A12A9719DF1460005BCBC1 /* zverse4.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129DA19DF144D005BCBC1 /* zverse4.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A9A2C17D118D9D3D0002873D /* Notifications.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A2C17C118D9D3D0002873D /* Notifications.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A9A7EEAF14D5D4C300B76B6A /* libsword.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A954ABC313EE9AB00094E3FE /* libsword.dylib */; };
 		A9A7EEBE14D5D64C00B76B6A /* osis2mod.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A975EDB111C7925C007C1532 /* osis2mod.cpp */; };
 		A9A7EEBF14D5D65900B76B6A /* libsword.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A954ABC313EE9AB00094E3FE /* libsword.dylib */; settings = {ATTRIBUTES = (Required, ); }; };
-		A9A94A381DCB21AB00F69260 /* canon_calvin.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A94A351DCB21AB00F69260 /* canon_calvin.h */; };
-		A9A94A391DCB21AB00F69260 /* canon_darbyfr.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A94A361DCB21AB00F69260 /* canon_darbyfr.h */; };
-		A9A94A3A1DCB21AB00F69260 /* canon_segond.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A94A371DCB21AB00F69260 /* canon_segond.h */; };
 		A9BB67771C6BCDD700EB1A49 /* adler32.c in Sources */ = {isa = PBXBuildFile; fileRef = A9BB67401C6BCD9600EB1A49 /* adler32.c */; };
 		A9BB67781C6BCDD700EB1A49 /* compress.c in Sources */ = {isa = PBXBuildFile; fileRef = A9BB67411C6BCD9600EB1A49 /* compress.c */; };
 		A9BB67791C6BCDD700EB1A49 /* crc32.c in Sources */ = {isa = PBXBuildFile; fileRef = A9BB67421C6BCD9600EB1A49 /* crc32.c */; };
@@ -2474,6 +2476,11 @@
 		A929619916B1BA240094E5BE /* SwordListKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwordListKey.h; path = src/SwordListKey.h; sourceTree = "<group>"; };
 		A929619A16B1BA240094E5BE /* SwordListKey.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SwordListKey.mm; path = src/SwordListKey.mm; sourceTree = "<group>"; };
 		A929619B16B1BA240094E5BE /* SwordVerseKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwordVerseKey.h; path = src/SwordVerseKey.h; sourceTree = "<group>"; };
+		A93EC16C1EA0F1AB001508A3 /* gbflatex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gbflatex.cpp; sourceTree = "<group>"; };
+		A93EC16D1EA0F1AB001508A3 /* osislatex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = osislatex.cpp; sourceTree = "<group>"; };
+		A93EC16E1EA0F1AB001508A3 /* teilatex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = teilatex.cpp; sourceTree = "<group>"; };
+		A93EC16F1EA0F1AB001508A3 /* thmllatex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = thmllatex.cpp; sourceTree = "<group>"; };
+		A93EC1701EA0F1AB001508A3 /* utf8scsu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utf8scsu.cpp; sourceTree = "<group>"; };
 		A94EABE3117B28910018B06F /* SwordBible.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwordBible.h; path = src/SwordBible.h; sourceTree = "<group>"; };
 		A94EABE4117B28910018B06F /* SwordBible.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SwordBible.mm; path = src/SwordBible.mm; sourceTree = "<group>"; };
 		A94EABE5117B28920018B06F /* SwordBibleBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwordBibleBook.h; path = src/SwordBibleBook.h; sourceTree = "<group>"; };
@@ -2624,7 +2631,6 @@
 		A954A8B413EE98B30094E3FE /* swld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = swld.cpp; sourceTree = "<group>"; };
 		A954A8B813EE98B30094E3FE /* zld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = zld.cpp; sourceTree = "<group>"; };
 		A954A8BC13EE98B30094E3FE /* swmodule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = swmodule.cpp; sourceTree = "<group>"; };
-		A954A8BE13EE98B30094E3FE /* echomod.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = echomod.cpp; sourceTree = "<group>"; };
 		A954A8C613EE98B30094E3FE /* rawtext.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rawtext.cpp; sourceTree = "<group>"; };
 		A954A8C913EE98B30094E3FE /* rawtext4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rawtext4.cpp; sourceTree = "<group>"; };
 		A954A8CA13EE98B30094E3FE /* swtext.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = swtext.cpp; sourceTree = "<group>"; };
@@ -2876,6 +2882,8 @@
 		A954AC3413EE9FA10094E3FE /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = SDKs/MacOSX10.7.sdk/usr/lib/libicucore.dylib; sourceTree = DEVELOPER_DIR; };
 		A954AC3513EE9FA10094E3FE /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "SDKs/MacOSX10.7.sdk/usr/lib/libstdc++.dylib"; sourceTree = DEVELOPER_DIR; };
 		A954AC3613EE9FA10094E3FE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = SDKs/MacOSX10.7.sdk/usr/lib/libz.dylib; sourceTree = DEVELOPER_DIR; };
+		A9568D0C1EA0CA6000D758C4 /* SwordFilterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwordFilterTest.swift; sourceTree = "<group>"; };
+		A9568D0F1EA0E7DB00D758C4 /* xzcomprs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = xzcomprs.cpp; sourceTree = "<group>"; };
 		A968BE4B19DFF831002C9B78 /* Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Bridging-Header.h"; sourceTree = "<group>"; };
 		A968BE4C19DFF832002C9B78 /* SwordBibleTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwordBibleTest.swift; sourceTree = "<group>"; };
 		A969DC7A1DA1289100C8E976 /* SwordLocaleManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwordLocaleManagerTest.swift; sourceTree = "<group>"; };
@@ -2903,11 +2911,7 @@
 		A975EED911C792B9007C1532 /* mod2osis */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mod2osis; sourceTree = BUILT_PRODUCTS_DIR; };
 		A982037319A09AE500DD808C /* zcom4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = zcom4.cpp; sourceTree = "<group>"; };
 		A982037719A09B5C00DD808C /* zverse4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = zverse4.cpp; sourceTree = "<group>"; };
-		A982037919A09B7800DD808C /* gbflatex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gbflatex.cpp; sourceTree = "<group>"; };
-		A982037A19A09B7800DD808C /* osislatex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = osislatex.cpp; sourceTree = "<group>"; };
 		A982037B19A09B7800DD808C /* osisxlit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = osisxlit.cpp; sourceTree = "<group>"; };
-		A982037C19A09B7800DD808C /* teilatex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = teilatex.cpp; sourceTree = "<group>"; };
-		A982037D19A09B7800DD808C /* thmllatex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = thmllatex.cpp; sourceTree = "<group>"; };
 		A982038819A09BC000DD808C /* ztext4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ztext4.cpp; sourceTree = "<group>"; };
 		A982039319A09FFD00DD808C /* libbz2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libbz2.dylib; path = usr/lib/libbz2.dylib; sourceTree = SDKROOT; };
 		A982039519A0A01200DD808C /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
@@ -2915,7 +2919,6 @@
 		A982039919A0A02C00DD808C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		A982039B19A0A03A00DD808C /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = usr/lib/libcurl.dylib; sourceTree = SDKROOT; };
 		A982039D19A0A5FA00DD808C /* scsuutf8.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scsuutf8.cpp; sourceTree = "<group>"; };
-		A982039E19A0A5FA00DD808C /* utf8scsu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utf8scsu.cpp; sourceTree = "<group>"; };
 		A9921A1911FD9CA8002DAA72 /* libSword.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libSword.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		A995E6091C8763B800843E13 /* SwordManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwordManagerTest.swift; sourceTree = "<group>"; };
 		A995E60B1C87678B00843E13 /* TestGlobals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestGlobals.h; sourceTree = "<group>"; };
@@ -4436,7 +4439,6 @@
 				A954A8A113EE98B30094E3FE /* genbook */,
 				A954A8A913EE98B30094E3FE /* lexdict */,
 				A954A8BC13EE98B30094E3FE /* swmodule.cpp */,
-				A954A8BD13EE98B30094E3FE /* tests */,
 				A954A8C013EE98B30094E3FE /* texts */,
 			);
 			path = modules;
@@ -4499,6 +4501,7 @@
 		A954A84313EE98B30094E3FE /* common */ = {
 			isa = PBXGroup;
 			children = (
+				A9568D0F1EA0E7DB00D758C4 /* xzcomprs.cpp */,
 				A999FF3917951C8900E65919 /* bz2comprs.cpp */,
 				A954A84513EE98B30094E3FE /* entriesblk.cpp */,
 				A954A84613EE98B30094E3FE /* lzsscomprs.cpp */,
@@ -4520,13 +4523,13 @@
 		A954A85413EE98B30094E3FE /* filters */ = {
 			isa = PBXGroup;
 			children = (
+				A93EC16C1EA0F1AB001508A3 /* gbflatex.cpp */,
+				A93EC16D1EA0F1AB001508A3 /* osislatex.cpp */,
+				A93EC16E1EA0F1AB001508A3 /* teilatex.cpp */,
+				A93EC16F1EA0F1AB001508A3 /* thmllatex.cpp */,
+				A93EC1701EA0F1AB001508A3 /* utf8scsu.cpp */,
 				A982039D19A0A5FA00DD808C /* scsuutf8.cpp */,
-				A982039E19A0A5FA00DD808C /* utf8scsu.cpp */,
-				A982037919A09B7800DD808C /* gbflatex.cpp */,
-				A982037A19A09B7800DD808C /* osislatex.cpp */,
 				A982037B19A09B7800DD808C /* osisxlit.cpp */,
-				A982037C19A09B7800DD808C /* teilatex.cpp */,
-				A982037D19A09B7800DD808C /* thmllatex.cpp */,
 				A96C2353176AF19C008D714B /* osisenum.cpp */,
 				A96C2354176AF19C008D714B /* osisglosses.cpp */,
 				A96C2355176AF19C008D714B /* osisreferencelinks.cpp */,
@@ -4656,14 +4659,6 @@
 				A954A8B813EE98B30094E3FE /* zld.cpp */,
 			);
 			path = zld;
-			sourceTree = "<group>";
-		};
-		A954A8BD13EE98B30094E3FE /* tests */ = {
-			isa = PBXGroup;
-			children = (
-				A954A8BE13EE98B30094E3FE /* echomod.cpp */,
-			);
-			path = tests;
 			sourceTree = "<group>";
 		};
 		A954A8C013EE98B30094E3FE /* texts */ = {
@@ -5367,6 +5362,7 @@
 				A9BDFA761207F9F00067ED5B /* SwordListKeyTest.h */,
 				A9BDFA771207F9F00067ED5B /* SwordListKeyTest.m */,
 				A968BE4C19DFF832002C9B78 /* SwordBibleTest.swift */,
+				A9568D0C1EA0CA6000D758C4 /* SwordFilterTest.swift */,
 				8C92C0CA467F3114A1DC89DD /* SwordInstallSourceManagerTest.m */,
 				A969DC7A1DA1289100C8E976 /* SwordLocaleManagerTest.swift */,
 			);
@@ -5424,13 +5420,14 @@
 				A9A12A2419DF1450005BCBC1 /* osisredletterwords.h in Headers */,
 				A9A12A3A19DF1452005BCBC1 /* rawverse4.h in Headers */,
 				A9A12A5719DF1455005BCBC1 /* swoptfilter.h in Headers */,
+				A9568D171EA0F0D300D758C4 /* canon_darbyfr.h in Headers */,
 				A9A12A8919DF145D005BCBC1 /* versekey.h in Headers */,
-				A9A12A1E19DF1450005BCBC1 /* osislatex.h in Headers */,
 				A9A12A8619DF145D005BCBC1 /* utf8utf16.h in Headers */,
 				A9A129E119DF144D005BCBC1 /* canon_kjva.h in Headers */,
 				A9A12A3E19DF1452005BCBC1 /* sapphire.h in Headers */,
 				A9A12A7819DF145A005BCBC1 /* url.h in Headers */,
 				A9A12A1A19DF144F005BCBC1 /* osisfootnotes.h in Headers */,
+				A9568D181EA0F0D500D758C4 /* canon_segond.h in Headers */,
 				A9A12A7419DF145A005BCBC1 /* treekey.h in Headers */,
 				A9A12A9419DF1460005BCBC1 /* ztext.h in Headers */,
 				A9A12A7119DF1459005BCBC1 /* thmlwebif.h in Headers */,
@@ -5440,25 +5437,24 @@
 				A9A12A4919DF1454005BCBC1 /* swconfig.h in Headers */,
 				A9A12A0E19DF144F005BCBC1 /* regex.h in Headers */,
 				A9A12A4719DF1453005BCBC1 /* swcom.h in Headers */,
+				A93EC1681EA0F108001508A3 /* zcom4.h in Headers */,
 				A9A12A2219DF1450005BCBC1 /* osisosis.h in Headers */,
 				A9A12A2619DF1450005BCBC1 /* osisrtf.h in Headers */,
 				A9A12A5B19DF1456005BCBC1 /* swversion.h in Headers */,
 				A9A12A8F19DF145F005BCBC1 /* zconf.h in Headers */,
 				A9A12A7D19DF145B005BCBC1 /* utf8cantillation.h in Headers */,
-				A9A12A5F19DF1456005BCBC1 /* teilatex.h in Headers */,
 				A9A129FE19DF144E005BCBC1 /* gbfhtmlhref.h in Headers */,
-				A9A94A3A1DCB21AB00F69260 /* canon_segond.h in Headers */,
 				A9A129F319DF144D005BCBC1 /* encfiltmgr.h in Headers */,
 				A9A12A6F19DF1459005BCBC1 /* thmlstrongs.h in Headers */,
 				A9A12A2B19DF1451005BCBC1 /* osiswordjs.h in Headers */,
 				A9A12A7519DF145A005BCBC1 /* treekeyidx.h in Headers */,
+				A93EC16B1EA0F127001508A3 /* utf8scsu.h in Headers */,
 				A9A12A6B19DF1458005BCBC1 /* thmlosis.h in Headers */,
 				A9A129E019DF144D005BCBC1 /* canon_german.h in Headers */,
 				A9A12A4B19DF1454005BCBC1 /* swfilter.h in Headers */,
 				A9A12A5419DF1455005BCBC1 /* swmgr.h in Headers */,
 				A9A129F719DF144E005BCBC1 /* flatapi.h in Headers */,
 				A9A129FD19DF144E005BCBC1 /* gbfhtml.h in Headers */,
-				A9A12A8419DF145C005BCBC1 /* utf8scsu.h in Headers */,
 				A9A129DC19DF144D005BCBC1 /* canon.h in Headers */,
 				A9A12A4A19DF1454005BCBC1 /* swdisp.h in Headers */,
 				A9A129EA19DF144D005BCBC1 /* canon_synodal.h in Headers */,
@@ -5482,8 +5478,11 @@
 				A9A12A5A19DF1456005BCBC1 /* swtext.h in Headers */,
 				A9A129F019DF144D005BCBC1 /* curlhttpt.h in Headers */,
 				A9A12A6619DF1457005BCBC1 /* thmlhtml.h in Headers */,
+				A93EC1691EA0F127001508A3 /* teilatex.h in Headers */,
+				A93EC1661EA0F0F6001508A3 /* zverse4.h in Headers */,
 				A9A12A8719DF145D005BCBC1 /* utilstr.h in Headers */,
 				A9A129ED19DF144D005BCBC1 /* cipherfil.h in Headers */,
+				A9568D161EA0F0D100D758C4 /* canon_calvin.h in Headers */,
 				A9A12A0A19DF144E005BCBC1 /* greeklexattribs.h in Headers */,
 				A9A12A0319DF144E005BCBC1 /* gbfredletterwords.h in Headers */,
 				A9A12A8119DF145C005BCBC1 /* utf8latin1.h in Headers */,
@@ -5496,6 +5495,7 @@
 				A9A12A7619DF145A005BCBC1 /* unicodertf.h in Headers */,
 				A9A129FA19DF144E005BCBC1 /* ftpparse.h in Headers */,
 				A9A12A7A19DF145B005BCBC1 /* utf8arabicpoints.h in Headers */,
+				A9568D191EA0F0DB00D758C4 /* gbflatex.h in Headers */,
 				A9A12A8A19DF145E005BCBC1 /* versetreekey.h in Headers */,
 				A9A12A6E19DF1459005BCBC1 /* thmlscripref.h in Headers */,
 				A9A12A8019DF145C005BCBC1 /* utf8html.h in Headers */,
@@ -5511,7 +5511,6 @@
 				A9A129E519DF144D005BCBC1 /* canon_mt.h in Headers */,
 				A9A12A1019DF144F005BCBC1 /* latin1utf8.h in Headers */,
 				A9A129EF19DF144D005BCBC1 /* curlftpt.h in Headers */,
-				A9A12A8E19DF145E005BCBC1 /* zcom4.h in Headers */,
 				A9A129DB19DF144D005BCBC1 /* bz2comprs.h in Headers */,
 				A9A12A0819DF144E005BCBC1 /* gbfwordjs.h in Headers */,
 				A9A12A2019DF1450005BCBC1 /* osismorph.h in Headers */,
@@ -5541,15 +5540,15 @@
 				A9A12A3219DF1451005BCBC1 /* rawgenbook.h in Headers */,
 				A9A12A8519DF145D005BCBC1 /* utf8transliterator.h in Headers */,
 				A9A12A0F19DF144F005BCBC1 /* latin1utf16.h in Headers */,
-				A9A94A381DCB21AB00F69260 /* canon_calvin.h in Headers */,
 				A9A12A8319DF145C005BCBC1 /* utf8nfkd.h in Headers */,
 				A9A12A9019DF145F005BCBC1 /* zipcomprs.h in Headers */,
 				A9A12A0519DF144E005BCBC1 /* gbfstrongs.h in Headers */,
+				A93EC16A1EA0F127001508A3 /* thmllatex.h in Headers */,
+				A93EC1671EA0F0FA001508A3 /* ztext4.h in Headers */,
 				A9A129E219DF144D005BCBC1 /* canon_leningrad.h in Headers */,
 				A9A12A1719DF144F005BCBC1 /* multimapwdef.h in Headers */,
 				A9A12A2F19DF1451005BCBC1 /* rawcom.h in Headers */,
 				A9A129F819DF144E005BCBC1 /* ftplib.h in Headers */,
-				A9A129FF19DF144E005BCBC1 /* gbflatex.h in Headers */,
 				A9A12A4319DF1453005BCBC1 /* swbasicfilter.h in Headers */,
 				A9A12A2C19DF1451005BCBC1 /* osisxhtml.h in Headers */,
 				A9A12A1619DF144F005BCBC1 /* markupfiltmgr.h in Headers */,
@@ -5577,9 +5576,9 @@
 				A9A12A1319DF144F005BCBC1 /* lzsscomprs.h in Headers */,
 				A9A129DE19DF144D005BCBC1 /* canon_catholic.h in Headers */,
 				A9A12A3C19DF1452005BCBC1 /* roman.h in Headers */,
+				A9568D1A1EA0F0DE00D758C4 /* osislatex.h in Headers */,
 				A9A12A1919DF144F005BCBC1 /* osisenum.h in Headers */,
 				A9A129FC19DF144E005BCBC1 /* gbfheadings.h in Headers */,
-				A9A12A9719DF1460005BCBC1 /* zverse4.h in Headers */,
 				A9A12A3F19DF1453005BCBC1 /* scsuutf8.h in Headers */,
 				A9A129E319DF144D005BCBC1 /* canon_luther.h in Headers */,
 				A9A12A6319DF1457005BCBC1 /* thmlfootnotes.h in Headers */,
@@ -5590,13 +5589,11 @@
 				A9A12A3719DF1452005BCBC1 /* rawtext.h in Headers */,
 				A9A12A9119DF145F005BCBC1 /* zld.h in Headers */,
 				A9A12A6719DF1458005BCBC1 /* thmlhtmlhref.h in Headers */,
-				A9A12A6819DF1458005BCBC1 /* thmllatex.h in Headers */,
 				A9A129E819DF144D005BCBC1 /* canon_null.h in Headers */,
 				A9A129F919DF144E005BCBC1 /* ftplibftpt.h in Headers */,
 				A9A12A7B19DF145B005BCBC1 /* utf8arshaping.h in Headers */,
 				A9A12A5119DF1455005BCBC1 /* swlocale.h in Headers */,
 				A9A129E919DF144D005BCBC1 /* canon_orthodox.h in Headers */,
-				A9A12A9519DF1460005BCBC1 /* ztext4.h in Headers */,
 				A9A12A6C19DF1458005BCBC1 /* thmlplain.h in Headers */,
 				A9A12A3119DF1451005BCBC1 /* rawfiles.h in Headers */,
 				A9A12A9619DF1460005BCBC1 /* zverse.h in Headers */,
@@ -5606,7 +5603,6 @@
 				A9A12A7719DF145A005BCBC1 /* untgz.h in Headers */,
 				A9A12A3919DF1452005BCBC1 /* rawverse.h in Headers */,
 				A9A12A7319DF1459005BCBC1 /* thmlxhtml.h in Headers */,
-				A9A94A391DCB21AB00F69260 /* canon_darbyfr.h in Headers */,
 				A94EAC11117B28920018B06F /* SwordBibleTextEntry.h in Headers */,
 				A94EAC13117B28920018B06F /* SwordBook.h in Headers */,
 				A94EAC15117B28920018B06F /* SwordCommentary.h in Headers */,
@@ -6531,18 +6527,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A982038B19A09C3C00DD808C /* zcom4.cpp in Sources */,
-				A982038C19A09C3C00DD808C /* zverse4.cpp in Sources */,
 				A901641419A9E8EB00F7FC7D /* unifilt.cpp in Sources */,
-				A982038D19A09C3C00DD808C /* gbflatex.cpp in Sources */,
 				A90164A319A9E8EB00F7FC7D /* collationsettings.cpp in Sources */,
 				A901649F19A9E8EB00F7FC7D /* collationruleparser.cpp in Sources */,
-				A982038E19A09C3C00DD808C /* osislatex.cpp in Sources */,
 				A982038F19A09C3C00DD808C /* osisxlit.cpp in Sources */,
-				A982039019A09C3C00DD808C /* teilatex.cpp in Sources */,
 				A901639419A9E8EB00F7FC7D /* ucnv_set.c in Sources */,
 				A901663619A9E8EB00F7FC7D /* GlyphSubstitutionTables.cpp in Sources */,
-				A982039119A09C3C00DD808C /* thmllatex.cpp in Sources */,
 				A90165E819A9E8EB00F7FC7D /* wintzimpl.cpp in Sources */,
 				A9BB67781C6BCDD700EB1A49 /* compress.c in Sources */,
 				A901639919A9E8EB00F7FC7D /* ucnvbocu.cpp in Sources */,
@@ -6705,6 +6695,7 @@
 				A901662C19A9E8EB00F7FC7D /* GlyphIterator.cpp in Sources */,
 				A954AC5713EEA0C10094E3FE /* rawfiles.cpp in Sources */,
 				A954AC5813EEA0C10094E3FE /* swcom.cpp in Sources */,
+				A93EC1771EA0F1B2001508A3 /* osislatex.cpp in Sources */,
 				A901653C19A9E8EB00F7FC7D /* search.cpp in Sources */,
 				A954AC5913EEA0C10094E3FE /* zcom.cpp in Sources */,
 				A901654319A9E8EB00F7FC7D /* smpdtfst.cpp in Sources */,
@@ -6774,7 +6765,6 @@
 				A954AC6E13EEA0C10094E3FE /* gbfredletterwords.cpp in Sources */,
 				A901637819A9E8EB00F7FC7D /* ucat.c in Sources */,
 				A954AC6F13EEA0C10094E3FE /* gbfrtf.cpp in Sources */,
-				A98203A019A0A5FA00DD808C /* utf8scsu.cpp in Sources */,
 				A954AC7013EEA0C10094E3FE /* gbfstrongs.cpp in Sources */,
 				A954AC7113EEA0C10094E3FE /* gbfthml.cpp in Sources */,
 				A9BB67841C6BCDD700EB1A49 /* uncompr.c in Sources */,
@@ -7023,6 +7013,7 @@
 				A954ABD413EE9E470094E3FE /* repl_tcstod.cpp in Sources */,
 				A901630419A9E8EB00F7FC7D /* bytestriebuilder.cpp in Sources */,
 				A954ABD513EE9E470094E3FE /* repl_tcstoll.cpp in Sources */,
+				A9568D141EA0F0A200D758C4 /* ztext4.cpp in Sources */,
 				A954ABD613EE9E470094E3FE /* repl_tprintf.cpp in Sources */,
 				A901656719A9E8EB00F7FC7D /* ucol.cpp in Sources */,
 				A954ABD713EE9E470094E3FE /* threads.cpp in Sources */,
@@ -7063,6 +7054,7 @@
 				A954ABE313EE9E470094E3FE /* FieldsWriter.cpp in Sources */,
 				A901638919A9E8EB00F7FC7D /* ucnv_cb.c in Sources */,
 				A954ABE413EE9E470094E3FE /* IndexModifier.cpp in Sources */,
+				A93EC1781EA0F1B2001508A3 /* teilatex.cpp in Sources */,
 				A954ABE513EE9E470094E3FE /* IndexReader.cpp in Sources */,
 				A901642219A9E8EB00F7FC7D /* unormcmp.cpp in Sources */,
 				A954ABE613EE9E470094E3FE /* IndexWriter.cpp in Sources */,
@@ -7074,8 +7066,8 @@
 				A9BB677E1C6BCDD700EB1A49 /* gzwrite.c in Sources */,
 				A954ABEA13EE9E470094E3FE /* SegmentMergeQueue.cpp in Sources */,
 				A901649919A9E8EB00F7FC7D /* collationkeys.cpp in Sources */,
-				A982038A19A09BC000DD808C /* ztext4.cpp in Sources */,
 				A901645319A9E8EB00F7FC7D /* uts46.cpp in Sources */,
+				A93EC1761EA0F1B2001508A3 /* gbflatex.cpp in Sources */,
 				A90164A719A9E8EB00F7FC7D /* collationweights.cpp in Sources */,
 				A901643F19A9E8EB00F7FC7D /* ustrcase_locale.cpp in Sources */,
 				A901646E19A9E8EB00F7FC7D /* astro.cpp in Sources */,
@@ -7105,6 +7097,7 @@
 				A90165D619A9E8EB00F7FC7D /* uspoof_impl.cpp in Sources */,
 				A901661219A9E8EB00F7FC7D /* ClassDefinitionTables.cpp in Sources */,
 				A954ABF213EE9E470094E3FE /* TermInfo.cpp in Sources */,
+				A93EC17A1EA0F1B2001508A3 /* utf8scsu.cpp in Sources */,
 				A954ABF313EE9E470094E3FE /* TermInfosReader.cpp in Sources */,
 				A954ABF413EE9E470094E3FE /* TermInfosWriter.cpp in Sources */,
 				A901641F19A9E8EB00F7FC7D /* unistr_props.cpp in Sources */,
@@ -7135,10 +7128,12 @@
 				A901637B19A9E8EB00F7FC7D /* ucharstrie.cpp in Sources */,
 				A901637E19A9E8EB00F7FC7D /* uchriter.cpp in Sources */,
 				A954ABFF13EE9E470094E3FE /* CachingWrapperFilter.cpp in Sources */,
+				A9568D131EA0F09700D758C4 /* zverse4.cpp in Sources */,
 				A954AC0013EE9E470094E3FE /* ChainedFilter.cpp in Sources */,
 				A901657219A9E8EB00F7FC7D /* uitercollationiterator.cpp in Sources */,
 				A901660019A9E8EB00F7FC7D /* uscanf.c in Sources */,
 				A901630E19A9E8EB00F7FC7D /* cstring.c in Sources */,
+				A93EC1791EA0F1B2001508A3 /* thmllatex.cpp in Sources */,
 				A901631F19A9E8EB00F7FC7D /* locavailable.cpp in Sources */,
 				A901637319A9E8EB00F7FC7D /* ucase.cpp in Sources */,
 				A901652A19A9E8EB00F7FC7D /* regeximp.cpp in Sources */,
@@ -7175,6 +7170,7 @@
 				A954AC1213EE9E470094E3FE /* PhraseScorer.cpp in Sources */,
 				A901654519A9E8EB00F7FC7D /* sortkey.cpp in Sources */,
 				A90164DD19A9E8EB00F7FC7D /* ethpccal.cpp in Sources */,
+				A9568D151EA0F0BF00D758C4 /* zcom4.cpp in Sources */,
 				A954AC1313EE9E470094E3FE /* PrefixQuery.cpp in Sources */,
 				A90164CE19A9E8EB00F7FC7D /* decimfmt.cpp in Sources */,
 				A901668F19A9E8EB00F7FC7D /* ScriptAndLanguage.cpp in Sources */,
@@ -7284,6 +7280,8 @@
 			files = (
 				A995E6271C877DD000843E13 /* SwordManagerTest.m in Sources */,
 				A968BE4D19DFF832002C9B78 /* SwordBibleTest.swift in Sources */,
+				A9568D0D1EA0CA6000D758C4 /* SwordFilterTest.swift in Sources */,
+				A9568D0E1EA0D95C00D758C4 /* SwordManagerTest.swift in Sources */,
 				A9BFB0BD13EDF5C900032679 /* SwordModuleTest.m in Sources */,
 				A969DC7B1DA1289100C8E976 /* SwordLocaleManagerTest.swift in Sources */,
 				A9BFB0BE13EDF5C900032679 /* SwordListKeyTest.m in Sources */,
