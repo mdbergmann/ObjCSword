@@ -489,7 +489,12 @@
 
 - (NSString *)entryAttributeValuePreverse {
     NSString *ret = [NSString stringWithUTF8String:swModule->getEntryAttributes()["Heading"]["Preverse"]["0"].c_str()];
-    
+    if([ret length] > 0) {
+        if([ret hasPrefix:@"<title>"]) {
+            ret = [ret stringByReplacingOccurrencesOfString:@"<title>" withString:@""];
+            ret = [ret stringByReplacingOccurrencesOfString:@"</title>" withString:@""];
+        }
+    }
     return ret;
 }
 

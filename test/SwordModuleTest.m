@@ -38,18 +38,6 @@
     XCTAssertTrue([@"Im Anfang schuf Gott Himmel und Erde." isEqualToString:modIntro]);
 }
 
-/*
-- (void)testFirstBookATIntro {
-    SwordBible *bible = (SwordBible *)[mgr moduleWithName:@"KJV"];
-    
-    SwordBibleBook *book = [bible bookList][0];
-    NSString *intro = [bible bookIntroductionFor:book];
-    NSLog(@"testament: '%i', book '%@' intro: %@", [book testament], [book name], intro);
-    XCTAssertNotNil(intro);
-    XCTAssertTrue([intro hasPrefix:@" <!P><br />Das erste Buch der Bibel wird auch Genesis"]);
-}
-*/
-
 - (void)testFirstBookATIntroGer {
     SwordBible *bible = (SwordBible *)[mgr moduleWithName:@"GerNeUe"];
 
@@ -60,9 +48,8 @@
     XCTAssertTrue([intro hasPrefix:@" <!P><br />Das erste Buch der Bibel wird auch Genesis"]);
 }
 
-/*
 - (void)testFirstBookNTIntro {
-    SwordBible *bible = (SwordBible *)[mgr moduleWithName:@"KJV"];
+    SwordBible *bible = (SwordBible *)[mgr moduleWithName:@"GerNeUe"];
 
     SwordBibleBook *book = [bible bookWithNamePrefix:@"Mat"];
     NSString *intro = [bible bookIntroductionFor:book];
@@ -70,7 +57,6 @@
     XCTAssertNotNil(intro);
     XCTAssertTrue([intro hasPrefix:@" <!P><br />Um die Zeit der Apostelversammlung herum"]);
 }
-*/
 
 - (void)testJesusWordsInRed {
     SwordBible *bible = (SwordBible *)[mgr moduleWithName:@"KJV"];
@@ -155,7 +141,7 @@
     SwordBibleTextEntry *text = (SwordBibleTextEntry *) [bible renderedTextEntryForRef:@"Numbers 1:47"];
     NSLog(@"Preverse text: %@", [text preVerseHeading]);
     XCTAssertTrue([[text preVerseHeading] length] > 0);
-    XCTAssertTrue([[text preVerseHeading] isEqualToString:@"<title>Die Sonderstellung der Leviten</title>"]);
+    XCTAssertTrue([[text preVerseHeading] isEqualToString:@"Die Sonderstellung der Leviten"]);
     [mgr setGlobalOption:SW_OPTION_HEADINGS value:SW_OFF];
 }
 
@@ -166,7 +152,7 @@
     SwordBibleTextEntry *text = (SwordBibleTextEntry *) [bible renderedTextEntryForRef:@"Numbers 4:21"];
     NSLog(@"Preverse text: %@", [text preVerseHeading]);
     XCTAssertTrue([[text preVerseHeading] length] > 0);
-    XCTAssertTrue([[text preVerseHeading] isEqualToString:@"<title>Die Gerschoniten</title>"]);
+    XCTAssertTrue([[text preVerseHeading] isEqualToString:@"Die Gerschoniten"]);
     [mgr setGlobalOption:SW_OPTION_HEADINGS value:SW_OFF];
 }
 

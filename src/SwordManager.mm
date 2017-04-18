@@ -209,6 +209,7 @@ static SwordManager *instance = nil;
         ModuleType aType = [SwordModule moduleTypeForModuleTypeString:type];
         SwordModule* swMod = [SwordModule moduleForType:aType swModule:mod];
         [self setFiltersToModule:swMod];
+        [swMod setSwManager:self];
         
         return swMod;
     }
