@@ -2892,7 +2892,7 @@
 		A96C2354176AF19C008D714B /* osisglosses.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = osisglosses.cpp; sourceTree = "<group>"; };
 		A96C2355176AF19C008D714B /* osisreferencelinks.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = osisreferencelinks.cpp; sourceTree = "<group>"; };
 		A975EAC411C77862007C1532 /* ObjCSword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjCSword.h; sourceTree = "<group>"; };
-		A975ED9811C7925C007C1532 /* imp2gbs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = imp2gbs.cpp; path = dependencies/sword_trunk/utilities/imp2gbs.cpp; sourceTree = SOURCE_ROOT; };
+		A975ED9811C7925C007C1532 /* imp2gbs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imp2gbs.cpp; sourceTree = "<group>"; };
 		A975ED9911C7925C007C1532 /* imp2ld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imp2ld.cpp; sourceTree = "<group>"; };
 		A975ED9A11C7925C007C1532 /* imp2vs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imp2vs.cpp; sourceTree = "<group>"; };
 		A975ED9B11C7925C007C1532 /* installmgr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = installmgr.cpp; sourceTree = "<group>"; };
@@ -3159,8 +3159,8 @@
 		A9D271F714D718F500DA8926 /* xml2gbs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = xml2gbs; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D4360311C4FE97007AFE83 /* SwordModule+Index.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SwordModule+Index.h"; path = "src/SwordModule+Index.h"; sourceTree = "<group>"; };
 		A9D4360411C4FE97007AFE83 /* SwordModule+Index.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "SwordModule+Index.mm"; path = "src/SwordModule+Index.mm"; sourceTree = "<group>"; };
-		A9D437CE11C52947007AFE83 /* locales.d */ = {isa = PBXFileReference; lastKnownFileType = folder; name = locales.d; path = dependencies/sword_trunk/locales.d; sourceTree = SOURCE_ROOT; };
-		A9D8FD2C19E2EC0E0055700C /* introtest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = introtest.cpp; path = ../../tests/introtest.cpp; sourceTree = "<group>"; };
+		A9D437CE11C52947007AFE83 /* locales.d */ = {isa = PBXFileReference; lastKnownFileType = folder; name = locales.d; path = "dependencies/sword-1-8-0 (tag)/locales.d"; sourceTree = SOURCE_ROOT; };
+		A9D8FD2C19E2EC0E0055700C /* introtest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = introtest.cpp; path = ../tests/introtest.cpp; sourceTree = "<group>"; };
 		A9D8FD3719E2EC5B0055700C /* introtest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = introtest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9E9C5ED16806A2B00ECEB39 /* teixhtml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = teixhtml.cpp; sourceTree = "<group>"; };
 		A9EE8A8B19E286E500CFFE6A /* LongRunningTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LongRunningTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -5064,8 +5064,8 @@
 				A975EDDB11C7925C007C1532 /* xml2gbs.cpp */,
 			);
 			name = Utilities;
-			path = ../../utilities;
-			sourceTree = SOURCE_ROOT;
+			path = "dependencies/sword-1-8-0 (tag)/utilities";
+			sourceTree = "<group>";
 		};
 		A982037019A09AE500DD808C /* zcom4 */ = {
 			isa = PBXGroup;
@@ -5376,6 +5376,7 @@
 				A9D8FD2C19E2EC0E0055700C /* introtest.cpp */,
 			);
 			name = Samples;
+			path = "dependencies/sword-1-8-0 (tag)/samples";
 			sourceTree = "<group>";
 		};
 		A9EE8A8C19E286E500CFFE6A /* LongRunningTests */ = {
@@ -5403,7 +5404,7 @@
 				A9A1291B19DF144D005BCBC1 /* include */,
 			);
 			name = sword;
-			path = dependencies/sword_trunk;
+			path = "dependencies/sword-1-8-0 (tag)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
