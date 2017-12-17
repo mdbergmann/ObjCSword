@@ -28,30 +28,31 @@ class SwordManagerTest: XCTestCase {
         XCTAssert(mgr != nil)
         XCTAssert((mgr?.allModules().count)! > 0)
         NSLog("modules: \(mgr?.allModules().count ?? -1)")
+        mgr?.allModules().keys.forEach {key in NSLog("Mod name: \(key)") }
     }
     
     func testGetModule() {
-        let mod = mgr?.module(withName: "kjv")
+        let mod = mgr?.module(withName: "KJV")
         XCTAssert(mod != nil)
         XCTAssert(mod?.name() == "KJV")
     }
 
     func testReload() {
-        var mod = mgr?.module(withName: "kjv")
+        var mod = mgr?.module(withName: "KJV")
         
         mgr?.reload()
-        mod = mgr?.module(withName: "kjv")
+        mod = mgr?.module(withName: "KJV")
         
         XCTAssert(mod != nil)
         XCTAssert(mod?.name() == "KJV")
     }
 
     func testReloadWithKeyString() {
-        var mod = mgr?.module(withName: "kjv")
+        var mod = mgr?.module(withName: "KJV")
         
         let te = mod?.renderedTextEntries(forRef: "Gen 1")
         XCTAssert((te?.count)! > 0)
-        NSLog(te![0] as! String)
+        NSLog((te![0] as! SwordBibleTextEntry).text)
         
 //        mod?.setKeyString("Gen 1")
 //        let text = mod?.renderedText()
@@ -60,7 +61,7 @@ class SwordManagerTest: XCTestCase {
 //        NSLog(text!)
         
         mgr?.reload()
-        mod = mgr?.module(withName: "kjv")
+        mod = mgr?.module(withName: "KJV")
         
         XCTAssert(mod != nil)
         XCTAssert(mod?.name() == "KJV")
