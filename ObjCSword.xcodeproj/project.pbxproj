@@ -7903,7 +7903,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -7941,7 +7941,7 @@
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				GCC_MODEL_TUNING = G5;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -7988,7 +7988,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -8026,7 +8026,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -8141,7 +8141,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -8179,7 +8179,7 @@
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				GCC_MODEL_TUNING = G5;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -8219,7 +8219,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -8257,7 +8257,7 @@
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				GCC_MODEL_TUNING = G5;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -8297,7 +8297,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -8335,7 +8335,7 @@
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				GCC_MODEL_TUNING = G5;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -8375,7 +8375,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -8413,7 +8413,7 @@
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				GCC_MODEL_TUNING = G5;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -8453,7 +8453,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -8491,7 +8491,7 @@
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				GCC_MODEL_TUNING = G5;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -8531,7 +8531,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -8569,7 +8569,7 @@
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				GCC_MODEL_TUNING = G5;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -8609,7 +8609,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -8646,7 +8646,7 @@
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				GCC_MODEL_TUNING = G5;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -8692,7 +8692,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -8730,7 +8730,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -8773,7 +8773,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -8811,7 +8811,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -8854,7 +8854,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -8892,7 +8892,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -8935,7 +8935,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -8973,7 +8973,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -9016,7 +9016,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -9054,7 +9054,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -9097,7 +9097,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -9135,7 +9135,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -9178,7 +9178,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -9216,7 +9216,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -9271,7 +9271,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
@@ -9307,7 +9307,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../../include",
+					"$(SRCROOT)/dependencies/sword/include",
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
