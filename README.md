@@ -1,6 +1,9 @@
 # ObjCSword
 Objective-C wrapper of SWORD library
 
+This library is the backend of the Eloquent bible study app.
+But it can certainly be used in other projects.
+
 Notes on compiling:
 
 1. cd into dependencies and unpack `icu.tar.gz` and `clucene.tar.gz`.
