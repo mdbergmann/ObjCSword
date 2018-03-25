@@ -8,24 +8,28 @@
 
 #import "SwordBibleTextEntry.h"
 
+@interface SwordBibleTextEntry ()
+
+@end
+
 @implementation SwordBibleTextEntry
 
-@synthesize preVerseHeading;
-
 + (id)textEntryForKey:(NSString *)aKey andText:(NSString *)aText {
-    return [[SwordBibleTextEntry alloc] initWithKey:aKey andText:aText];
+    return [[[SwordBibleTextEntry alloc] initWithKey:aKey andText:aText] autorelease];
 }
 
 - (id)initWithKey:(NSString *)aKey andText:(NSString *)aText {
-    self = [super init];
+    self = [super initWithKey:aKey andText:aText];
     if(self) {
-        self.key = aKey;
-        self.text = aText;
         self.preVerseHeading = @"";
-    }    
+    }
     return self;
 }
 
-
+- (void)dealloc {
+    self.preVerseHeading = nil;
+    
+    [super dealloc];
+}
 
 @end

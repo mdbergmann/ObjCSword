@@ -10,40 +10,44 @@
 #import "SwordListKey.h"
 
 @interface VerseEnumerator ()
-@property (strong, readwrite) SwordListKey *listKey;
+@property (retain, readwrite) SwordListKey *listKey;
 @end
 
 @implementation VerseEnumerator
-
-@synthesize listKey;
 
 - (id)initWithListKey:(SwordListKey *)aListKey {
     self = [super init];
     if(self) {
         self.listKey = aListKey;
-        *[listKey swListKey] = sword::TOP;
+        *[self.listKey swListKey] = sword::TOP;
     }
     return self;
 }
 
+- (void)dealloc {
+    self.listKey = nil;
 
+    [super dealloc];
+}
 
 - (NSArray *)allObjects {
     NSMutableArray *t = [NSMutableArray array];
-    for(*[listKey swListKey] = sword::TOP;![listKey swListKey]->popError(); *[listKey swListKey] += 1) {
-        [t addObject:[listKey keyText]];
+    sword::ListKey *lk = [self.listKey swListKey];
+    for(*lk = sword::TOP;!lk->popError(); *lk += 1) {
+        [t addObject:[self.listKey keyText]];
     }
     // position TOP again
-    *[listKey swListKey] = sword::TOP;
+    *lk = sword::TOP;
     
     return [NSArray arrayWithArray:t];
 }
 
 - (NSString *)nextObject {
     NSString *ret = nil;
-    if(![listKey swListKey]->popError()) {
-        ret = [listKey keyText];
-        *[listKey swListKey] += 1;
+    sword::ListKey *lk = [self.listKey swListKey];
+    if(!lk->popError()) {
+        ret = [self.listKey keyText];
+        *lk += 1;
     }
     return ret;
 }

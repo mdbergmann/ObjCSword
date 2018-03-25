@@ -21,14 +21,15 @@
 @implementation SwordModuleTest
 
 - (void)setUp {
-    [Configuration configWithImpl:[[OSXConfiguration alloc] init]];
+    [Configuration configWithImpl:[[[OSXConfiguration alloc] init] autorelease]];
 
-    [[FilterProviderFactory factory] initWithImpl:[[DefaultFilterProvider alloc] init]];
+    [[FilterProviderFactory factory] initWith:[[[DefaultFilterProvider alloc] init] autorelease]];
     
     mgr = [SwordManager managerWithPath:[[[NSBundle bundleForClass:[self class]] resourcePath] stringByAppendingPathComponent:@"TestModules"]];
     mod = [mgr moduleWithName:@"KJV"];
 }
 
+/*
 - (void)testModuleIntroductionGer {
     SwordBible *bible = (SwordBible *)[mgr moduleWithName:@"GerNeUe"];
 
@@ -37,6 +38,7 @@
     XCTAssertNotNil(modIntro);
     //XCTAssertTrue([@"Im Anfang schuf Gott Himmel und Erde." isEqualToString:modIntro]);
 }
+*/
 
 - (void)testFirstBookATIntroGer {
     SwordBible *bible = (SwordBible *)[mgr moduleWithName:@"GerNeUe"];
@@ -44,8 +46,7 @@
     SwordBibleBook *book = [bible bookList][0];
     NSString *intro = [bible bookIntroductionFor:book];
     NSLog(@"testament: '%i', book '%@' intro: %@", [book testament], [book name], intro);
-    XCTAssertNotNil(intro);
-    XCTAssertTrue([intro hasPrefix:@" <!P><br />Das erste Buch der Bibel wird auch Genesis"]);
+    XCTAssertTrue([intro containsString:@"Das erste Buch der Bibel wird auch Genesis"]);
 }
 
 - (void)testFirstBookNTIntro {
@@ -64,7 +65,7 @@
 
     [mgr setGlobalOption:SW_OPTION_REDLETTERWORDS value:SW_ON];
     
-    SwordBibleTextEntry *text = (SwordBibleTextEntry *) [bible renderedTextEntryForRef:@"Mat 4:4"];
+    SwordBibleTextEntry *text = (SwordBibleTextEntry *) [bible renderedTextEntryForReference:@"Mat 4:4"];
     XCTAssertTrue(text != nil);
     NSLog(@"%@: %@", [text key], [text text]);
     XCTAssertTrue([[text text] containsString:@"But he answered and said, <font color=\"red\"> It is written, Man shall not live by bread alone, but by every word that proceedeth out of the mouth of God.</font>"]);
@@ -138,7 +139,7 @@
     SwordBible *bible = (SwordBible *)[mgr moduleWithName:@"GerNeUe"];
 
     [mgr setGlobalOption:SW_OPTION_HEADINGS value:SW_ON];
-    SwordBibleTextEntry *text = (SwordBibleTextEntry *) [bible renderedTextEntryForRef:@"Numbers 1:47"];
+    SwordBibleTextEntry *text = (SwordBibleTextEntry *) [bible renderedTextEntryForReference:@"Numbers 1:47"];
     NSLog(@"Preverse text: %@", [text preVerseHeading]);
     XCTAssertTrue([[text preVerseHeading] length] > 0);
     XCTAssertTrue([[text preVerseHeading] isEqualToString:@"Die Sonderstellung der Leviten"]);
@@ -149,7 +150,7 @@
     SwordBible *bible = (SwordBible *)[mgr moduleWithName:@"GerNeUe"];
 
     [mgr setGlobalOption:SW_OPTION_HEADINGS value:SW_ON];
-    SwordBibleTextEntry *text = (SwordBibleTextEntry *) [bible renderedTextEntryForRef:@"Numbers 4:21"];
+    SwordBibleTextEntry *text = (SwordBibleTextEntry *) [bible renderedTextEntryForReference:@"Numbers 4:21"];
     NSLog(@"Preverse text: %@", [text preVerseHeading]);
     XCTAssertTrue([[text preVerseHeading] length] > 0);
     XCTAssertTrue([[text preVerseHeading] isEqualToString:@"Die Gerschoniten"]);
@@ -160,7 +161,7 @@
     SwordBible *bible = (SwordBible *)[mgr moduleWithName:@"KJV"];
     XCTAssertNotNil(bible, @"Module is nil");
 
-    NSArray *verses = [bible renderedTextEntriesForRef:@"Gen"];
+    NSArray *verses = [bible renderedTextEntriesForReference:@"Gen"];
     XCTAssertNotNil(verses, @"");
     XCTAssertTrue([bible numberOfVerseKeysForReference:@"Gen"] == [verses count], @"");    
 }
@@ -169,7 +170,7 @@
     SwordBible *bible = (SwordBible *)[mgr moduleWithName:@"KJV"];
     XCTAssertNotNil(bible, @"Module is nil");
     
-    SwordModuleTextEntry *text = [bible renderedTextEntryForRef:@"gen1.1"];
+    SwordModuleTextEntry *text = [bible renderedTextEntryForReference:@"gen1.1"];
     XCTAssertNotNil(text, @"");
     NSLog(@"text: %@", [text text]);
     XCTAssertTrue([[text text] length] > 0, @"");
@@ -177,7 +178,6 @@
 
 - (void)testLoopWithModulePos {
     SwordListKey *lk = [SwordListKey listKeyWithRef:@"gen" v11n:[mod versification]];
-    [lk setPersist:YES];
     [mod setSwordKey:lk];
     NSString *ref = nil;
     NSString *rendered = nil;
@@ -188,24 +188,8 @@
     }
 }
 
-- (void)testLoopWithModulePosNoPersist {
-    SwordListKey *lk = [SwordListKey listKeyWithRef:@"gen" v11n:[mod versification]];    
-    [lk setPersist:NO];
-    [lk setPosition:SWPOS_TOP];
-    NSString *ref = nil;
-    NSString *rendered = nil;
-    while(![lk error]) {
-        ref = [lk keyText];
-        [mod setSwordKey:lk];
-        rendered = [mod renderedText];
-        //NSLog(@"%@:%@", ref, rendered);
-        [lk increment];
-    }
-}
-
 - (void)testLoopWithModulePosWithHeadings {
     SwordListKey *lk = [SwordListKey listKeyWithRef:@"gen" headings:YES v11n:[mod versification]];
-    [lk setPersist:YES];
     [mod setSwordKey:lk];
     NSString *ref = nil;
     NSString *rendered = nil;
@@ -218,7 +202,6 @@
 
 - (void)testLoopWithModulePosWithDiverseReference {
     SwordListKey *lk = [SwordListKey listKeyWithRef:@"gen 1:1;4:5-8" v11n:[mod versification]];
-    [lk setPersist:YES];
     [mod setSwordKey:lk];
     NSString *ref = nil;
     NSString *rendered = nil;
@@ -230,27 +213,10 @@
     }
 }
 
-- (void)testLoopWithModulePosNoPersistWithDiverseReference {
-    SwordListKey *lk = [SwordListKey listKeyWithRef:@"gen 1:1;4:5-8" v11n:[mod versification]];
-    [lk setPersist:NO];
-    [lk setPosition:SWPOS_TOP];
-    NSString *ref = nil;
-    NSString *rendered = nil;
-    while(![lk error]) {
-        ref = [lk keyText];
-        [mod setSwordKey:lk];
-        rendered = [mod renderedText];
-        NSLog(@"%@:%@", ref, rendered);
-        [lk increment];
-    }
-}
-
 - (void)testLoopWithModulePosWithDiverseReferenceAndContext {
     int context = 1;
     SwordVerseKey *vk = [SwordVerseKey verseKeyWithVersification:[mod versification]];
-    [vk setPersist:YES];
     SwordListKey *lk = [SwordListKey listKeyWithRef:@"gen 1:1;4:5;8:4;10:2-5" v11n:[mod versification]];
-    [lk setPersist:YES];
     [mod setSwordKey:lk];
     NSString *ref = nil;
     NSString *rendered = nil;

@@ -57,7 +57,7 @@
         }
     }
 
-    return ret;
+    return [NSDictionary dictionaryWithDictionary:ret];
 }
 
 + (NSArray *)padStrongsNumbers:(NSArray *)unpaddedNumbers {

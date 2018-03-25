@@ -28,7 +28,7 @@
 
 
 - (void)testRenderedTextEntriesForRef {
-    NSArray *entries = [(SwordBible *)mod renderedTextEntriesForRef:@"gen1-rev22"];
+    NSArray *entries = [(SwordBible *) mod renderedTextEntriesForReference:@"gen1-rev22"];
     NSString *ref = nil;
     NSString *rendered = nil;
     for(SwordBibleTextEntry *entry in entries) {

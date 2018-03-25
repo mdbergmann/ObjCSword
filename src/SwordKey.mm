@@ -8,97 +8,53 @@
 
 #import "SwordKey.h"
 
+@interface SwordKey () {
+    BOOL created;
+}
+@end
 
 @implementation SwordKey
 
-+ (SwordKey *)swordKey {
-    return [[SwordKey alloc] init];
-}
-
-+ (SwordKey *)swordKeyWithRef:(NSString *)aRef {
-    return [[SwordKey alloc] initWithRef:aRef];
-}
+@dynamic keyText;
 
 + (SwordKey *)swordKeyWithSWKey:(sword::SWKey *)aSk {
-    return [[SwordKey alloc] initWithSWKey:aSk];
+    return [[[SwordKey alloc] initWithSWKey:aSk] autorelease];
 }
 
-+ (SwordKey *)swordKeyWithSWKey:(sword::SWKey *)aSk makeCopy:(BOOL)copy {
-    return [[SwordKey alloc] initWithSWKey:aSk makeCopy:copy];    
-}
-
-- (id)init {
-    return [self initWithRef:nil];
++ (SwordKey *)swordKeyWithNewSWKey:(sword::SWKey *)aSk {
+    return [[[SwordKey alloc] initWithNewSWKey:aSk] autorelease];
 }
 
 - (SwordKey *)initWithSWKey:(sword::SWKey *)aSk {
-    return [self initWithSWKey:aSk makeCopy:NO];
-}
-
-- (SwordKey *)initWithSWKey:(sword::SWKey *)aSk makeCopy:(BOOL)copy {
     self = [super init];
     if(self) {
-        if(copy) {
-            if(aSk) {
-                sk = aSk->clone();
-                sk->setPersist(true);
-                created = YES;
-            } else {
-                created = NO;
-            }
-        } else {
-            sk = aSk;
-            created = NO;
-        }
+        sk = aSk;
+        created = false;
     }
-    return self;    
+    return self;
 }
 
-- (SwordKey *)initWithRef:(NSString *)aRef {
-    self = [super init];
+- (SwordKey *)initWithNewSWKey:(sword::SWKey *)aSk {
+    self = [self initWithSWKey:aSk];
     if(self) {
-        sk = new sword::SWKey([aRef UTF8String]);
-        created = YES;
+        [self swKey]->setPersist(true);
+        created = true;
     }
-    
-    return self;    
+    return self;
 }
-
 
 - (void)dealloc {
     if(created) {
         delete sk;
     }
-}
 
-- (SwordKey *)clone {
-    return [SwordKey swordKeyWithSWKey:sk];
+    [super dealloc];
 }
 
 #pragma mark - Methods
 
-- (void)setPersist:(BOOL)flag {
-    sk->setPersist(flag);
-}
-
-- (BOOL)persist {
-    return (BOOL)sk->isPersist();
-}
-
-- (int)error {
-    return sk->popError();
-}
-
-- (void)setPosition:(int)aPosition {
-    sk->setPosition(sword::SW_POSITION((char)aPosition));
-}
-
-- (void)decrement {
-    sk->decrement();
-}
-
-- (void)increment {
-    sk->increment();
+- (SwordKey *)clone {
+    return [SwordKey swordKeyWithSWKey:sk];
 }
 
 - (NSString *)keyText {
@@ -107,6 +63,22 @@
 
 - (void)setKeyText:(NSString *)aKey {
     sk->setText([aKey UTF8String]);
+}
+
+- (void)setPosition:(int)pos {
+    sk->setPosition(sword::SW_POSITION((char)pos));
+}
+
+- (int)error {
+    return sk->popError();
+}
+
+- (void)decrement {
+    sk->decrement();
+}
+
+- (void)increment {
+    sk->increment();
 }
 
 - (sword::SWKey *)swKey {

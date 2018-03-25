@@ -22,26 +22,28 @@
 
 @interface SwordModule ()
 
+@property (readwrite) ModuleType type;
+
 @end
 
 @implementation SwordModule
 
 + (id)moduleForSWModule:(sword::SWModule *)aModule {
-    return [[SwordModule alloc] initWithSWModule:aModule];
+    return [[[SwordModule alloc] initWithSWModule:aModule] autorelease];
 }
 
 + (id)moduleForType:(ModuleType)aType swModule:(sword::SWModule *)swModule {
     SwordModule *sm;
     if(aType == Bible) {
-        sm = [[SwordBible alloc] initWithSWModule:swModule];
+        sm = [[[SwordBible alloc] initWithSWModule:swModule] autorelease];
     } else if(aType == Commentary) {
-        sm = [[SwordCommentary alloc] initWithSWModule:swModule];
+        sm = [[[SwordCommentary alloc] initWithSWModule:swModule] autorelease];
     } else if(aType == Dictionary) {
-        sm = [[SwordDictionary alloc] initWithSWModule:swModule];
+        sm = [[[SwordDictionary alloc] initWithSWModule:swModule] autorelease];
     } else if(aType == Genbook) {
-        sm = [[SwordBook alloc] initWithSWModule:swModule];
+        sm = [[[SwordBook alloc] initWithSWModule:swModule] autorelease];
     } else {
-        sm = [[SwordModule alloc] initWithSWModule:swModule];
+        sm = [[[SwordModule alloc] initWithSWModule:swModule] autorelease];
     }
     
     return sm;
@@ -98,10 +100,11 @@
 - (void)mainInit {
     category = Unset;
 
+    indexLock = [[NSLock alloc] init];
+    moduleLock = [[NSRecursiveLock alloc] init];
+    configEntries = [[NSMutableDictionary dictionary] retain];
+
     self.type = [SwordModule moduleTypeForModuleTypeString:[self typeString]];
-    self.moduleLock = [[NSRecursiveLock alloc] init];
-    self.indexLock = [[NSLock alloc] init];
-    self.configEntries = [NSMutableDictionary dictionary];
 }
 
 - (id)initWithSWModule:(sword::SWModule *)aModule {
@@ -113,6 +116,21 @@
     }
     
     return self;
+}
+
+- (void)dealloc {
+    [moduleLock release];
+    moduleLock = nil;
+
+    [indexLock release];
+    indexLock = nil;
+
+    [configEntries release];
+    configEntries = nil;
+
+    self.swManager = nil;
+
+    [super dealloc];
 }
 
 #pragma mark - Filters
@@ -128,12 +146,20 @@
 
 #pragma mark - Module access semaphores
 
+- (void)lockIndexAccess {
+    [indexLock lock];
+}
+
+- (void)unlockIndexAccess {
+    [indexLock unlock];
+}
+
 - (void)lockModuleAccess {
-    [self.moduleLock lock];
+    [moduleLock lock];
 }
 
 - (void)unlockModuleAccess {
-    [self.moduleLock unlock];
+    [moduleLock unlock];
 }
 
 - (NSString *)name {
@@ -169,7 +195,7 @@
 }
 
 - (NSAttributedString *)fullAboutText {
-    return [[NSAttributedString alloc] initWithString:@""];
+    return [[[NSAttributedString alloc] initWithString:@""] autorelease];
 }
 
 - (NSInteger)error {
@@ -179,11 +205,11 @@
 #pragma mark - Conf entries
 
 - (NSString *)categoryString {
-    NSString *cat = self.configEntries[SWMOD_CONFENTRY_CATEGORY];
+    NSString *cat = configEntries[SWMOD_CONFENTRY_CATEGORY];
     if(cat == nil) {
         cat = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_CATEGORY];
         if(cat != nil) {
-            self.configEntries[SWMOD_CONFENTRY_CATEGORY] = cat;
+            configEntries[SWMOD_CONFENTRY_CATEGORY] = cat;
         }
     }
     
@@ -198,11 +224,11 @@
 }
 
 - (NSString *)cipherKey {
-    NSString *cipherKey = self.configEntries[SWMOD_CONFENTRY_CIPHERKEY];
+    NSString *cipherKey = configEntries[SWMOD_CONFENTRY_CIPHERKEY];
     if(cipherKey == nil) {
         cipherKey = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_CIPHERKEY];
         if(cipherKey != nil) {
-            self.configEntries[SWMOD_CONFENTRY_CIPHERKEY] = cipherKey;
+            configEntries[SWMOD_CONFENTRY_CIPHERKEY] = cipherKey;
         }
     }
     
@@ -210,11 +236,11 @@
 }
 
 - (NSString *)version {
-    NSString *version = self.configEntries[SWMOD_CONFENTRY_VERSION];
+    NSString *version = configEntries[SWMOD_CONFENTRY_VERSION];
     if(version == nil) {
         version = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_VERSION];
         if(version != nil) {
-            self.configEntries[SWMOD_CONFENTRY_VERSION] = version;
+            configEntries[SWMOD_CONFENTRY_VERSION] = version;
         }
     }
     
@@ -222,11 +248,11 @@
 }
 
 - (NSString *)minVersion {
-    NSString *minVersion = self.configEntries[SWMOD_CONFENTRY_MINVERSION];
+    NSString *minVersion = configEntries[SWMOD_CONFENTRY_MINVERSION];
     if(minVersion == nil) {
         minVersion = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_MINVERSION];
         if(minVersion != nil) {
-            self.configEntries[SWMOD_CONFENTRY_MINVERSION] = minVersion;
+            configEntries[SWMOD_CONFENTRY_MINVERSION] = minVersion;
         }
     }
     
@@ -235,7 +261,7 @@
 
 /** this might be RTF string  but the return value will be converted to UTF8 */
 - (NSString *)aboutText {
-    NSMutableString *aboutText = self.configEntries[SWMOD_CONFENTRY_ABOUT];
+    NSMutableString *aboutText = configEntries[SWMOD_CONFENTRY_ABOUT];
     if(aboutText == nil) {
         aboutText = [NSMutableString stringWithString:[self configFileEntryForConfigKey:SWMOD_CONFENTRY_ABOUT]];
         if(aboutText != nil) {
@@ -288,10 +314,12 @@
 			}
 			
 			aboutText = retStr;
+            [retStr release];
+
         } else {
             aboutText = [NSMutableString string];
         }
-        self.configEntries[SWMOD_CONFENTRY_ABOUT] = aboutText;
+        configEntries[SWMOD_CONFENTRY_ABOUT] = aboutText;
     }
     
     return aboutText;    
@@ -304,11 +332,11 @@
 
 - (BOOL)isEditable {
     BOOL ret = NO;
-    NSString *editable = self.configEntries[SWMOD_CONFENTRY_EDITABLE];
+    NSString *editable = configEntries[SWMOD_CONFENTRY_EDITABLE];
     if(editable == nil) {
         editable = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_EDITABLE];
         if(editable != nil) {
-            self.configEntries[SWMOD_CONFENTRY_EDITABLE] = editable;
+            configEntries[SWMOD_CONFENTRY_EDITABLE] = editable;
         }
     }
     
@@ -323,11 +351,11 @@
 
 - (BOOL)isRTL {
     BOOL ret = NO;
-    NSString *direction = self.configEntries[SWMOD_CONFENTRY_DIRECTION];
+    NSString *direction = configEntries[SWMOD_CONFENTRY_DIRECTION];
     if(direction == nil) {
         direction = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_DIRECTION];
         if(direction != nil) {
-            self.configEntries[SWMOD_CONFENTRY_DIRECTION] = direction;
+            configEntries[SWMOD_CONFENTRY_DIRECTION] = direction;
         }
     }
     
@@ -392,7 +420,7 @@
 - (NSString *)configFileEntryForConfigKey:(NSString *)entryKey {
 	NSString *result = nil;
     
-	[self.moduleLock lock];
+	[moduleLock lock];
     const char *entryStr = swModule->getConfigEntry([entryKey UTF8String]);
 	if(entryStr) {
 		result = [NSString stringWithUTF8String:entryStr];
@@ -400,7 +428,7 @@
             result = [NSString stringWithCString:entryStr encoding:NSISOLatin1StringEncoding];
         }
     }
-	[self.moduleLock unlock];
+	[moduleLock unlock];
 	
 	return result;
 }
@@ -415,64 +443,59 @@
     swModule->decrement(1);
 }
 
-- (void)setKeyString:(NSString *)aKeyString {
+- (SwordKey *)setKeyString:(NSString *)aKeyString {
     swModule->setKey([aKeyString UTF8String]);
+    return [SwordKey swordKeyWithSWKey:swModule->getKey()];
 }
 
-- (void)setSwordKey:(SwordKey *)aKey {
-    swModule->getKey()->setPersist(true);
+- (SwordKey *)setSwordKey:(SwordKey *)aKey {
     swModule->setKey([aKey swKey]);
+    return [SwordKey swordKeyWithSWKey:swModule->getKey()];
 }
 
 - (SwordKey *)createKey {
-    sword::SWKey *sk = swModule->createKey();
-    SwordKey *newKey = [SwordKey swordKeyWithSWKey:sk makeCopy:YES];
-    delete sk;
-    
-    return newKey;
+    return [SwordKey swordKeyWithNewSWKey:swModule->createKey()];
 }
 
 - (SwordKey *)getKey {
     return [SwordKey swordKeyWithSWKey:swModule->getKey()];
 }
 
-- (SwordKey *)getKeyCopy {
-    return [SwordKey swordKeyWithSWKey:swModule->getKey() makeCopy:YES];
-}
-
 #pragma mark - Module metadata processing
 
 - (id)attributeValueForParsedLinkData:(NSDictionary *)data {
-    return [self attributeValueForParsedLinkData:data withTextRenderType:TextTypeStripped];
+    return [self attributeValueForParsedLinkData:data withTextRenderType:RenderTypeStripped];
 }
 
-- (id)attributeValueForParsedLinkData:(NSDictionary *)data withTextRenderType:(TextPullType)textType {
+- (id)attributeValueForParsedLinkData:(NSDictionary *)data withTextRenderType:(RenderType)textType {
     id ret = nil;
-    
+
+    SwordKey *swKey = [self getKey];
     NSString *passage = data[ATTRTYPE_PASSAGE];
     if(passage) {
         passage = [[passage stringByReplacingOccurrencesOfString:@"+" withString:@" "] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     } 
     NSString *attrType = data[ATTRTYPE_TYPE];
     if([attrType isEqualToString:@"n"]) {
+        [swKey setKeyText:passage];
         NSString *footnoteText = [self entryAttributeValueFootnoteOfType:attrType 
                                                               indexValue:data[ATTRTYPE_VALUE]
-                                                                  forKey:[SwordKey swordKeyWithRef:passage]];
+                                                                  forKey:swKey];
         ret = footnoteText;
     } else if([attrType isEqualToString:@"x"] || [attrType isEqualToString:@"scriptRef"] || [attrType isEqualToString:@"scripRef"]) {
-        NSString *key = @"";
+        NSString *key;
         if([attrType isEqualToString:@"x"]) {
             key = [self entryAttributeValueFootnoteOfType:attrType
                                                indexValue:data[ATTRTYPE_VALUE]
-                                                   forKey:[SwordKey swordKeyWithRef:passage]];            
+                                                   forKey:swKey];
         } else {
             key = [[data[ATTRTYPE_VALUE] stringByReplacingOccurrencesOfString:@"+"
                                                                    withString:@" "] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         }
-        if(textType == TextTypeRendered) {
-            ret = [self renderedTextEntriesForRef:key];
+        if(textType == RenderTypeRendered) {
+            ret = [self renderedTextEntriesForReference:key];
         } else {
-            ret = [self strippedTextEntriesForRef:key];
+            ret = [self strippedTextEntriesForReference:key];
         }
     }
     
@@ -546,20 +569,20 @@
 }
 
 - (NSString *)entryAttributeValuePreverseForKey:(SwordKey *)aKey {
-    [self.moduleLock lock];
+    [moduleLock lock];
     [self setSwordKey:aKey];
     swModule->renderText(); // force processing of key
     NSString *value = [self entryAttributeValuePreverse];
-    [self.moduleLock unlock];
+    [moduleLock unlock];
     return value;
 }
 
 - (NSString *)entryAttributeValueFootnoteOfType:(NSString *)fnType indexValue:(NSString *)index forKey:(SwordKey *)aKey {
-    [self.moduleLock lock];
+    [moduleLock lock];
     [self setSwordKey:aKey];
     swModule->renderText(); // force processing of key
     NSString *value = [self entryAttributeValueFootnoteOfType:fnType indexValue:index];
-    [self.moduleLock unlock];
+    [moduleLock unlock];
     return value;
 }
 
@@ -571,7 +594,7 @@
 #pragma mark - Module text access
 
 - (NSString *)renderedText {
-    NSString *ret = @"";
+    NSString *ret;
     ret = [NSString stringWithUTF8String:swModule->renderText()];
     if(!ret) {
         ret = [NSString stringWithCString:swModule->renderText() encoding:NSISOLatin1StringEncoding];
@@ -580,7 +603,7 @@
 }
 
 - (NSString *)renderedTextFromString:(NSString *)aString {
-    NSString *ret = @"";
+    NSString *ret;
     ret = [NSString stringWithUTF8String:swModule->renderText([aString UTF8String])];
     if(!ret) {
         ret = [NSString stringWithCString:swModule->renderText([aString UTF8String]) encoding:NSISOLatin1StringEncoding];
@@ -589,7 +612,7 @@
 }
 
 - (NSString *)strippedText {
-    NSString *ret = @"";
+    NSString *ret;
     ret = [NSString stringWithUTF8String:swModule->stripText()];
     if(!ret) {
         ret = [NSString stringWithCString:swModule->stripText() encoding:NSISOLatin1StringEncoding];
@@ -598,7 +621,7 @@
 }
 
 - (NSString *)strippedTextFromString:(NSString *)aString {
-    NSString *ret = @"";
+    NSString *ret;
     ret = [NSString stringWithUTF8String:swModule->renderText([aString UTF8String])];
     if(!ret) {
         ret = [NSString stringWithCString:swModule->renderText([aString UTF8String]) encoding:NSISOLatin1StringEncoding];
@@ -606,19 +629,26 @@
     return ret;
 }
 
-- (NSArray *)strippedTextEntriesForRef:(NSString *)reference {
-    return [self textEntriesForReference:reference textType:TextTypeStripped];
+- (NSArray *)strippedTextEntriesForReference:(NSString *)reference {
+    return [self textEntriesForReference:reference renderType:RenderTypeStripped];
 }
 
-- (NSArray *)renderedTextEntriesForRef:(NSString *)reference {
-    return [self textEntriesForReference:reference textType:TextTypeRendered];
+- (SwordModuleTextEntry *)strippedTextEntryForReference:(NSString *)reference {
+    return [self textEntryForReference:reference renderType:RenderTypeStripped];
 }
 
-- (NSArray *)textEntriesForReference:(NSString *)aReference textType:(TextPullType)textType {
+- (NSArray *)renderedTextEntriesForReference:(NSString *)reference {
+    return [self textEntriesForReference:reference renderType:RenderTypeRendered];
+}
+
+- (SwordModuleTextEntry *)renderedTextEntryForReference:(NSString *)reference {
+    return [self textEntryForReference:reference renderType:RenderTypeRendered];
+}
+
+- (NSArray *)textEntriesForReference:(NSString *)aReference renderType:(RenderType)textType {
     NSArray *ret = nil;
-    
-    SwordModuleTextEntry *entry = [self textEntryForKey:[SwordKey swordKeyWithRef:aReference]
-                                               textType:textType];
+
+    SwordModuleTextEntry *entry = [self textEntryForReference:aReference renderType:textType];
     if(entry) {
         ret = @[entry];
     }
@@ -626,41 +656,27 @@
     return ret;
 }
 
-- (SwordModuleTextEntry *)renderedTextEntryForRef:(NSString *)reference {
-    return [self textEntryForKeyString:reference textType:TextTypeRendered];
-}
-
-- (SwordModuleTextEntry *)strippedTextEntryForRef:(NSString *)reference {
-    return [self textEntryForKeyString:reference textType:TextTypeStripped];
-}
-
-- (SwordModuleTextEntry *)textEntryForKeyString:(NSString *)aKeyString textType:(TextPullType)aType {
-    return [self textEntryForKey:[SwordKey swordKeyWithRef:aKeyString] textType:aType];
-}
-
-- (SwordModuleTextEntry *)textEntryForKey:(SwordKey *)aKey textType:(TextPullType)aType {
+- (SwordModuleTextEntry *)textEntryForReference:(NSString *)aKeyString renderType:(RenderType)aType {
     SwordModuleTextEntry *ret = nil;
-    
-    if(aKey) {
-        [self.moduleLock lock];
-        [self setSwordKey:aKey];
-        if(![self error]) {
-            NSString *txt = @"";
-            if(aType == TextTypeRendered) {
-                txt = [self renderedText];
-            } else {
-                txt = [self strippedText];
-            }
-            
-            if(txt) {
-                ret = [SwordModuleTextEntry textEntryForKey:[aKey keyText] andText:txt];
-            } else {
-                ALog(@"Nil key");
-            }
+
+    [moduleLock lock];
+    [self setKeyString:aKeyString];
+    if(![self error]) {
+        NSString *txt;
+        if(aType == RenderTypeRendered) {
+            txt = [self renderedText];
+        } else {
+            txt = [self strippedText];
         }
-        [self.moduleLock unlock];
+
+        if(txt) {
+            ret = [SwordModuleTextEntry textEntryForKey:aKeyString andText:txt];
+        } else {
+            ALog(@"Nil key");
+        }
     }
-    
+    [moduleLock unlock];
+
     return ret;
 }
 

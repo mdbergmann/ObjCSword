@@ -23,6 +23,10 @@
 	return instance;
 }
 
+- (void)dealloc {
+    [super dealloc];
+}
+
 - (void)initLocale {
     // set locale swManager
     NSString *resourcePath = [[NSBundle bundleForClass:[SwordLocaleManager class]] resourcePath];

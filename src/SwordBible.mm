@@ -17,11 +17,15 @@ using sword::AttributeTypeList;
 using sword::AttributeList;
 using sword::AttributeValue;
 
-@interface SwordBible ()
+@interface SwordBible () {
+    NSDictionary *_books;
+}
 
 - (NSDictionary *)buildBookList;
 - (BOOL)containsBookNumber:(int)aBookNum;
-- (NSArray *)textEntriesForReference:(NSString *)aReference context:(int)context textType:(TextPullType)textType;
+- (NSArray *)textEntriesForReference:(NSString *)aReference context:(int)context textType:(RenderType)textType;
+
+@property (retain, readwrite) NSDictionary *books;
 
 @end
 
@@ -104,13 +108,17 @@ NSLock *bibleLock = nil;
 - (id)initWithSWModule:(sword::SWModule *)aModule swordManager:(SwordManager *)aManager {
     self = [super initWithSWModule:aModule];
     if(self) {
-        [self setBooks:nil];    
+        self.books = nil;
     }
     
     return self;
 }
 
-
+- (void)dealloc {
+    self.books = nil;
+    
+    [super dealloc];
+}
 
 #pragma mark - Bible information
 
@@ -128,6 +136,7 @@ NSLock *bibleLock = nil;
         
         NSString *bookName = [bb name];
         buf[bookName] = bb;
+        [bb release];
     }
     return [NSDictionary dictionaryWithDictionary:buf];
 }
@@ -143,13 +152,14 @@ NSLock *bibleLock = nil;
 
 - (NSDictionary *)books {
     if(_books == nil) {
-        _books = [self buildBookList];
+        self.books = [self buildBookList];
     }
     return _books;
 }
 
 - (void)setBooks:(NSDictionary *)aBooks {
-    _books = aBooks;
+    [_books release];
+    _books = [aBooks retain];
 }
 
 - (NSArray *)bookList {
@@ -159,8 +169,6 @@ NSLock *bibleLock = nil;
 }
 
 - (BOOL)hasReference:(NSString *)ref {
-	[self.moduleLock lock];
-	
 	sword::VerseKey	*key = (sword::VerseKey *)(swModule->createKey());
 	(*key) = [ref UTF8String];
     NSString *bookName = [NSString stringWithUTF8String:key->getBookName()];
@@ -176,8 +184,6 @@ NSLock *bibleLock = nil;
         }
     }    
     
-	[self.moduleLock unlock];
-	
 	return NO;
 }
 
@@ -245,24 +251,36 @@ NSLock *bibleLock = nil;
     return nil;
 }
 
+- (NSString *)versification {
+    NSString *versification = configEntries[SWMOD_CONFENTRY_VERSIFICATION];
+    if(versification == nil) {
+        versification = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_VERSIFICATION];
+        if(versification != nil) {
+            configEntries[SWMOD_CONFENTRY_VERSIFICATION] = versification;
+        }
+    }
+
+    // if still nil, use KJV versification
+    if(versification == nil) {
+        versification = @"KJV";
+        configEntries[SWMOD_CONFENTRY_VERSIFICATION] = versification;
+    }
+
+    return versification;
+}
+
 - (NSString *)moduleIntroduction {
     NSString *ret;
     
-    [self.moduleLock lock];
+    [moduleLock lock];
 
-    // save key
-    SwordVerseKey *save = (SwordVerseKey *)[self getKeyCopy];
-    
-    SwordVerseKey *key = [SwordVerseKey verseKeyWithVersification:[self versification]];
-    [key setHeadings:YES];
+    SwordVerseKey *key = (SwordVerseKey *)[self getKey];
+    [key setIntros:YES];
     [key setTestament:0];
     [self setSwordKey:key];
     ret = [self renderedText];
     
-    // restore old key
-    [self setSwordKey:save];
-    
-    [self.moduleLock unlock];
+    [moduleLock unlock];
 
     return ret;
 }
@@ -270,22 +288,16 @@ NSLock *bibleLock = nil;
 - (NSString *)bookIntroductionFor:(SwordBibleBook *)aBook {
     NSString *ret;
     
-    [self.moduleLock lock];
+    [moduleLock lock];
 
-    // save key
-    SwordVerseKey *save = (SwordVerseKey *)[self getKeyCopy];
-
-    SwordVerseKey *key = [SwordVerseKey verseKeyWithVersification:[self versification]];
-    [key setHeadings:YES];
+    SwordVerseKey *key = (SwordVerseKey *)[self getKey];
+    [key setIntros:YES];
     [key setTestament:(char) [aBook testament]];
     [key setBook:(char) [aBook numberInTestament]];
     [self setSwordKey:key];
     ret = [self renderedText];
     
-    // restore old key
-    [self setSwordKey:save];
-
-    [self.moduleLock unlock];
+    [moduleLock unlock];
 
     return ret;
 }
@@ -293,94 +305,29 @@ NSLock *bibleLock = nil;
 - (NSString *)chapterIntroductionIn:(SwordBibleBook *)aBook forChapter:(int)chapter {
     NSString *ret;
 
-    [self.moduleLock lock];
+    [moduleLock lock];
 
-    // save key
-    SwordVerseKey *save = (SwordVerseKey *)[self getKeyCopy];
-
-    SwordVerseKey *key = [SwordVerseKey verseKeyWithVersification:[self versification]];
-    [key setHeadings:YES];
+    SwordVerseKey *key = (SwordVerseKey *)[self getKey];
+    [key setIntros:YES];
     [key setTestament:(char) [aBook testament]];
     [key setBook:(char) [aBook numberInTestament]];
     [key setChapter:chapter];
     [self setSwordKey:key];
     ret = [self renderedText];
     
-    // restore old key
-    [self setSwordKey:save];
-
-    [self.moduleLock unlock];
+    [moduleLock unlock];
 
     return ret;    
-}
-
-- (SwordModuleTextEntry *)textEntryForKey:(SwordKey *)aKey textType:(TextPullType)aType {
-    SwordBibleTextEntry *ret = nil;
-    
-    if(aKey) {
-        [self.moduleLock lock];
-        [self setSwordKey:aKey];
-        if(![self error]) {
-            NSString *txt;
-            if(aType == TextTypeRendered) {
-                txt = [self renderedText];
-            } else {
-                txt = [self strippedText];
-            }
-            
-            if(txt) {
-                ret = [SwordBibleTextEntry textEntryForKey:[aKey keyText] andText:txt];
-            } else {
-                ALog(@"nil key");
-            }
-
-            if([self.swManager globalOption:SW_OPTION_HEADINGS] && [self hasFeature:SWMOD_FEATURE_HEADINGS]) {
-                NSString *preverseHeading = [self entryAttributeValuePreverse];
-                if(preverseHeading && [preverseHeading length] > 0) {
-                    [ret setPreVerseHeading:preverseHeading];
-                }
-            }        
-        }
-        [self.moduleLock unlock];
-    }
-    
-    return ret;
-}
-
-- (NSString *)versification {
-    NSString *versification = self.configEntries[SWMOD_CONFENTRY_VERSIFICATION];
-    if(versification == nil) {
-        versification = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_VERSIFICATION];
-        if(versification != nil) {
-            self.configEntries[SWMOD_CONFENTRY_VERSIFICATION] = versification;
-        }
-    }
-    
-    // if still nil, use KJV versification
-    if(versification == nil) {
-        versification = @"KJV";
-        self.configEntries[SWMOD_CONFENTRY_VERSIFICATION] = versification;
-    }
-    
-    return versification;    
 }
 
 #pragma mark - SwordModuleAccess
 
 - (SwordKey *)createKey {
-    sword::VerseKey *vk = (sword::VerseKey *)swModule->createKey();
-    SwordVerseKey *newKey = [SwordVerseKey verseKeyWithSWVerseKey:vk makeCopy:YES];
-    delete vk;
-    
-    return newKey;
+    return [SwordVerseKey verseKeyWithNewSWVerseKey:(sword::VerseKey *)swModule->createKey()];
 }
 
 - (SwordKey *)getKey {
     return [SwordVerseKey verseKeyWithSWVerseKey:(sword::VerseKey *)swModule->getKey()];
-}
-
-- (SwordKey *)getKeyCopy {
-    return [SwordVerseKey verseKeyWithSWVerseKey:(sword::VerseKey *)swModule->getKey() makeCopy:YES];
 }
 
 - (long)entryCount {
@@ -392,56 +339,74 @@ NSLock *bibleLock = nil;
     return verseHighIndex - verseLowIndex;
 }
 
-- (NSArray *)strippedTextEntriesForRef:(NSString *)reference {
-    return [self strippedTextEntriesForRef:reference context:0];
+- (NSArray *)strippedTextEntriesForReference:(NSString *)reference {
+    return [self strippedTextEntriesForReference:reference context:0];
 }
 
-- (NSArray *)strippedTextEntriesForRef:(NSString *)reference context:(int)context {
-    return [self textEntriesForReference:reference context:context textType:TextTypeStripped];
+- (NSArray *)strippedTextEntriesForReference:(NSString *)aReference context:(int)context {
+    return [self textEntriesForReference:aReference context:context textType:RenderTypeStripped];
 }
 
-- (NSArray *)renderedTextEntriesForRef:(NSString *)reference {
-    return [self renderedTextEntriesForRef:reference context:0];
+- (NSArray *)renderedTextEntriesForReference:(NSString *)reference {
+    return [self renderedTextEntriesForReference:reference context:0];
 }
 
-- (NSArray *)renderedTextEntriesForRef:(NSString *)reference context:(int)context {
-    return [self textEntriesForReference:reference context:context textType:TextTypeRendered];
+- (NSArray *)renderedTextEntriesForReference:(NSString *)aReference context:(int)context {
+    return [self textEntriesForReference:aReference context:context textType:RenderTypeRendered];
 }
 
-- (NSArray *)textEntriesForReference:(NSString *)aReference textType:(TextPullType)textType {
-    return [self textEntriesForReference:aReference context:0 textType:textType];
+- (NSArray *)textEntriesForReference:(NSString *)aReference renderType:(RenderType)aType {
+    return [self textEntriesForReference:aReference context:0 textType:aType];
 }
 
-- (NSArray *)textEntriesForReference:(NSString *)aReference context:(int)context textType:(TextPullType)textType {
+- (NSArray *)textEntriesForReference:(NSString *)aReference context:(int)context textType:(RenderType)aType {
     NSMutableArray *ret = [NSMutableArray array];
-    
+
+    [moduleLock lock];
     SwordListKey *lk = [SwordListKey listKeyWithRef:aReference v11n:[self versification]];
     [lk setPosition:SWPOS_TOP];
-    SwordVerseKey *vk = [SwordVerseKey verseKeyWithRef:[lk keyText] v11n:[self versification]];
+    SwordVerseKey *verseKey = [SwordVerseKey verseKeyWithRef:[lk keyText] v11n:[self versification]];
+    [verseKey setKeyText:[lk keyText]];
     while(![lk error]) {
-        // set current key to vk
-        [vk setKeyText:[lk keyText]];
+        [verseKey setKeyText:[lk keyText]];
         if(context != 0) {
-            long lowVerse = [vk verse] - context;
+            long lowVerse = [verseKey verse] - context;
             long highVerse = lowVerse + (context * 2);
             for(;lowVerse <= highVerse;lowVerse++) {
-                [vk setVerse:lowVerse];
-                SwordBibleTextEntry *entry = (SwordBibleTextEntry *) [self textEntryForKey:vk textType:textType];
+                [verseKey setVerse:lowVerse];
+                SwordBibleTextEntry *entry = (SwordBibleTextEntry *) [self textEntryForReference:[verseKey keyText] renderType:aType];
                 if(entry) {
                     [ret addObject:entry];
                 }
-                [vk increment];
+                [verseKey increment];
             }
         } else {
-            SwordBibleTextEntry *entry = (SwordBibleTextEntry *) [self textEntryForKey:vk textType:textType];
+            SwordBibleTextEntry *entry = (SwordBibleTextEntry *) [self textEntryForReference:[verseKey keyText] renderType:aType];
             if(entry) {
                 [ret addObject:entry];
             }            
         }
         [lk increment];
     }
-    
+    [moduleLock unlock];
+
     return ret;    
+}
+
+- (SwordModuleTextEntry *)textEntryForReference:(NSString *)aReference renderType:(RenderType)aType {
+    SwordModuleTextEntry *superEntry = [super textEntryForReference:aReference renderType:aType];
+
+    if(superEntry == nil) return nil;
+
+    SwordBibleTextEntry *ret = [SwordBibleTextEntry textEntryForKey:[superEntry key] andText:[superEntry text]];
+    if([self.swManager globalOption:SW_OPTION_HEADINGS] && [self hasFeature:SWMOD_FEATURE_HEADINGS]) {
+        NSString *preverseHeading = [self entryAttributeValuePreverse];
+        if(preverseHeading && [preverseHeading length] > 0) {
+            [ret setPreVerseHeading:preverseHeading];
+        }
+    }
+
+    return ret;
 }
 
 - (void)writeEntry:(SwordModuleTextEntry *)anEntry {
@@ -449,14 +414,14 @@ NSLock *bibleLock = nil;
     const char *data = [[anEntry text] UTF8String];
     size_t dLen = strlen(data);
 
-	[self.moduleLock lock];
+	[moduleLock lock];
     [self setKeyString:[anEntry key]];
     if(![self error]) {
         swModule->setEntry(data, dLen);	// save text to module at current position    
     } else {
         ALog(@"error at positioning module!");
     }
-	[self.moduleLock unlock];
+	[moduleLock unlock];
 }
 
 @end

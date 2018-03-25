@@ -59,7 +59,7 @@
         newConf[aNameCStr]["SourceType"] = "ThML";
         newConf[aNameCStr]["Editable"] = "YES";
         newConf[aNameCStr]["About"] = "This module allows you to store your own commentary.";
-        newConf.Save();
+        newConf.save();
     }
     
     return ret;
@@ -69,6 +69,8 @@
     return [super init];
 }
 
-
+- (void)dealloc {
+    [super dealloc];
+}
 
 @end

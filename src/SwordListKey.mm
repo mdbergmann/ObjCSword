@@ -11,35 +11,23 @@
 @implementation SwordListKey
 
 + (SwordListKey *)listKeyWithRef:(NSString *)aRef {
-    return [[SwordListKey alloc] initWithRef:aRef];
+    return [[[SwordListKey alloc] initWithRef:aRef] autorelease];
 }
 
 + (SwordListKey *)listKeyWithRef:(NSString *)aRef v11n:(NSString *)scheme {
-    return [[SwordListKey alloc] initWithRef:aRef v11n:scheme];
+    return [[[SwordListKey alloc] initWithRef:aRef v11n:scheme] autorelease];
 }
 
 + (SwordListKey *)listKeyWithRef:(NSString *)aRef headings:(BOOL)headings v11n:(NSString *)scheme {
-    return [[SwordListKey alloc] initWithRef:aRef headings:headings v11n:scheme];
+    return [[[SwordListKey alloc] initWithRef:aRef headings:headings v11n:scheme] autorelease];
 }
 
 + (SwordListKey *)listKeyWithSWListKey:(sword::ListKey *)aLk {
-    return [[SwordListKey alloc] initWithSWListKey:aLk];
-}
-
-+ (SwordListKey *)listKeyWithSWListKey:(sword::ListKey *)aLk makeCopy:(BOOL)copy {
-    return [[SwordListKey alloc] initWithSWListKey:aLk makeCopy:copy];    
-}
-
-- (id)init {
-    return [super init];
+    return [[[SwordListKey alloc] initWithSWListKey:aLk] autorelease];
 }
 
 - (SwordListKey *)initWithSWListKey:(sword::ListKey *)aLk {
     return (SwordListKey *) [super initWithSWKey:aLk];
-}
-
-- (SwordListKey *)initWithSWListKey:(sword::ListKey *)aLk makeCopy:(BOOL)copy {
-    return (SwordListKey *) [super initWithSWKey:aLk makeCopy:copy];
 }
 
 - (SwordListKey *)initWithRef:(NSString *)aRef {
@@ -58,9 +46,10 @@
     }
     sword::ListKey listKey = vk.parseVerseList([aRef UTF8String], "gen", true);
     sword::ListKey *lk = new sword::ListKey(listKey);
-    lk->setPersist(true);
 
-    return (SwordListKey *) [super initWithSWKey:lk];
+    self = (SwordListKey *) [super initWithNewSWKey:lk];
+
+    return self;
 }
 
 - (NSInteger)numberOfVerses {
@@ -78,7 +67,7 @@
 }
 
 - (VerseEnumerator *)verseEnumerator {
-    return [[VerseEnumerator alloc] initWithListKey:self];
+    return [[[VerseEnumerator alloc] initWithListKey:self] autorelease];
 }
 
 - (BOOL)containsKey:(SwordVerseKey *)aVerseKey {

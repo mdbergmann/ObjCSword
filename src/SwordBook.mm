@@ -14,39 +14,56 @@
 #import "SwordBook.h"
 #import "SwordModuleTreeEntry.h"
 
+#define GenBookRootKey @"root"
+
 @interface SwordBook ()
+
+@property(retain, readwrite) NSMutableDictionary *_contents;
 
 - (SwordModuleTreeEntry *)_treeEntryForKey:(sword::TreeKeyIdx *)treeKey;
 
 @end
 
-@implementation SwordBook
 
-@synthesize contents;
+@implementation SwordBook
 
 - (id)initWithSWModule:(sword::SWModule *)aModule swordManager:(SwordManager *)aManager {
     self = [super initWithSWModule:aModule];
     if(self) {
-        [self setContents:[NSMutableDictionary dictionary]];
+        self._contents = [NSMutableDictionary dictionary];
     }
     
     return self;
 }
 
+- (void)dealloc {
+    self._contents = nil;
+    
+    [super dealloc];
+}
+
+/**
+ * Immutable copy
+ * @return
+ */
+- (NSDictionary *)allContent {
+    return [NSDictionary dictionaryWithDictionary:self._contents];
+}
+
 - (SwordModuleTreeEntry *)treeEntryForKey:(NSString *)treeKey {
     SwordModuleTreeEntry * ret;
     
-    [self.moduleLock lock];
+    [moduleLock lock];
     if(treeKey == nil) {
-        ret = contents[@"root"];
+        ret = self._contents[GenBookRootKey];
         if(ret == nil) {
             sword::TreeKeyIdx *tk = dynamic_cast<sword::TreeKeyIdx*>((sword::SWKey *)*(swModule));
             ret = [self _treeEntryForKey:tk];
             // add to content
-            contents[@"root"] = ret;
+            self._contents[GenBookRootKey] = ret;
         }
     } else {
-        ret = contents[treeKey];
+        ret = self._contents[treeKey];
         if(ret == nil) {
             const char *keyStr = [treeKey UTF8String];
             if(![self isUnicode]) {
@@ -58,22 +75,22 @@
             sword::TreeKeyIdx *key = dynamic_cast<sword::TreeKeyIdx*>((sword::SWKey *)*(swModule));
             ret = [self _treeEntryForKey:key];
             // add to content
-            contents[treeKey] = ret;
+            self._contents[treeKey] = ret;
         }
     }
-    [self.moduleLock unlock];
+    [moduleLock unlock];
     
     return ret;
 }
 
 - (SwordModuleTreeEntry *)_treeEntryForKey:(sword::TreeKeyIdx *)treeKey {
-    SwordModuleTreeEntry *ret = [[SwordModuleTreeEntry alloc] init];
+    SwordModuleTreeEntry *ret = [[[SwordModuleTreeEntry alloc] init] autorelease];
     
 	char *treeNodeName = (char *)treeKey->getText();
 	NSString *nName;
     
     if(strlen(treeNodeName) == 0) {
-        nName = @"root";
+        nName = GenBookRootKey;
     } else {    
         // key encoding depends on module encoding
         nName = [NSString stringWithUTF8String:treeNodeName];

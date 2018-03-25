@@ -8,11 +8,11 @@
 
 #import "SwordModuleTreeEntry.h"
 
+@interface SwordModuleTreeEntry ()
+
+@end
 
 @implementation SwordModuleTreeEntry
-
-@synthesize key;
-@synthesize content;
 
 - (id)initWithKey:(NSString *)aKey content:(NSArray *)aContent {
     self = [super init];
@@ -24,6 +24,11 @@
     return self;
 }
 
-
+- (void)dealloc {
+    self.key = nil;
+    self.content = nil;
+    
+    [super dealloc];
+}
 
 @end

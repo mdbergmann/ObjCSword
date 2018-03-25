@@ -9,13 +9,17 @@
 #import "SwordModuleTextEntry.h"
 #import "SwordKey.h"
 
+@interface SwordModuleTextEntry ()
+
+@property (retain, readwrite) NSString *key;
+@property (retain, readwrite) NSString *text;
+
+@end
+
 @implementation SwordModuleTextEntry
 
-@synthesize key;
-@synthesize text;
-
 + (id)textEntryForKey:(NSString *)aKey andText:(NSString *)aText {
-    return [[SwordModuleTextEntry alloc] initWithKey:aKey andText:aText];
+    return [[[SwordModuleTextEntry alloc] initWithKey:aKey andText:aText] autorelease];
 }
 
 - (id)initWithKey:(NSString *)aKey andText:(NSString *)aText {
@@ -28,6 +32,11 @@
     return self;
 }
 
-
+- (void)dealloc {
+    self.key = nil;
+    self.text = nil;
+    
+    [super dealloc];
+}
 
 @end

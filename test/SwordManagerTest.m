@@ -20,8 +20,8 @@
 - (void)setUp {
     [super setUp];
 
-    [Configuration configWithImpl:[[OSXConfiguration alloc] init]];
-    [[FilterProviderFactory factory] initWithImpl:[[DefaultFilterProvider alloc] init]];
+    [Configuration configWithImpl:[[[OSXConfiguration alloc] init] autorelease]];
+    [[FilterProviderFactory factory] initWith:[[[DefaultFilterProvider alloc] init] autorelease]];
     
     NSString *modulePath = [[[NSBundle bundleForClass:[self class]] resourcePath] stringByAppendingPathComponent:@"TestModules"];
     
@@ -60,7 +60,8 @@
 - (void)testReloadWithRenderedKey_SwordKey {
     SwordModule *mod = [mgr moduleWithName:@"KJV"];
     
-    SwordKey *key = [SwordKey swordKeyWithRef:@"Gen 1"];
+    SwordKey *key = [mod getKey];
+    [key setKeyText:@"Gen 1"];
     [mod setSwordKey:key];
     NSString *text = [mod renderedText];
     XCTAssert(text != nil);
@@ -76,7 +77,7 @@
 - (void)testReloadWithRenderedKey_CustomRender {
     SwordModule *mod = [mgr moduleWithName:@"KJV"];
 
-    NSArray *textEntries = [(SwordBible *)mod renderedTextEntriesForRef:@"Gen 1" context:0];
+    NSArray *textEntries = [(SwordBible *) mod renderedTextEntriesForReference:@"Gen 1" context:0];
     XCTAssert(textEntries != nil);
     NSLog(@"Entries: %lu", [textEntries count]);
     XCTAssert([textEntries count] == 31);

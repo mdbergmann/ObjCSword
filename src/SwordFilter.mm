@@ -17,19 +17,30 @@
 #import "teixhtml.h"
 #import "teiplain.h"
 
+@interface SwordFilter ()
+
+- (id)initWithSWFilter:(sword::SWFilter *)swFilter;
+
+@end
+
 @implementation SwordFilter {
     sword::SWFilter *swFilter;
 }
 
-- (id)initWithSWFilter:(sword::SWFilter *)swFilter1 {
+- (id)initWithSWFilter:(sword::SWFilter *)aFilter {
     self = [super init];
     if (self) {
-        swFilter = swFilter1;
+        swFilter = aFilter;
     }
 
     return self;
 }
 
+- (void)dealloc {
+    if(swFilter != NULL) delete swFilter;
+
+    [super dealloc];
+}
 
 - (sword::SWFilter *)swFilter {
     return swFilter;
@@ -38,7 +49,7 @@
 @end
 
 @implementation SwordOsisHtmlRefFilter
-+ (SwordOsisHtmlRefFilter *)filter {
++ (SwordOsisHtmlRefFilter *)newFilter {
     return [[SwordOsisHtmlRefFilter alloc] init];
 }
 
@@ -48,7 +59,7 @@
 @end
 
 @implementation SwordOsisXHtmlFilter
-+ (SwordOsisXHtmlFilter *)filter {
++ (SwordOsisXHtmlFilter *)newFilter {
     return [[SwordOsisXHtmlFilter alloc] init];
 }
 
@@ -58,7 +69,7 @@
 @end
 
 @implementation SwordOsisPlainFilter
-+ (SwordOsisPlainFilter *)filter {
++ (SwordOsisPlainFilter *)newFilter {
     return [[SwordOsisPlainFilter alloc] init];
 }
 
@@ -68,7 +79,7 @@
 @end
 
 @implementation SwordThmlHtmlFilter
-+ (SwordThmlHtmlFilter *)filter {
++ (SwordThmlHtmlFilter *)newFilter {
     return [[SwordThmlHtmlFilter alloc] init];
 }
 
@@ -78,7 +89,7 @@
 @end
 
 @implementation SwordThmlPlainFilter
-+ (SwordThmlPlainFilter *)filter {
++ (SwordThmlPlainFilter *)newFilter {
     return [[SwordThmlPlainFilter alloc] init];
 }
 
@@ -88,7 +99,7 @@
 @end
 
 @implementation SwordGbfHtmlFilter
-+ (SwordGbfHtmlFilter *)filter {
++ (SwordGbfHtmlFilter *)newFilter {
     return [[SwordGbfHtmlFilter alloc] init];
 }
 
@@ -98,7 +109,7 @@
 @end
 
 @implementation SwordGbfPlainFilter
-+ (SwordGbfPlainFilter *)filter {
++ (SwordGbfPlainFilter *)newFilter {
     return [[SwordGbfPlainFilter alloc] init];
 }
 
@@ -108,7 +119,7 @@
 @end
 
 @implementation SwordTeiHtmlFilter
-+ (SwordTeiHtmlFilter *)filter {
++ (SwordTeiHtmlFilter *)newFilter {
     return [[SwordTeiHtmlFilter alloc] init];
 }
 
@@ -118,7 +129,7 @@
 @end
 
 @implementation SwordTeiXHtmlFilter
-+ (SwordTeiXHtmlFilter *)filter {
++ (SwordTeiXHtmlFilter *)newFilter {
     return [[SwordTeiXHtmlFilter alloc] init];
 }
 
@@ -128,7 +139,7 @@
 @end
 
 @implementation SwordTeiPlainFilter
-+ (SwordTeiPlainFilter *)filter {
++ (SwordTeiPlainFilter *)newFilter {
     return [[SwordTeiPlainFilter alloc] init];
 }
 

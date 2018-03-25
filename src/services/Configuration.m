@@ -8,6 +8,10 @@
 
 #import "Configuration.h"
 
+@interface Configuration ()
+@property (retain, readwrite) id<Configuration> impl;
+@end
+
 @implementation Configuration
 
 + (Configuration *)config {
@@ -27,19 +31,18 @@
     return [super init];
 }
 
-
-
-- (void)setImpl:(id<Configuration>)configImpl {
-    impl = (Configuration *)configImpl;
+- (void)dealloc {
+    self.impl = nil;
+    [super dealloc];
 }
 
 #pragma mark Configuration implementation
 
-- (NSString *)osVersion {return [impl osVersion];}
-- (NSString *)bundleVersion {return [impl bundleVersion];}
-- (NSString *)defaultModulePath {return [impl defaultModulePath];}
-- (NSString *)defaultAppSupportPath {return [impl defaultAppSupportPath];}
-- (NSString *)tempFolder {return [impl tempFolder];}
-- (NSString *)logFile {return [impl logFile];}
+- (NSString *)osVersion {return [self.impl osVersion];}
+- (NSString *)bundleVersion {return [self.impl bundleVersion];}
+- (NSString *)defaultModulePath {return [self.impl defaultModulePath];}
+- (NSString *)defaultAppSupportPath {return [self.impl defaultAppSupportPath];}
+- (NSString *)tempFolder {return [self.impl tempFolder];}
+- (NSString *)logFile {return [self.impl logFile];}
 
 @end

@@ -8,11 +8,14 @@
 
 #import "SwordBibleChapter.h"
 
+@interface SwordBibleChapter ()
+
+@property (readwrite) int number;
+@property (retain, readwrite) SwordBibleBook *book;
+
+@end
 
 @implementation SwordBibleChapter
-
-@synthesize book;
-@synthesize number;
 
 - (id)initWithBook:(SwordBibleBook *)aBook andChapter:(int)aNumber {
     self = [super init];
@@ -24,6 +27,10 @@
     return self;
 }
 
-
+- (void)dealloc {
+    self.book = nil;
+    
+    [super dealloc];
+}
 
 @end

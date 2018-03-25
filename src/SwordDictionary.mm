@@ -13,12 +13,9 @@
 
 #import <ObjCSword/ObjCSword.h>
 
-@interface SwordDictionary (/* Private, class continuation */)
-/** private property */
-@property(readwrite, strong) NSMutableArray *keys;
-@end
+@interface SwordDictionary ()
 
-@interface SwordDictionary (PrivateAPI)
+@property(readwrite, retain) NSMutableArray *keys;
 
 - (void)readKeys;
 - (void)readFromCache;
@@ -26,21 +23,22 @@
 
 @end
 
-@implementation SwordDictionary (PrivateAPI)
+
+@implementation SwordDictionary
 
 /**
  only the keys are stored here in an array
  */
 - (void)readKeys {    
-	if(keys == nil) {
+	if(self.keys == nil) {
         [self readFromCache];
     }
     
     // still no entries?
-	if([keys count] == 0) {
+	if([self.keys count] == 0) {
         NSMutableArray *arr = [NSMutableArray array];
 
-        [self.moduleLock lock];
+        [moduleLock lock];
         
         swModule->setSkipConsecutiveLinks(true);
         *swModule = sword::TOP;
@@ -66,9 +64,9 @@
             (*swModule)++;
         }
 
-        [self.moduleLock unlock];
+        [moduleLock unlock];
         
-        self.keys = arr;        
+        self.keys = arr;
         [self writeToCache];
     }
 }
@@ -87,14 +85,9 @@
 - (void)writeToCache {
 	// save cached file
     NSString *cachePath = [[[Configuration config] defaultAppSupportPath] stringByAppendingPathComponent:[NSString stringWithFormat:@"cache-%@", [self name]]];
-	[keys writeToFile:cachePath atomically:NO];
+	[self.keys writeToFile:cachePath atomically:NO];
 }
 
-@end
-
-@implementation SwordDictionary
-
-@synthesize keys;
 
 /** init with given SWModule */
 - (id)initWithSWModule:(sword::SWModule *)aModule swordManager:(SwordManager *)aManager {
@@ -106,15 +99,17 @@
     return self;
 }
 
-
+- (void)dealloc {
+    self.keys = nil;
+    
+    [super dealloc];
+}
 
 - (NSArray *)allKeys {
-    NSArray *ret = self.keys;
-    if(ret == nil) {
+    if(self.keys == nil) {
         [self readKeys];
-        ret = self.keys;
     }
-	return ret;    
+	return [NSArray arrayWithArray:self.keys];
 }
 
 /**
@@ -124,23 +119,23 @@
 - (NSString *)entryForKey:(NSString *)aKey {
     NSString *ret = nil;
     
-	[self.moduleLock lock];
+	[moduleLock lock];
     [self setKeyString:aKey];    
 	if([self error]) {
         ALog(@"Error on setting key!");
     } else {
         ret = [self strippedText];
     }
-	[self.moduleLock unlock];
+	[moduleLock unlock];
 	
 	return ret;
 }
 
 - (id)attributeValueForParsedLinkData:(NSDictionary *)data {
-    return [self attributeValueForParsedLinkData:data withTextRenderType:TextTypeStripped];
+    return [self attributeValueForParsedLinkData:data withTextRenderType:RenderTypeStripped];
 }
 
-- (id)attributeValueForParsedLinkData:(NSDictionary *)data withTextRenderType:(TextPullType)textType {
+- (id)attributeValueForParsedLinkData:(NSDictionary *)data withTextRenderType:(RenderType)textType {
     id ret = nil;
     
     NSString *attrType = data[ATTRTYPE_TYPE];
@@ -150,7 +145,7 @@
        [attrType isEqualToString:@"Hebrew"] ||
        [attrType hasPrefix:@"strongMorph"] || [attrType hasPrefix:@"robinson"]) {
         NSString *key = data[ATTRTYPE_VALUE];
-        ret = [self strippedTextEntriesForRef:key];
+        ret = [self strippedTextEntriesForReference:key];
     }
     
     return ret;
@@ -160,7 +155,7 @@
 
 
 - (long)entryCount {
-    return [[self allKeys] count];    
+    return [self.allKeys count];
 }
 
 @end

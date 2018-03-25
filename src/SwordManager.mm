@@ -19,9 +19,13 @@
 using std::string;
 using std::list;
 
-@interface SwordManager ()
+@interface SwordManager () {
+    sword::SWMgr *swManager;
+}
 
-@property (strong, readwrite) NSDictionary *modules;
+@property (retain, readwrite) NSRecursiveLock *managerLock;
+@property (retain, readwrite) NSDictionary *modules;
+@property (retain, readwrite) NSString *modulesPath;
 @property (readwrite) BOOL deleteSWMgr;
 
 - (void)setFiltersToModule:(SwordModule *)mod;
@@ -31,8 +35,6 @@ using std::list;
 
 @implementation SwordManager
 
-# pragma mark - class methods
-
 static SwordManager *instance = nil;
 
 + (NSArray *)moduleTypes {
@@ -40,7 +42,7 @@ static SwordManager *instance = nil;
 }
 
 + (SwordManager *)managerWithPath:(NSString *)path {
-    SwordManager *manager = [[SwordManager alloc] initWithPath:path];
+    SwordManager *manager = [[[SwordManager alloc] initWithPath:path] autorelease];
     return manager;
 }
 
@@ -62,7 +64,7 @@ static SwordManager *instance = nil;
         ALog(@"Init with path:%@", path);
         self.deleteSWMgr = YES;
         self.modulesPath = path;
-		self.managerLock = (id) [[NSRecursiveLock alloc] init];
+		self.managerLock = [[[NSRecursiveLock alloc] init] autorelease];
 
         [self initManager];
         
@@ -70,7 +72,7 @@ static SwordManager *instance = nil;
         sword::StringList options = swManager->getGlobalOptions();
         sword::StringList::iterator	it;
         for(it = options.begin(); it != options.end(); it++) {
-            [self setGlobalOption:[NSString stringWithCString:it->c_str() encoding:NSUTF8StringEncoding] value:SW_OFF];
+            [self setGlobalOption:[NSString stringWithUTF8String:it->c_str()] value:SW_OFF];
         }
     }	
 	
@@ -83,7 +85,7 @@ static SwordManager *instance = nil;
         ALog(@"Init with temporary SWMgr");
         swManager = aSWMgr;
         self.deleteSWMgr = NO;
-        self.managerLock = (id) [[NSRecursiveLock alloc] init];
+        self.managerLock = [[[NSRecursiveLock alloc] init] autorelease];
     }
     
     return self;
@@ -98,6 +100,8 @@ static SwordManager *instance = nil;
         ALog(@"Deleting SWMgr!");
         delete swManager;
     }
+
+    [super dealloc];
 }
 
 - (void)initManager {
@@ -144,7 +148,7 @@ static SwordManager *instance = nil;
 
 - (void)reloadManager {
     if(swManager != NULL) {
-        swManager->Load();
+        swManager->load();
     }
 }
 
@@ -196,7 +200,6 @@ static SwordManager *instance = nil;
 }
 
 - (SwordModule *)moduleWithName:(NSString *)name {
-    
     sword::SWModule *mod = [self getSWModuleWithName:name];
     if(mod == NULL) {
         ALog(@"No module by that name: %@!", name);
@@ -242,7 +245,7 @@ static SwordManager *instance = nil;
         mod = it->second;
         if(mod) {
             SwordModule *swMod = [self moduleWithName:[NSString stringWithUTF8String:mod->getName()]];
-            [dict setObject:swMod forKey:[swMod name]];
+            dict[[swMod name]] = swMod;
         }
     }
     return [NSDictionary dictionaryWithDictionary:dict];
@@ -265,7 +268,7 @@ static SwordManager *instance = nil;
     }
 	
     // sort
-    NSArray *sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES]];
+    NSArray *sortDescriptors = @[[[[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES] autorelease]];
     [ret sortUsingDescriptors:sortDescriptors];
 
 	return [NSArray arrayWithArray:ret];
@@ -280,7 +283,7 @@ static SwordManager *instance = nil;
     }
     
     // sort
-    NSArray *sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES]];
+    NSArray *sortDescriptors = @[[[[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES] autorelease]];
     [ret sortUsingDescriptors:sortDescriptors];
     
 	return [NSArray arrayWithArray:ret];
@@ -294,7 +297,7 @@ static SwordManager *instance = nil;
         }
     }
     
-    NSArray *sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES]];
+    NSArray *sortDescriptors = @[[[[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES] autorelease]];
     [ret sortUsingDescriptors:sortDescriptors];
     
 	return [NSArray arrayWithArray:ret];    

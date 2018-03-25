@@ -8,14 +8,12 @@
 #import "DefaultFilterProvider.h"
 
 @interface FilterProviderFactory ()
-
-@property(nonatomic, strong) id <FilterProvider> filterProvider;
-
+@property(retain, nonatomic) id <FilterProvider> filterProvider;
 @end
 
 @implementation FilterProviderFactory
 
-+ (instancetype)factory {
++ (FilterProviderFactory *)factory {
     static FilterProviderFactory *singleton = nil;
 
     if(singleton == nil) {
@@ -25,8 +23,14 @@
     return singleton;
 }
 
-- (void)initWithImpl:(id <FilterProvider>)aFilterProvider {
+- (void)initWith:(id <FilterProvider>)aFilterProvider {
     self.filterProvider = aFilterProvider;
+}
+
+- (void)dealloc {
+    self.filterProvider = nil;
+    
+    [super dealloc];
 }
 
 - (id <FilterProvider>)get {
@@ -35,7 +39,5 @@
     }
     return self.filterProvider;
 }
-
-
 
 @end

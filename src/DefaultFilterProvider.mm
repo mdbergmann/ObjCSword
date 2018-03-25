@@ -9,35 +9,35 @@
 @implementation DefaultFilterProvider
 
 - (SwordFilter *)newOsisRenderFilter {
-    return [SwordOsisHtmlRefFilter filter];
+    return [SwordOsisHtmlRefFilter newFilter];
 }
 
 - (SwordFilter *)newOsisPlainFilter {
-    return [SwordOsisPlainFilter filter];
+    return [SwordOsisPlainFilter newFilter];
 }
 
 - (SwordFilter *)newGbfRenderFilter {
-    return [SwordGbfHtmlFilter filter];
+    return [SwordGbfHtmlFilter newFilter];
 }
 
 - (SwordFilter *)newGbfPlainFilter {
-    return [SwordGbfPlainFilter filter];
+    return [SwordGbfPlainFilter newFilter];
 }
 
 - (SwordFilter *)newThmlRenderFilter {
-    return [SwordThmlHtmlFilter filter];
+    return [SwordThmlHtmlFilter newFilter];
 }
 
 - (SwordFilter *)newThmlPlainFilter {
-    return [SwordThmlPlainFilter filter];
+    return [SwordThmlPlainFilter newFilter];
 }
 
 - (SwordFilter *)newTeiRenderFilter {
-    return [SwordTeiHtmlFilter filter];
+    return [SwordTeiHtmlFilter newFilter];
 }
 
 - (SwordFilter *)newTeiPlainFilter {
-    return [SwordTeiPlainFilter filter];
+    return [SwordTeiPlainFilter newFilter];
 }
 
 @end

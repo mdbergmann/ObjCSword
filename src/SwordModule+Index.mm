@@ -15,12 +15,8 @@
 	NSString *dataPath = [self configFileEntryForConfigKey:@"AbsoluteDataPath"];
 	dataPath = [dataPath stringByAppendingPathComponent:@"lucene"];
 	dataPath = [dataPath stringByAppendingPathComponent:@"segments"];
-    
-	if ([[NSFileManager defaultManager] fileExistsAtPath:dataPath]) {
-		return YES;
-	} else {
-		return NO;
-	}
+
+	return [[NSFileManager defaultManager] fileExistsAtPath:dataPath];
 }
 
 - (void)createSearchIndex {

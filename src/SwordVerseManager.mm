@@ -10,15 +10,15 @@
 #import "SwordBibleBook.h"
 
 
-@interface SwordVerseManager ()
+@interface SwordVerseManager () {
+    sword::VersificationMgr *verseMgr;
+}
 
-@property (strong, readwrite) NSMutableDictionary *booksPerVersification;
+@property (retain, readwrite) NSMutableDictionary *booksPerVersification;
 
 @end
 
 @implementation SwordVerseManager
-
-@synthesize booksPerVersification;
 
 + (SwordVerseManager *)defaultManager {
     static SwordVerseManager *singleton = nil;
@@ -39,8 +39,6 @@
     return self;
 }
 
-
-
 /** convenience method that returns the books for default scheme (KJV) */
 - (NSArray *)books {
     return [self booksForVersification:SW_VERSIFICATION_KJV];
@@ -48,7 +46,7 @@
 
 /** books for a versification scheme */
 - (NSArray *)booksForVersification:(NSString *)verseScheme {
-    NSArray *ret = booksPerVersification[verseScheme];
+    NSArray *ret = self.booksPerVersification[verseScheme];
     if(ret == nil) {
         // hasn't been initialized yet
         const sword::VersificationMgr::System *system = verseMgr->getVersificationSystem([verseScheme UTF8String]);
@@ -57,13 +55,13 @@
         for(int i = 0;i < bookCount;i++) {
             sword::VersificationMgr::Book *book = (sword::VersificationMgr::Book *)system->getBook(i);
             
-            SwordBibleBook *bb = [[SwordBibleBook alloc] initWithBook:book];
+            SwordBibleBook *bb = [[[SwordBibleBook alloc] initWithBook:book] autorelease];
             [bb setNumber:i+1]; // VerseKey-Book() starts at index 1
             
             // add to array
             [buf addObject:bb];
         }
-        booksPerVersification[verseScheme] = buf;
+        self.booksPerVersification[verseScheme] = buf;
         ret = buf;
     }
     

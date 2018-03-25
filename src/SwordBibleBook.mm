@@ -9,13 +9,23 @@
 #import "SwordBibleBook.h"
 #import "SwordBibleChapter.h"
 
+@interface SwordBibleBook () {
+    NSArray *_chapters;
+}
+
+@property (readwrite) int numberInTestament;
+@property (readwrite) int testament;
+@property (retain, readwrite) NSString *localizedName;
+@property (retain, readwrite) NSArray *chapters;
+
+@end
 
 @implementation SwordBibleBook
 
-@synthesize number;
-@synthesize numberInTestament;
-@synthesize testament;
-@synthesize localizedName;
+//@synthesize number;
+//@synthesize numberInTestament;
+//@synthesize testament;
+//@synthesize localizedName;
 @dynamic chapters;
 
 - (id)init {
@@ -50,7 +60,7 @@
             self.localizedName = [NSString stringWithCString:translated encoding:NSISOLatin1StringEncoding];
         }
         if(self.localizedName == nil) {
-            DLog(@"Unable to get this bookname: %s", translated);
+            DLog(@"Unable to get this book name: %s", translated);
         }
     }
     
@@ -61,6 +71,8 @@
 - (void)dealloc {
     [self setChapters:nil];
     [self setLocalizedName:nil];
+
+    [super dealloc];
 }
 
 - (NSString *)name {
@@ -80,18 +92,19 @@
 }
 
 - (void)setChapters:(NSArray *)anArray {
-    chapters = anArray;
+    [_chapters release];
+    _chapters = [anArray retain];
 }
 
 - (NSArray *)chapters {
-    if(chapters == nil) {
+    if(_chapters == nil) {
         NSMutableArray *temp = [NSMutableArray array];
         for(int i = 0;i < swBook->getChapterMax();i++) {
-            [temp addObject:[[SwordBibleChapter alloc] initWithBook:self andChapter:i+1]];
+            [temp addObject:[[[SwordBibleChapter alloc] initWithBook:self andChapter:i + 1] autorelease]];
         }
         [self setChapters:[NSArray arrayWithArray:temp]];
     }
-    return chapters;
+    return _chapters;
 }
 
 /**
@@ -99,7 +112,7 @@
  that is: book number + testament * 100
  */
 - (int)generatedIndex {
-    return number + testament * 100;
+    return self.number + self.testament * 100;
 }
 
 - (sword::VersificationMgr::Book *)book {
@@ -108,7 +121,7 @@
 
 /** we implement this for sorting */
 - (NSComparisonResult)compare:(SwordBibleBook *)b {
-    return [@(number) compare:@([b number])];
+    return [@(self.number) compare:@([b number])];
 }
 
 @end

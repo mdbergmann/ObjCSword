@@ -12,27 +12,27 @@
 @implementation SwordVerseKey
 
 + (SwordVerseKey *)verseKey {
-    return [[SwordVerseKey alloc] init];
+    return [[[SwordVerseKey alloc] init] autorelease];
 }
 
 + (SwordVerseKey *)verseKeyWithVersification:(NSString *)scheme {
-    return [[SwordVerseKey alloc] initWithVersification:scheme];
+    return [[[SwordVerseKey alloc] initWithVersification:scheme] autorelease];
 }
 
 + (SwordVerseKey *)verseKeyWithRef:(NSString *)aRef {
-    return [[SwordVerseKey alloc] initWithRef:aRef];
+    return [[[SwordVerseKey alloc] initWithRef:aRef] autorelease];
 }
 
 + (SwordVerseKey *)verseKeyWithRef:(NSString *)aRef v11n:(NSString *)scheme {
-    return [[SwordVerseKey alloc] initWithRef:aRef v11n:scheme];
+    return [[[SwordVerseKey alloc] initWithRef:aRef v11n:scheme] autorelease];
 }
 
 + (SwordVerseKey *)verseKeyWithSWVerseKey:(sword::VerseKey *)aVk {
-    return [[SwordVerseKey alloc] initWithSWVerseKey:aVk];
+    return [[[SwordVerseKey alloc] initWithSWVerseKey:aVk] autorelease];
 }
 
-+ (SwordVerseKey *)verseKeyWithSWVerseKey:(sword::VerseKey *)aVk makeCopy:(BOOL)copy {
-    return [[SwordVerseKey alloc] initWithSWVerseKey:aVk makeCopy:copy];    
++ (SwordVerseKey *)verseKeyWithNewSWVerseKey:(sword::VerseKey *)aVk {
+    return [[[SwordVerseKey alloc] initWithNewSWVerseKey:aVk] autorelease];
 }
 
 - (id)init {
@@ -44,15 +44,11 @@
 }
 
 - (SwordVerseKey *)initWithSWVerseKey:(sword::VerseKey *)aVk {
-    return [self initWithSWVerseKey:aVk makeCopy:NO];
+    return (SwordVerseKey *)[super initWithSWKey:aVk];
 }
 
-- (SwordVerseKey *)initWithSWVerseKey:(sword::VerseKey *)aVk makeCopy:(BOOL)copy {
-    self = [super initWithSWKey:aVk makeCopy:copy];
-    if(self) {
-        [self swVerseKey]->setVersificationSystem(aVk->getVersificationSystem());
-    }
-    return self;    
+- (SwordVerseKey *)initWithNewSWVerseKey:(sword::VerseKey *)aVk {
+    return (SwordVerseKey *)[super initWithNewSWKey:aVk];
 }
 
 - (SwordVerseKey *)initWithRef:(NSString *)aRef {
@@ -61,9 +57,9 @@
 
 - (SwordVerseKey *)initWithRef:(NSString *)aRef v11n:(NSString *)scheme {
     sword::VerseKey vk;
-    self = [super initWithSWKey:&vk makeCopy:YES];
+
+    self = [super initWithNewSWKey:vk.clone()];
     if(self) {
-        created = YES;
         if(scheme) {
             [self setVersification:scheme];
         }
@@ -76,21 +72,15 @@
     return self;
 }
 
-
-
-- (SwordKey *)clone {
-    return [SwordVerseKey verseKeyWithSWVerseKey:(sword::VerseKey *)sk];
-}
-
 - (long)index {
     return ((sword::VerseKey *)sk)->getIndex();
 }
 
-- (BOOL)headings {
+- (BOOL)intros {
     return (BOOL)((sword::VerseKey *)sk)->isIntros();
 }
 
-- (void)setHeadings:(BOOL)flag {
+- (void)setIntros:(BOOL)flag {
     ((sword::VerseKey *)sk)->setIntros(flag);
 }
 

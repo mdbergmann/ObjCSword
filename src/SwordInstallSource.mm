@@ -10,20 +10,25 @@
 #import "SwordInstallSourceManager.h"
 #import "SwordManager.h"
 
-@interface SwordInstallSource ()
-
-@property (nonatomic) BOOL deleteSwInstallSource;
+@interface SwordInstallSource () {
+    sword::InstallSource *swInstallSource;
+}
 
 @end
 
 @implementation SwordInstallSource
+
+@dynamic caption;
+@dynamic type;
+@dynamic source;
+@dynamic directory;
 
 // init
 - (id)init {
     self = [super init];
     if(self) {
         swInstallSource = new sword::InstallSource("", "");
-        self.deleteSwInstallSource = YES;
+        self.deleteOnDealloc = YES;
     }
     
     return self;
@@ -43,7 +48,7 @@
     self = [super init];
     if(self) {
         swInstallSource = is;
-        self.deleteSwInstallSource = NO;
+        self.deleteOnDealloc = NO;
     }
     
     return self;
@@ -51,15 +56,16 @@
 
 - (void)dealloc {
     ALog(@"");
-    if(swInstallSource != NULL && self.deleteSwInstallSource) {
+    if(swInstallSource != NULL && self.deleteOnDealloc) {
         ALog(@"Deleting InstallSource");
         delete swInstallSource;
     }
+
+    [super dealloc];
 }
 
 - (NSString *)caption {
-    const char *str = swInstallSource->caption;
-    return [[NSString alloc] initWithCString:str encoding:NSUTF8StringEncoding];
+    return [[[NSString alloc] initWithUTF8String:swInstallSource->caption] autorelease];
 }
 
 - (void)setCaption:(NSString *)aCaption {
@@ -67,8 +73,7 @@
 }
 
 - (NSString *)type {
-    const char *str = swInstallSource->type;
-    return [[NSString alloc] initWithCString:str encoding:NSUTF8StringEncoding];
+    return [[[NSString alloc] initWithUTF8String:swInstallSource->type] autorelease];
 }
 
 - (void)setType:(NSString *)aType {
@@ -76,8 +81,7 @@
 }
 
 - (NSString *)source {
-    const char *str = swInstallSource->source;
-    return [[NSString alloc] initWithCString:str encoding:NSUTF8StringEncoding];
+    return [[[NSString alloc] initWithUTF8String:swInstallSource->source] autorelease];
 }
 
 - (void)setSource:(NSString *)aSource {
@@ -85,8 +89,7 @@
 }
 
 - (NSString *)directory {
-    const char *str = swInstallSource->directory;
-    return [[NSString alloc] initWithCString:str encoding:NSUTF8StringEncoding];
+    return [[[NSString alloc] initWithUTF8String:swInstallSource->directory] autorelease];
 }
 
 - (void)setDirectory:(NSString *)aDir {
@@ -150,7 +153,7 @@
         return nil;
 
     } else {
-        return [[SwordManager alloc] initWithSWMgr:mgr];
+        return [[[SwordManager alloc] initWithSWMgr:mgr] autorelease];
     }
 }
 

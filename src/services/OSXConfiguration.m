@@ -12,7 +12,7 @@
 @implementation OSXConfiguration
 
 - (NSString *)osVersion {
-    return [[NSDictionary dictionaryWithContentsOfFile:@"/System/Library/CoreServices/SystemVersion.plist"] objectForKey:@"ProductVersion"];
+    return [NSDictionary dictionaryWithContentsOfFile:@"/System/Library/CoreServices/SystemVersion.plist"][@"ProductVersion"];
 }
 
 - (NSString *)bundleVersion {
