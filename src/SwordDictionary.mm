@@ -46,16 +46,17 @@
         while(![self error]) {
             char *cStrKeyText = (char *)swModule->getKeyText();
             if(cStrKeyText) {
-                NSString *keyText = [NSString stringWithUTF8String:cStrKeyText];
-                if(!keyText) {
-                    keyText = [NSString stringWithCString:swModule->getKeyText() encoding:NSISOLatin1StringEncoding];
-                    if(!keyText) {
-                        ALog(@"Unable to create NSString instance from string: %s", cStrKeyText);
-                    }
+                NSString *keyText;
+                if([self isUnicode]) {
+                    keyText = [NSString stringWithUTF8String:cStrKeyText];
+                } else {
+                    keyText = [NSString stringWithCString:cStrKeyText encoding:NSISOLatin1StringEncoding];
                 }
                 
                 if(keyText) {
                     [arr addObject:[keyText capitalizedString]];
+                } else {
+                    ALog(@"Unable to create NSString instance from string: %s", cStrKeyText);
                 }
             } else {
                 ALog(@"Could not get keytext from sword module!");                
