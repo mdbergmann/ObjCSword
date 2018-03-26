@@ -168,7 +168,7 @@ NSLock *bibleLock = nil;
 }
 
 - (BOOL)hasReference:(NSString *)ref {
-	sword::VerseKey	*key = (sword::VerseKey *)(swModule->createKey());
+	sword::VerseKey	*key = (sword::VerseKey *)([self swModule]->createKey());
 	(*key) = [ref UTF8String];
     NSString *bookName = [NSString stringWithUTF8String:key->getBookName()];
     int chapter = key->getChapterMax();
@@ -251,20 +251,10 @@ NSLock *bibleLock = nil;
 }
 
 - (NSString *)versification {
-    NSString *versification = configEntries[SWMOD_CONFENTRY_VERSIFICATION];
-    if(versification == nil) {
-        versification = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_VERSIFICATION];
-        if(versification != nil) {
-            configEntries[SWMOD_CONFENTRY_VERSIFICATION] = versification;
-        }
-    }
-
-    // if still nil, use KJV versification
-    if(versification == nil) {
+    NSString *versification = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_VERSIFICATION];
+    if([versification length] == 0) {
         versification = @"KJV";
-        configEntries[SWMOD_CONFENTRY_VERSIFICATION] = versification;
     }
-
     return versification;
 }
 
@@ -322,18 +312,18 @@ NSLock *bibleLock = nil;
 #pragma mark - SwordModuleAccess
 
 - (SwordKey *)createKey {
-    return [SwordVerseKey verseKeyWithNewSWVerseKey:(sword::VerseKey *)swModule->createKey()];
+    return [SwordVerseKey verseKeyWithNewSWVerseKey:(sword::VerseKey *)[self swModule]->createKey()];
 }
 
 - (SwordKey *)getKey {
-    return [SwordVerseKey verseKeyWithSWVerseKey:(sword::VerseKey *)swModule->getKey()];
+    return [SwordVerseKey verseKeyWithSWVerseKey:(sword::VerseKey *)[self swModule]->getKey()];
 }
 
 - (long)entryCount {
-    swModule->setPosition(sword::TOP);
-    long verseLowIndex = swModule->getIndex();
-    swModule->setPosition(sword::BOTTOM);
-    long verseHighIndex = swModule->getIndex();
+    [self swModule]->setPosition(sword::TOP);
+    long verseLowIndex = [self swModule]->getIndex();
+    [self swModule]->setPosition(sword::BOTTOM);
+    long verseHighIndex = [self swModule]->getIndex();
     
     return verseHighIndex - verseLowIndex;
 }
@@ -423,7 +413,7 @@ NSLock *bibleLock = nil;
 	[moduleLock lock];
     [self setKeyString:[anEntry key]];
     if(![self error]) {
-        swModule->setEntry(data, dLen);	// save text to module at current position    
+        [self swModule]->setEntry(data, dLen);	// save text to module at current position
     } else {
         ALog(@"error at positioning module!");
     }

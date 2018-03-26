@@ -57,7 +57,7 @@
     if(treeKey == nil) {
         ret = self._contents[GenBookRootKey];
         if(ret == nil) {
-            sword::TreeKeyIdx *tk = dynamic_cast<sword::TreeKeyIdx*>((sword::SWKey *)*(swModule));
+            sword::TreeKeyIdx *tk = dynamic_cast<sword::TreeKeyIdx*>((sword::SWKey *)*([self swModule]));
             ret = [self _treeEntryForKey:tk];
             // add to content
             self._contents[GenBookRootKey] = ret;
@@ -71,8 +71,8 @@
             }
             // position module
             sword::SWKey *mkey = new sword::SWKey(keyStr);
-            swModule->setKey(mkey);
-            sword::TreeKeyIdx *key = dynamic_cast<sword::TreeKeyIdx*>((sword::SWKey *)*(swModule));
+            [self swModule]->setKey(mkey);
+            sword::TreeKeyIdx *key = dynamic_cast<sword::TreeKeyIdx*>((sword::SWKey *)*([self swModule]));
             ret = [self _treeEntryForKey:key];
             // add to content
             self._contents[treeKey] = ret;

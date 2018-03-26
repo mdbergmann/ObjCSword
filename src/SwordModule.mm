@@ -20,7 +20,9 @@
 #import "SwordCommentary.h"
 #import "SwordUtil.h"
 
-@interface SwordModule ()
+@interface SwordModule () {
+    sword::SWModule	*swModule;
+}
 
 @property (readwrite) ModuleType type;
 
@@ -102,7 +104,6 @@
 
     indexLock = [[NSLock alloc] init];
     moduleLock = [[NSRecursiveLock alloc] init];
-    configEntries = [[NSMutableDictionary dictionary] retain];
 
     self.type = [SwordModule moduleTypeForModuleTypeString:[self typeString]];
 }
@@ -124,9 +125,6 @@
 
     [indexLock release];
     indexLock = nil;
-
-    [configEntries release];
-    configEntries = nil;
 
     self.swManager = nil;
 
@@ -205,15 +203,7 @@
 #pragma mark - Conf entries
 
 - (NSString *)categoryString {
-    NSString *cat = configEntries[SWMOD_CONFENTRY_CATEGORY];
-    if(cat == nil) {
-        cat = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_CATEGORY];
-        if(cat != nil) {
-            configEntries[SWMOD_CONFENTRY_CATEGORY] = cat;
-        }
-    }
-    
-    return cat;
+    return [self configFileEntryForConfigKey:SWMOD_CONFENTRY_CATEGORY];
 }
 
 - (ModuleCategory)category {
@@ -224,104 +214,84 @@
 }
 
 - (NSString *)cipherKey {
-    NSString *cipherKey = configEntries[SWMOD_CONFENTRY_CIPHERKEY];
-    if(cipherKey == nil) {
-        cipherKey = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_CIPHERKEY];
-        if(cipherKey != nil) {
-            configEntries[SWMOD_CONFENTRY_CIPHERKEY] = cipherKey;
-        }
-    }
-    
-    return cipherKey;
+    return [self configFileEntryForConfigKey:SWMOD_CONFENTRY_CIPHERKEY];
 }
 
 - (NSString *)version {
-    NSString *version = configEntries[SWMOD_CONFENTRY_VERSION];
-    if(version == nil) {
-        version = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_VERSION];
-        if(version != nil) {
-            configEntries[SWMOD_CONFENTRY_VERSION] = version;
-        }
-    }
-    
-    return version;
+    return [self configFileEntryForConfigKey:SWMOD_CONFENTRY_VERSION];
+}
+
+- (NSString *)shortPromo {
+    return [self configFileEntryForConfigKey:SWMOD_CONFENTRY_SHORTPROMO];
+}
+
+- (NSString *)distributionLicense {
+    return [self configFileEntryForConfigKey:SWMOD_CONFENTRY_DISTRLICENSE];
 }
 
 - (NSString *)minVersion {
-    NSString *minVersion = configEntries[SWMOD_CONFENTRY_MINVERSION];
-    if(minVersion == nil) {
-        minVersion = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_MINVERSION];
-        if(minVersion != nil) {
-            configEntries[SWMOD_CONFENTRY_MINVERSION] = minVersion;
-        }
-    }
-    
-    return minVersion;
+    return [self configFileEntryForConfigKey:SWMOD_CONFENTRY_MINVERSION];
 }
 
 /** this might be RTF string  but the return value will be converted to UTF8 */
 - (NSString *)aboutText {
-    NSMutableString *aboutText = configEntries[SWMOD_CONFENTRY_ABOUT];
-    if(aboutText == nil) {
-        aboutText = [NSMutableString stringWithString:[self configFileEntryForConfigKey:SWMOD_CONFENTRY_ABOUT]];
-        if(aboutText != nil) {
-			//search & replace the RTF markup:
-			// "\\qc"		- for centering							--->>>  ignore these
-			// "\\pard"		- for resetting paragraph attributes	--->>>  ignore these
-			// "\\par"		- for paragraph breaks					--->>>  honour these
-			// "\\u{num}?"	- for unicode characters				--->>>  honour these
-			[aboutText replaceOccurrencesOfString:@"\\qc" withString:@"" options:0 range:NSMakeRange(0, [aboutText length])];
-			[aboutText replaceOccurrencesOfString:@"\\pard" withString:@"" options:0 range:NSMakeRange(0, [aboutText length])];
-			[aboutText replaceOccurrencesOfString:@"\\par" withString:@"\n" options:0 range:NSMakeRange(0, [aboutText length])];
-            
-			NSMutableString *retStr = [@"" mutableCopy];
-			for(NSUInteger i=0; i<[aboutText length]; i++) {
-				unichar c = [aboutText characterAtIndex:i];
-                
-				if(c == '\\' && ((i+1) < [aboutText length])) {
-					unichar d = [aboutText characterAtIndex:(i+1)];
-					if (d == 'u') {
-						//we have an unicode character!
-						@try {
-							NSInteger unicodeChar = 0;
-							NSMutableString *unicodeCharString = [@"" mutableCopy];
-							int j = 0;
-							BOOL negative = NO;
-							if ([aboutText characterAtIndex:(i+2)] == '-') {
-								//we have a negative unicode char
-								negative = YES;
-								j++;//skip past the '-'
-							}
-							while(isdigit([aboutText characterAtIndex:(i+2+j)])) {
-								[unicodeCharString appendFormat:@"%C", [aboutText characterAtIndex:(i+2+j)]];
-								j++;
-							}
-							unicodeChar = [unicodeCharString integerValue];
-							if (negative) unicodeChar = 65536 - unicodeChar;
-							i += j+2;
-							[retStr appendFormat:@"%C", (unichar)unicodeChar];
-						}
-						@catch (NSException * e) {
-							[retStr appendFormat:@"%C", c];
-						}
-						//end dealing with the unicode character.
-					} else {
-						[retStr appendFormat:@"%C", c];
-					}
-				} else {
-					[retStr appendFormat:@"%C", c];
-				}
-			}
-			
-			aboutText = retStr;
-            [retStr release];
+    NSMutableString *aboutText = [NSMutableString stringWithString:[self configFileEntryForConfigKey:SWMOD_CONFENTRY_ABOUT]];
+    if(aboutText != nil) {
+        //search & replace the RTF markup:
+        // "\\qc"		- for centering							--->>>  ignore these
+        // "\\pard"		- for resetting paragraph attributes	--->>>  ignore these
+        // "\\par"		- for paragraph breaks					--->>>  honour these
+        // "\\u{num}?"	- for unicode characters				--->>>  honour these
+        [aboutText replaceOccurrencesOfString:@"\\qc" withString:@"" options:0 range:NSMakeRange(0, [aboutText length])];
+        [aboutText replaceOccurrencesOfString:@"\\pard" withString:@"" options:0 range:NSMakeRange(0, [aboutText length])];
+        [aboutText replaceOccurrencesOfString:@"\\par" withString:@"\n" options:0 range:NSMakeRange(0, [aboutText length])];
 
-        } else {
-            aboutText = [NSMutableString string];
+        NSMutableString *retStr = [@"" mutableCopy];
+        for(NSUInteger i=0; i<[aboutText length]; i++) {
+            unichar c = [aboutText characterAtIndex:i];
+
+            if(c == '\\' && ((i+1) < [aboutText length])) {
+                unichar d = [aboutText characterAtIndex:(i+1)];
+                if (d == 'u') {
+                    //we have an unicode character!
+                    @try {
+                        NSInteger unicodeChar = 0;
+                        NSMutableString *unicodeCharString = [[@"" mutableCopy] autorelease];
+                        int j = 0;
+                        BOOL negative = NO;
+                        if ([aboutText characterAtIndex:(i+2)] == '-') {
+                            //we have a negative unicode char
+                            negative = YES;
+                            j++;//skip past the '-'
+                        }
+                        while(isdigit([aboutText characterAtIndex:(i+2+j)])) {
+                            [unicodeCharString appendFormat:@"%C", [aboutText characterAtIndex:(i+2+j)]];
+                            j++;
+                        }
+                        unicodeChar = [unicodeCharString integerValue];
+                        if (negative) unicodeChar = 65536 - unicodeChar;
+                        i += j+2;
+                        [retStr appendFormat:@"%C", (unichar)unicodeChar];
+                    }
+                    @catch (NSException * e) {
+                        [retStr appendFormat:@"%C", c];
+                    }
+                    //end dealing with the unicode character.
+                } else {
+                    [retStr appendFormat:@"%C", c];
+                }
+            } else {
+                [retStr appendFormat:@"%C", c];
+            }
         }
-        configEntries[SWMOD_CONFENTRY_ABOUT] = aboutText;
+
+        aboutText = [NSMutableString stringWithString:retStr];
+        [retStr release];
+
+    } else {
+        aboutText = [NSMutableString string];
     }
-    
+
     return aboutText;    
 }
 
@@ -332,39 +302,23 @@
 
 - (BOOL)isEditable {
     BOOL ret = NO;
-    NSString *editable = configEntries[SWMOD_CONFENTRY_EDITABLE];
-    if(editable == nil) {
-        editable = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_EDITABLE];
-        if(editable != nil) {
-            configEntries[SWMOD_CONFENTRY_EDITABLE] = editable;
-        }
-    }
-    
+    NSString *editable = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_EDITABLE];
     if(editable) {
         if([editable isEqualToString:@"YES"]) {
             ret = YES;
         }
     }
-    
     return ret;
 }
 
 - (BOOL)isRTL {
     BOOL ret = NO;
-    NSString *direction = configEntries[SWMOD_CONFENTRY_DIRECTION];
-    if(direction == nil) {
-        direction = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_DIRECTION];
-        if(direction != nil) {
-            configEntries[SWMOD_CONFENTRY_DIRECTION] = direction;
-        }
-    }
-    
+    NSString *direction = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_DIRECTION];
     if(direction) {
         if([direction isEqualToString:SW_DIRECTION_RTL]) {
             ret = YES;
         }
     }
-    
     return ret;    
 }
 
@@ -418,14 +372,17 @@
 }
 
 - (NSString *)configFileEntryForConfigKey:(NSString *)entryKey {
-	NSString *result = nil;
+	NSString *result = @"";
     
 	[moduleLock lock];
     const char *entryStr = swModule->getConfigEntry([entryKey UTF8String]);
 	if(entryStr) {
-		result = [NSString stringWithUTF8String:entryStr];
-        if(!result) {
-            result = [NSString stringWithCString:entryStr encoding:NSISOLatin1StringEncoding];
+		NSString *tmp = [NSString stringWithUTF8String:entryStr];
+        if(!tmp) {
+            tmp = [NSString stringWithCString:entryStr encoding:NSISOLatin1StringEncoding];
+        }
+        if(tmp) {
+            result = [NSString stringWithString:tmp];
         }
     }
 	[moduleLock unlock];

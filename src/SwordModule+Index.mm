@@ -20,15 +20,15 @@
 }
 
 - (void)createSearchIndex {
-	swModule->createSearchFramework();
+	[self swModule]->createSearchFramework();
 }
 
 - (void)deleteSearchIndex {
-	swModule->deleteSearchFramework();
+	[self swModule]->deleteSearchFramework();
 }
 
 - (NSArray *)performIndexSearch:(NSString *)searchString {
-	sword::ListKey results = swModule->search([searchString UTF8String], -4);
+	sword::ListKey results = [self swModule]->search([searchString UTF8String], -4);
 	results.sort();
 
 	NSMutableArray *retArray = [NSMutableArray array];

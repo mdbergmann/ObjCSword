@@ -39,12 +39,12 @@
         NSMutableArray *arr = [NSMutableArray array];
 
         [moduleLock lock];
-        
-        swModule->setSkipConsecutiveLinks(true);
-        *swModule = sword::TOP;
-        swModule->getRawEntry();        
+
+        [self swModule]->setSkipConsecutiveLinks(true);
+        *[self swModule] = sword::TOP;
+        [self swModule]->getRawEntry();
         while(![self error]) {
-            char *cStrKeyText = (char *)swModule->getKeyText();
+            char *cStrKeyText = (char *)[self swModule]->getKeyText();
             if(cStrKeyText) {
                 NSString *keyText;
                 if([self isUnicode]) {
@@ -62,7 +62,7 @@
                 ALog(@"Could not get keytext from sword module!");                
             }
             
-            (*swModule)++;
+            (*[self swModule])++;
         }
 
         [moduleLock unlock];
