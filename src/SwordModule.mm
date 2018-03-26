@@ -629,7 +629,7 @@
 }
 
 - (NSArray *)strippedTextEntriesForReference:(NSString *)reference {
-    return [self textEntriesForReference:reference renderType:RenderTypeStripped];
+    return [self textEntriesForReference:reference renderType:RenderTypeStripped withBlock:^(SwordModuleTextEntry *){}];
 }
 
 - (SwordModuleTextEntry *)strippedTextEntryForReference:(NSString *)reference {
@@ -637,18 +637,21 @@
 }
 
 - (NSArray *)renderedTextEntriesForReference:(NSString *)reference {
-    return [self textEntriesForReference:reference renderType:RenderTypeRendered];
+    return [self textEntriesForReference:reference renderType:RenderTypeRendered withBlock:^(SwordModuleTextEntry *){}];
 }
 
 - (SwordModuleTextEntry *)renderedTextEntryForReference:(NSString *)reference {
     return [self textEntryForReference:reference renderType:RenderTypeRendered];
 }
 
-- (NSArray *)textEntriesForReference:(NSString *)aReference renderType:(RenderType)textType {
+- (NSArray *)textEntriesForReference:(NSString *)aReference
+                          renderType:(RenderType)aType
+                           withBlock:(void(^)(SwordModuleTextEntry *))entryResult {
     NSArray *ret = nil;
 
-    SwordModuleTextEntry *entry = [self textEntryForReference:aReference renderType:textType];
+    SwordModuleTextEntry *entry = [self textEntryForReference:aReference renderType:aType];
     if(entry) {
+        entryResult(entry);     // let caller do something with the result
         ret = @[entry];
     }
     

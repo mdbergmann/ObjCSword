@@ -176,6 +176,20 @@
     XCTAssertTrue([[text text] length] > 0, @"");
 }
 
+- (void)testRetrieveTextEntryWithBlock {
+    SwordBible *bible = (SwordBible *)[mgr moduleWithName:@"KJV"];
+    XCTAssertNotNil(bible, @"Module is nil");
+
+    __block SwordModuleTextEntry *entry;
+    [bible textEntriesForReference:@"gen1.1" renderType:RenderTypeRendered withBlock:^(SwordModuleTextEntry *entry1){
+        entry = entry1;
+    }];
+
+    XCTAssertTrue(entry != nil);
+    XCTAssertTrue([[entry text] length] > 0);
+    NSLog(@"text: %@", [entry text]);
+}
+
 - (void)testLoopWithModulePos {
     SwordListKey *lk = [SwordListKey listKeyWithRef:@"gen" v11n:[mod versification]];
     [mod setSwordKey:lk];

@@ -31,7 +31,7 @@
     NSLog(@"%@", defaultLocName);
     
     XCTAssert(defaultLocName != nil);
-    XCTAssert([defaultLocName isEqual:@"en"]);
+    XCTAssert([defaultLocName isEqual:@"de"]);
 }
 
 @end

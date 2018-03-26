@@ -23,7 +23,6 @@ using sword::AttributeValue;
 
 - (NSDictionary *)buildBookList;
 - (BOOL)containsBookNumber:(int)aBookNum;
-- (NSArray *)textEntriesForReference:(NSString *)aReference context:(int)context textType:(RenderType)textType;
 
 @property (retain, readwrite) NSDictionary *books;
 
@@ -344,7 +343,7 @@ NSLock *bibleLock = nil;
 }
 
 - (NSArray *)strippedTextEntriesForReference:(NSString *)aReference context:(int)context {
-    return [self textEntriesForReference:aReference context:context textType:RenderTypeStripped];
+    return [self textEntriesForReference:aReference context:context renderType:RenderTypeStripped withBlock:^(SwordModuleTextEntry *){}];
 }
 
 - (NSArray *)renderedTextEntriesForReference:(NSString *)reference {
@@ -352,14 +351,19 @@ NSLock *bibleLock = nil;
 }
 
 - (NSArray *)renderedTextEntriesForReference:(NSString *)aReference context:(int)context {
-    return [self textEntriesForReference:aReference context:context textType:RenderTypeRendered];
+    return [self textEntriesForReference:aReference context:context renderType:RenderTypeRendered withBlock:^(SwordModuleTextEntry *){}];
 }
 
-- (NSArray *)textEntriesForReference:(NSString *)aReference renderType:(RenderType)aType {
-    return [self textEntriesForReference:aReference context:0 textType:aType];
+- (NSArray *)textEntriesForReference:(NSString *)aReference
+                          renderType:(RenderType)aType
+                           withBlock:(void(^)(SwordModuleTextEntry *))entryResult {
+    return [self textEntriesForReference:aReference context:0 renderType:aType withBlock:entryResult];
 }
 
-- (NSArray *)textEntriesForReference:(NSString *)aReference context:(int)context textType:(RenderType)aType {
+- (NSArray *)textEntriesForReference:(NSString *)aReference
+                             context:(int)context
+                          renderType:(RenderType)aType
+                           withBlock:(void(^)(SwordModuleTextEntry *))entryResult {
     NSMutableArray *ret = [NSMutableArray array];
 
     [moduleLock lock];
@@ -376,6 +380,7 @@ NSLock *bibleLock = nil;
                 [verseKey setVerse:lowVerse];
                 SwordBibleTextEntry *entry = (SwordBibleTextEntry *) [self textEntryForReference:[verseKey keyText] renderType:aType];
                 if(entry) {
+                    entryResult(entry);
                     [ret addObject:entry];
                 }
                 [verseKey increment];
@@ -383,8 +388,9 @@ NSLock *bibleLock = nil;
         } else {
             SwordBibleTextEntry *entry = (SwordBibleTextEntry *) [self textEntryForReference:[verseKey keyText] renderType:aType];
             if(entry) {
+                entryResult(entry);
                 [ret addObject:entry];
-            }            
+            }
         }
         [lk increment];
     }
