@@ -40,6 +40,7 @@
 		8C92C0092524B19DA56E913B /* SwordModuleConfEntriesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C92CA6FFEA8A01A01D207F7 /* SwordModuleConfEntriesTest.m */; };
 		8C92C1CEA5B5038C8AFC6138 /* SwordBibleTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C92CBF201C1DF44A49CFC1F /* SwordBibleTest.m */; };
 		8C92C31DC92DF0671FCEB5B3 /* SwordFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C92CC111DC521DE0C054C60 /* SwordFilter.mm */; };
+		8C92C4634C024C78A7D3A71F /* SwordBookTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C92C7B5AC00CA65F0E9CA05 /* SwordBookTest.m */; };
 		8C92CA04E38B25CF26C3865D /* SwordFilterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C92C67CD9DF18A2794D9C33 /* SwordFilterTest.m */; };
 		8C92CC7B68FDCDFFFB8B4A31 /* DefaultFilterProvider.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C92C0124F354F4CB4F294F9 /* DefaultFilterProvider.mm */; };
 		8C92CC9CEC8A341B902C53E2 /* SwordInstallSourceManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C92C0CA467F3114A1DC89DD /* SwordInstallSourceManagerTest.m */; };
@@ -1679,6 +1680,7 @@
 		8C92C67CD9DF18A2794D9C33 /* SwordFilterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwordFilterTest.m; sourceTree = "<group>"; };
 		8C92C72ADACB017A434CD268 /* FilterProviderFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FilterProviderFactory.h; path = src/FilterProviderFactory.h; sourceTree = "<group>"; };
 		8C92C7B2EB245D47FEB5E3B0 /* SwordUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwordUtil.h; path = src/SwordUtil.h; sourceTree = "<group>"; };
+		8C92C7B5AC00CA65F0E9CA05 /* SwordBookTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwordBookTest.m; sourceTree = "<group>"; };
 		8C92C980D4DE32C7AB93159D /* DefaultFilterProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DefaultFilterProvider.h; path = src/DefaultFilterProvider.h; sourceTree = "<group>"; };
 		8C92CA600BF802C377CFB9A1 /* SwordBibleTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwordBibleTest.h; sourceTree = "<group>"; };
 		8C92CA6FFEA8A01A01D207F7 /* SwordModuleConfEntriesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwordModuleConfEntriesTest.m; sourceTree = "<group>"; };
@@ -5367,6 +5369,7 @@
 				8C92C67CD9DF18A2794D9C33 /* SwordFilterTest.m */,
 				8C92C22F7A5B1223838507AB /* SwordFilterTest.h */,
 				8C92CA6FFEA8A01A01D207F7 /* SwordModuleConfEntriesTest.m */,
+				8C92C7B5AC00CA65F0E9CA05 /* SwordBookTest.m */,
 			);
 			name = Tests;
 			path = test;
@@ -7289,6 +7292,7 @@
 				8C92C1CEA5B5038C8AFC6138 /* SwordBibleTest.m in Sources */,
 				8C92CA04E38B25CF26C3865D /* SwordFilterTest.m in Sources */,
 				8C92C0092524B19DA56E913B /* SwordModuleConfEntriesTest.m in Sources */,
+				8C92C4634C024C78A7D3A71F /* SwordBookTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

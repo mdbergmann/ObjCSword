@@ -18,7 +18,7 @@
 
 @interface SwordBook ()
 
-@property(retain, readwrite) NSMutableDictionary *_contents;
+@property(retain, readwrite) NSMutableDictionary *_contentsBuffer;
 
 - (SwordModuleTreeEntry *)_treeEntryForKey:(sword::TreeKeyIdx *)treeKey;
 
@@ -27,17 +27,17 @@
 
 @implementation SwordBook
 
-- (id)initWithSWModule:(sword::SWModule *)aModule swordManager:(SwordManager *)aManager {
+- (id)initWithSWModule:(sword::SWModule *)aModule {
     self = [super initWithSWModule:aModule];
     if(self) {
-        self._contents = [NSMutableDictionary dictionary];
+        self._contentsBuffer = [NSMutableDictionary dictionary];
     }
     
     return self;
 }
 
 - (void)dealloc {
-    self._contents = nil;
+    self._contentsBuffer = nil;
     
     [super dealloc];
 }
@@ -47,7 +47,7 @@
  * @return
  */
 - (NSDictionary *)allContent {
-    return [NSDictionary dictionaryWithDictionary:self._contents];
+    return [NSDictionary dictionaryWithDictionary:self._contentsBuffer];
 }
 
 - (SwordModuleTreeEntry *)treeEntryForKey:(NSString *)treeKey {
@@ -55,15 +55,15 @@
     
     [moduleLock lock];
     if(treeKey == nil) {
-        ret = self._contents[GenBookRootKey];
+        ret = self._contentsBuffer[GenBookRootKey];
         if(ret == nil) {
             sword::TreeKeyIdx *tk = dynamic_cast<sword::TreeKeyIdx*>((sword::SWKey *)*([self swModule]));
             ret = [self _treeEntryForKey:tk];
             // add to content
-            self._contents[GenBookRootKey] = ret;
+            self._contentsBuffer[GenBookRootKey] = ret;
         }
     } else {
-        ret = self._contents[treeKey];
+        ret = self._contentsBuffer[treeKey];
         if(ret == nil) {
             const char *keyStr = [treeKey UTF8String];
             if(![self isUnicode]) {
@@ -75,7 +75,7 @@
             sword::TreeKeyIdx *key = dynamic_cast<sword::TreeKeyIdx*>((sword::SWKey *)*([self swModule]));
             ret = [self _treeEntryForKey:key];
             // add to content
-            self._contents[treeKey] = ret;
+            self._contentsBuffer[treeKey] = ret;
         }
     }
     [moduleLock unlock];
@@ -101,8 +101,6 @@
     // set name
     [ret setKey:nName];
     NSMutableArray *c = [NSMutableArray array];
-    [ret setContent:c];
-	
     // if this node has children, walk them
 	if(treeKey->hasChildren()) {
         // get first child
@@ -121,7 +119,8 @@
         }
         while(treeKey->nextSibling());            
 	}
-	
+    [ret setContent:[NSArray arrayWithArray:c]];
+
 	return ret;
 }
 
