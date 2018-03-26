@@ -563,8 +563,7 @@
 
 - (NSArray *)entryAttributeValuesLemmaNormalized {
     NSArray *lemmas = [self entryAttributeValuesLemma];
-    // post process all codes and mormalize the number
-    // Hebrew keys should have 5 number digits
+    // post process all codes and number digits
     return [SwordUtil padStrongsNumbers:lemmas];
 }
 
