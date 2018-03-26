@@ -203,7 +203,8 @@
 #pragma mark - Conf entries
 
 - (NSString *)categoryString {
-    return [self configFileEntryForConfigKey:SWMOD_CONFENTRY_CATEGORY];
+    NSString *confEntry = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_CATEGORY];
+    return confEntry == nil ? @"" : confEntry;
 }
 
 - (ModuleCategory)category {
@@ -214,83 +215,86 @@
 }
 
 - (NSString *)cipherKey {
+    // encryption state is determined if the cipherkey conf entry exists or not
     return [self configFileEntryForConfigKey:SWMOD_CONFENTRY_CIPHERKEY];
 }
 
 - (NSString *)version {
-    return [self configFileEntryForConfigKey:SWMOD_CONFENTRY_VERSION];
+    NSString *confEntry = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_VERSION];
+    return confEntry == nil ? @"" : confEntry;
 }
 
 - (NSString *)shortPromo {
-    return [self configFileEntryForConfigKey:SWMOD_CONFENTRY_SHORTPROMO];
+    NSString *confEntry = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_SHORTPROMO];
+    return confEntry == nil ? @"" : confEntry;
 }
 
 - (NSString *)distributionLicense {
-    return [self configFileEntryForConfigKey:SWMOD_CONFENTRY_DISTRLICENSE];
+    NSString *confEntry = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_DISTRLICENSE];
+    return confEntry == nil ? @"" : confEntry;
 }
 
 - (NSString *)minVersion {
-    return [self configFileEntryForConfigKey:SWMOD_CONFENTRY_MINVERSION];
+    NSString *confEntry = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_MINVERSION];
+    return confEntry == nil ? @"" : confEntry;
 }
 
 /** this might be RTF string  but the return value will be converted to UTF8 */
 - (NSString *)aboutText {
-    NSMutableString *aboutText = [NSMutableString stringWithString:[self configFileEntryForConfigKey:SWMOD_CONFENTRY_ABOUT]];
-    if(aboutText != nil) {
-        //search & replace the RTF markup:
-        // "\\qc"		- for centering							--->>>  ignore these
-        // "\\pard"		- for resetting paragraph attributes	--->>>  ignore these
-        // "\\par"		- for paragraph breaks					--->>>  honour these
-        // "\\u{num}?"	- for unicode characters				--->>>  honour these
-        [aboutText replaceOccurrencesOfString:@"\\qc" withString:@"" options:0 range:NSMakeRange(0, [aboutText length])];
-        [aboutText replaceOccurrencesOfString:@"\\pard" withString:@"" options:0 range:NSMakeRange(0, [aboutText length])];
-        [aboutText replaceOccurrencesOfString:@"\\par" withString:@"\n" options:0 range:NSMakeRange(0, [aboutText length])];
+    NSString *confEntry = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_ABOUT];
+    if(!confEntry) return @"";
 
-        NSMutableString *retStr = [@"" mutableCopy];
-        for(NSUInteger i=0; i<[aboutText length]; i++) {
-            unichar c = [aboutText characterAtIndex:i];
+    NSMutableString *aboutText = [NSMutableString stringWithString:confEntry];
+    //search & replace the RTF markup:
+    // "\\qc"		- for centering							--->>>  ignore these
+    // "\\pard"		- for resetting paragraph attributes	--->>>  ignore these
+    // "\\par"		- for paragraph breaks					--->>>  honour these
+    // "\\u{num}?"	- for unicode characters				--->>>  honour these
+    [aboutText replaceOccurrencesOfString:@"\\qc" withString:@"" options:0 range:NSMakeRange(0, [aboutText length])];
+    [aboutText replaceOccurrencesOfString:@"\\pard" withString:@"" options:0 range:NSMakeRange(0, [aboutText length])];
+    [aboutText replaceOccurrencesOfString:@"\\par" withString:@"\n" options:0 range:NSMakeRange(0, [aboutText length])];
 
-            if(c == '\\' && ((i+1) < [aboutText length])) {
-                unichar d = [aboutText characterAtIndex:(i+1)];
-                if (d == 'u') {
-                    //we have an unicode character!
-                    @try {
-                        NSInteger unicodeChar = 0;
-                        NSMutableString *unicodeCharString = [[@"" mutableCopy] autorelease];
-                        int j = 0;
-                        BOOL negative = NO;
-                        if ([aboutText characterAtIndex:(i+2)] == '-') {
-                            //we have a negative unicode char
-                            negative = YES;
-                            j++;//skip past the '-'
-                        }
-                        while(isdigit([aboutText characterAtIndex:(i+2+j)])) {
-                            [unicodeCharString appendFormat:@"%C", [aboutText characterAtIndex:(i+2+j)]];
-                            j++;
-                        }
-                        unicodeChar = [unicodeCharString integerValue];
-                        if (negative) unicodeChar = 65536 - unicodeChar;
-                        i += j+2;
-                        [retStr appendFormat:@"%C", (unichar)unicodeChar];
+    NSMutableString *retStr = [@"" mutableCopy];
+    for(NSUInteger i=0; i<[aboutText length]; i++) {
+        unichar c = [aboutText characterAtIndex:i];
+
+        if(c == '\\' && ((i+1) < [aboutText length])) {
+            unichar d = [aboutText characterAtIndex:(i+1)];
+            if (d == 'u') {
+                //we have an unicode character!
+                @try {
+                    NSInteger unicodeChar = 0;
+                    NSMutableString *unicodeCharString = [[@"" mutableCopy] autorelease];
+                    int j = 0;
+                    BOOL negative = NO;
+                    if ([aboutText characterAtIndex:(i+2)] == '-') {
+                        //we have a negative unicode char
+                        negative = YES;
+                        j++;//skip past the '-'
                     }
-                    @catch (NSException * e) {
-                        [retStr appendFormat:@"%C", c];
+                    while(isdigit([aboutText characterAtIndex:(i+2+j)])) {
+                        [unicodeCharString appendFormat:@"%C", [aboutText characterAtIndex:(i+2+j)]];
+                        j++;
                     }
-                    //end dealing with the unicode character.
-                } else {
+                    unicodeChar = [unicodeCharString integerValue];
+                    if (negative) unicodeChar = 65536 - unicodeChar;
+                    i += j+2;
+                    [retStr appendFormat:@"%C", (unichar)unicodeChar];
+                }
+                @catch (NSException * e) {
                     [retStr appendFormat:@"%C", c];
                 }
+                //end dealing with the unicode character.
             } else {
                 [retStr appendFormat:@"%C", c];
             }
+        } else {
+            [retStr appendFormat:@"%C", c];
         }
-
-        aboutText = [NSMutableString stringWithString:retStr];
-        [retStr release];
-
-    } else {
-        aboutText = [NSMutableString string];
     }
+
+    aboutText = [NSMutableString stringWithString:retStr];
+    [retStr release];
 
     return aboutText;    
 }
@@ -301,25 +305,13 @@
 }
 
 - (BOOL)isEditable {
-    BOOL ret = NO;
     NSString *editable = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_EDITABLE];
-    if(editable) {
-        if([editable isEqualToString:@"YES"]) {
-            ret = YES;
-        }
-    }
-    return ret;
+    return editable && [editable isEqualToString:@"YES"];
 }
 
 - (BOOL)isRTL {
-    BOOL ret = NO;
     NSString *direction = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_DIRECTION];
-    if(direction) {
-        if([direction isEqualToString:SW_DIRECTION_RTL]) {
-            ret = YES;
-        }
-    }
-    return ret;    
+    return direction && [direction isEqualToString:SW_DIRECTION_RTL];
 }
 
 - (BOOL)isUnicode {    
@@ -327,12 +319,7 @@
 }
 
 - (BOOL)isEncrypted {
-    BOOL encrypted = YES;
-    if([self cipherKey] == nil) {
-        encrypted = NO;
-    }
-    
-    return encrypted;
+    return [self cipherKey] != nil;
 }
 
 - (BOOL)isLocked {
@@ -346,7 +333,7 @@
             locked = YES;
         }
     }
-    
+
     return locked;
 }
 
@@ -372,7 +359,7 @@
 }
 
 - (NSString *)configFileEntryForConfigKey:(NSString *)entryKey {
-	NSString *result = @"";
+	NSString *result = nil;
     
 	[moduleLock lock];
     const char *entryStr = swModule->getConfigEntry([entryKey UTF8String]);

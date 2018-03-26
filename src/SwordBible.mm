@@ -251,11 +251,8 @@ NSLock *bibleLock = nil;
 }
 
 - (NSString *)versification {
-    NSString *versification = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_VERSIFICATION];
-    if([versification length] == 0) {
-        versification = @"KJV";
-    }
-    return versification;
+    NSString *confEntry = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_CATEGORY];
+    return confEntry == nil ? @"KJV" : confEntry;
 }
 
 - (NSString *)moduleIntroduction {

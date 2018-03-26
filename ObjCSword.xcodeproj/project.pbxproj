@@ -37,6 +37,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		8C92C0092524B19DA56E913B /* SwordModuleConfEntriesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C92CA6FFEA8A01A01D207F7 /* SwordModuleConfEntriesTest.m */; };
 		8C92C1CEA5B5038C8AFC6138 /* SwordBibleTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C92CBF201C1DF44A49CFC1F /* SwordBibleTest.m */; };
 		8C92C31DC92DF0671FCEB5B3 /* SwordFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C92CC111DC521DE0C054C60 /* SwordFilter.mm */; };
 		8C92CA04E38B25CF26C3865D /* SwordFilterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C92C67CD9DF18A2794D9C33 /* SwordFilterTest.m */; };
@@ -1680,6 +1681,7 @@
 		8C92C7B2EB245D47FEB5E3B0 /* SwordUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwordUtil.h; path = src/SwordUtil.h; sourceTree = "<group>"; };
 		8C92C980D4DE32C7AB93159D /* DefaultFilterProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DefaultFilterProvider.h; path = src/DefaultFilterProvider.h; sourceTree = "<group>"; };
 		8C92CA600BF802C377CFB9A1 /* SwordBibleTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwordBibleTest.h; sourceTree = "<group>"; };
+		8C92CA6FFEA8A01A01D207F7 /* SwordModuleConfEntriesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwordModuleConfEntriesTest.m; sourceTree = "<group>"; };
 		8C92CBF201C1DF44A49CFC1F /* SwordBibleTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwordBibleTest.m; sourceTree = "<group>"; };
 		8C92CC111DC521DE0C054C60 /* SwordFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SwordFilter.mm; path = src/SwordFilter.mm; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -5364,6 +5366,7 @@
 				A9F02F0C20657EAF004D8F11 /* SwordLocaleManagerTest.m */,
 				8C92C67CD9DF18A2794D9C33 /* SwordFilterTest.m */,
 				8C92C22F7A5B1223838507AB /* SwordFilterTest.h */,
+				8C92CA6FFEA8A01A01D207F7 /* SwordModuleConfEntriesTest.m */,
 			);
 			name = Tests;
 			path = test;
@@ -7285,6 +7288,7 @@
 				8C92CC9CEC8A341B902C53E2 /* SwordInstallSourceManagerTest.m in Sources */,
 				8C92C1CEA5B5038C8AFC6138 /* SwordBibleTest.m in Sources */,
 				8C92CA04E38B25CF26C3865D /* SwordFilterTest.m in Sources */,
+				8C92C0092524B19DA56E913B /* SwordModuleConfEntriesTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
