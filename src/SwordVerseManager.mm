@@ -50,6 +50,13 @@
     if(ret == nil) {
         // hasn't been initialized yet
         const sword::VersificationMgr::System *system = verseMgr->getVersificationSystem([verseScheme UTF8String]);
+
+        if(system == NULL) {
+            DLog(@"Unable to retrieve books for versification scheme: %@", verseScheme);
+            DLog(@"Using default!");
+            return [self books];
+        }
+
         NSUInteger bookCount = (NSUInteger)system->getBookCount();
         NSMutableArray *buf = [NSMutableArray arrayWithCapacity:bookCount];
         for(int i = 0;i < bookCount;i++) {

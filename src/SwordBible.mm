@@ -122,20 +122,17 @@ NSLock *bibleLock = nil;
 #pragma mark - Bible information
 
 - (NSDictionary *)buildBookList {
-    sword::VersificationMgr *vmgr = sword::VersificationMgr::getSystemVersificationMgr();
-    const sword::VersificationMgr::System *system = vmgr->getVersificationSystem([[self versification] UTF8String]);
+    NSString *versificationString = [self versification];
+    DLog(@"Have versification: %@", versificationString);
+
+    NSArray *books = [[SwordVerseManager defaultManager] booksForVersification:versificationString];
 
     NSMutableDictionary *buf = [NSMutableDictionary dictionary];
-    int bookCount = system->getBookCount();
-    for(int i = 0;i < bookCount;i++) {
-        sword::VersificationMgr::Book *book = (sword::VersificationMgr::Book *)system->getBook(i);
-        
-        SwordBibleBook *bb = [[SwordBibleBook alloc] initWithBook:book];
-        [bb setNumber:i+1];
-        
+    for(NSUInteger i = 0;i < books.count;i++) {
+        SwordBibleBook *bb = books[i];
+
         NSString *bookName = [bb name];
         buf[bookName] = bb;
-        [bb release];
     }
     return [NSDictionary dictionaryWithDictionary:buf];
 }
@@ -251,7 +248,7 @@ NSLock *bibleLock = nil;
 }
 
 - (NSString *)versification {
-    NSString *confEntry = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_CATEGORY];
+    NSString *confEntry = [self configFileEntryForConfigKey:SWMOD_CONFENTRY_VERSIFICATION];
     return confEntry == nil ? @"KJV" : confEntry;
 }
 
