@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -46,7 +46,6 @@
 		8C92CC9CEC8A341B902C53E2 /* SwordInstallSourceManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C92C0CA467F3114A1DC89DD /* SwordInstallSourceManagerTest.m */; };
 		8C92CE0B19FBB659FB8F8B71 /* FilterProviderFactory.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C92C25F57CB01957B086256 /* FilterProviderFactory.mm */; };
 		8C92CE39E231FF9CAAB5308B /* SwordUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C92C291C40A77060C12A21B /* SwordUtil.m */; };
-		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 		A90162FC19A9E8EB00F7FC7D /* appendable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A90152BE19A9E8E100F7FC7D /* appendable.cpp */; };
 		A90162FD19A9E8EB00F7FC7D /* bmpset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A90152BF19A9E8E100F7FC7D /* bmpset.cpp */; };
@@ -840,6 +839,7 @@
 		A929619F16B1BA240094E5BE /* SwordListKey.h in Headers */ = {isa = PBXBuildFile; fileRef = A929619916B1BA240094E5BE /* SwordListKey.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A92961A016B1BA240094E5BE /* SwordListKey.mm in Sources */ = {isa = PBXBuildFile; fileRef = A929619A16B1BA240094E5BE /* SwordListKey.mm */; };
 		A92961A116B1BA240094E5BE /* SwordVerseKey.h in Headers */ = {isa = PBXBuildFile; fileRef = A929619B16B1BA240094E5BE /* SwordVerseKey.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A92B19922ED8E4A400C56A8A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A92B19912ED8E4A400C56A8A /* InfoPlist.strings */; };
 		A93EC1661EA0F0F6001508A3 /* zverse4.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129DA19DF144D005BCBC1 /* zverse4.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A93EC1671EA0F0FA001508A3 /* ztext4.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129D819DF144D005BCBC1 /* ztext4.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A93EC1681EA0F108001508A3 /* zcom4.h in Headers */ = {isa = PBXBuildFile; fileRef = A9A129D119DF144D005BCBC1 /* zcom4.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -881,109 +881,6 @@
 		A94EAC30117B28920018B06F /* SwordVerseManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = A94EAC08117B28920018B06F /* SwordVerseManager.mm */; };
 		A94EAC31117B28920018B06F /* VerseEnumerator.h in Headers */ = {isa = PBXBuildFile; fileRef = A94EAC09117B28920018B06F /* VerseEnumerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A94EAC32117B28920018B06F /* VerseEnumerator.mm in Sources */ = {isa = PBXBuildFile; fileRef = A94EAC0A117B28920018B06F /* VerseEnumerator.mm */; };
-		A954ABCB13EE9E460094E3FE /* AnalysisHeader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954A9E413EE9A2B0094E3FE /* AnalysisHeader.cpp */; };
-		A954ABCC13EE9E460094E3FE /* Analyzers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954A9E613EE9A2B0094E3FE /* Analyzers.cpp */; };
-		A954ABCD13EE9E470094E3FE /* StandardAnalyzer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954A9E913EE9A2B0094E3FE /* StandardAnalyzer.cpp */; };
-		A954ABCE13EE9E470094E3FE /* StandardFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954A9EB13EE9A2B0094E3FE /* StandardFilter.cpp */; };
-		A954ABCF13EE9E470094E3FE /* StandardTokenizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954A9ED13EE9A2B0094E3FE /* StandardTokenizer.cpp */; };
-		A954ABD013EE9E470094E3FE /* gunichartables.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954A9F913EE9A2B0094E3FE /* gunichartables.cpp */; };
-		A954ABD113EE9E470094E3FE /* repl_lltot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954A9FE13EE9A2B0094E3FE /* repl_lltot.cpp */; };
-		A954ABD213EE9E470094E3FE /* repl_tcscasecmp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA0013EE9A2B0094E3FE /* repl_tcscasecmp.cpp */; };
-		A954ABD313EE9E470094E3FE /* repl_tcslwr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA0113EE9A2B0094E3FE /* repl_tcslwr.cpp */; };
-		A954ABD413EE9E470094E3FE /* repl_tcstod.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA0213EE9A2B0094E3FE /* repl_tcstod.cpp */; };
-		A954ABD513EE9E470094E3FE /* repl_tcstoll.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA0313EE9A2B0094E3FE /* repl_tcstoll.cpp */; };
-		A954ABD613EE9E470094E3FE /* repl_tprintf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA0413EE9A2B0094E3FE /* repl_tprintf.cpp */; };
-		A954ABD713EE9E470094E3FE /* threads.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA0813EE9A2B0094E3FE /* threads.cpp */; };
-		A954ABD813EE9E470094E3FE /* utf8.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA0913EE9A2B0094E3FE /* utf8.cpp */; };
-		A954ABD913EE9E470094E3FE /* condition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA0B13EE9A2B0094E3FE /* condition.cpp */; };
-		A954ABDA13EE9E470094E3FE /* error.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA0D13EE9A2B0094E3FE /* error.cpp */; };
-		A954ABDB13EE9E470094E3FE /* memtracking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA1113EE9A2B0094E3FE /* memtracking.cpp */; };
-		A954ABDC13EE9E470094E3FE /* DateField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA1313EE9A2B0094E3FE /* DateField.cpp */; };
-		A954ABDD13EE9E470094E3FE /* Document.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA1513EE9A2B0094E3FE /* Document.cpp */; };
-		A954ABDE13EE9E470094E3FE /* Field.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA1713EE9A2B0094E3FE /* Field.cpp */; };
-		A954ABDF13EE9E470094E3FE /* CompoundFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA1A13EE9A2B0094E3FE /* CompoundFile.cpp */; };
-		A954ABE013EE9E470094E3FE /* DocumentWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA1C13EE9A2B0094E3FE /* DocumentWriter.cpp */; };
-		A954ABE113EE9E470094E3FE /* FieldInfos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA1F13EE9A2B0094E3FE /* FieldInfos.cpp */; };
-		A954ABE213EE9E470094E3FE /* FieldsReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA2113EE9A2B0094E3FE /* FieldsReader.cpp */; };
-		A954ABE313EE9E470094E3FE /* FieldsWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA2313EE9A2B0094E3FE /* FieldsWriter.cpp */; };
-		A954ABE413EE9E470094E3FE /* IndexModifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA2513EE9A2B0094E3FE /* IndexModifier.cpp */; };
-		A954ABE513EE9E470094E3FE /* IndexReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA2713EE9A2B0094E3FE /* IndexReader.cpp */; };
-		A954ABE613EE9E470094E3FE /* IndexWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA2913EE9A2B0094E3FE /* IndexWriter.cpp */; };
-		A954ABE713EE9E470094E3FE /* MultiReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA2B13EE9A2B0094E3FE /* MultiReader.cpp */; };
-		A954ABE813EE9E470094E3FE /* SegmentInfos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA2E13EE9A2B0094E3FE /* SegmentInfos.cpp */; };
-		A954ABE913EE9E470094E3FE /* SegmentMergeInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA3013EE9A2B0094E3FE /* SegmentMergeInfo.cpp */; };
-		A954ABEA13EE9E470094E3FE /* SegmentMergeQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA3213EE9A2B0094E3FE /* SegmentMergeQueue.cpp */; };
-		A954ABEB13EE9E470094E3FE /* SegmentMerger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA3413EE9A2B0094E3FE /* SegmentMerger.cpp */; };
-		A954ABEC13EE9E470094E3FE /* SegmentReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA3613EE9A2B0094E3FE /* SegmentReader.cpp */; };
-		A954ABED13EE9E470094E3FE /* SegmentTermDocs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA3713EE9A2B0094E3FE /* SegmentTermDocs.cpp */; };
-		A954ABEE13EE9E470094E3FE /* SegmentTermEnum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA3813EE9A2B0094E3FE /* SegmentTermEnum.cpp */; };
-		A954ABEF13EE9E470094E3FE /* SegmentTermPositions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA3A13EE9A2B0094E3FE /* SegmentTermPositions.cpp */; };
-		A954ABF013EE9E470094E3FE /* SegmentTermVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA3B13EE9A2B0094E3FE /* SegmentTermVector.cpp */; };
-		A954ABF113EE9E470094E3FE /* Term.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA3C13EE9A2B0094E3FE /* Term.cpp */; };
-		A954ABF213EE9E470094E3FE /* TermInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA3E13EE9A2B0094E3FE /* TermInfo.cpp */; };
-		A954ABF313EE9E470094E3FE /* TermInfosReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA4013EE9A2B0094E3FE /* TermInfosReader.cpp */; };
-		A954ABF413EE9E470094E3FE /* TermInfosWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA4213EE9A2B0094E3FE /* TermInfosWriter.cpp */; };
-		A954ABF513EE9E470094E3FE /* TermVectorReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA4613EE9A2B0094E3FE /* TermVectorReader.cpp */; };
-		A954ABF613EE9E470094E3FE /* TermVectorWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA4713EE9A2B0094E3FE /* TermVectorWriter.cpp */; };
-		A954ABF713EE9E470094E3FE /* Lexer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA4A13EE9A2B0094E3FE /* Lexer.cpp */; };
-		A954ABF813EE9E470094E3FE /* MultiFieldQueryParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA4C13EE9A2B0094E3FE /* MultiFieldQueryParser.cpp */; };
-		A954ABF913EE9E470094E3FE /* QueryParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA4E13EE9A2B0094E3FE /* QueryParser.cpp */; };
-		A954ABFA13EE9E470094E3FE /* QueryParserBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA5013EE9A2B0094E3FE /* QueryParserBase.cpp */; };
-		A954ABFB13EE9E470094E3FE /* QueryToken.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA5213EE9A2B0094E3FE /* QueryToken.cpp */; };
-		A954ABFC13EE9E470094E3FE /* TokenList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA5413EE9A2B0094E3FE /* TokenList.cpp */; };
-		A954ABFD13EE9E470094E3FE /* BooleanQuery.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA5813EE9A2B0094E3FE /* BooleanQuery.cpp */; };
-		A954ABFE13EE9E470094E3FE /* BooleanScorer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA5A13EE9A2B0094E3FE /* BooleanScorer.cpp */; };
-		A954ABFF13EE9E470094E3FE /* CachingWrapperFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA5C13EE9A2B0094E3FE /* CachingWrapperFilter.cpp */; };
-		A954AC0013EE9E470094E3FE /* ChainedFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA5E13EE9A2B0094E3FE /* ChainedFilter.cpp */; };
-		A954AC0113EE9E470094E3FE /* ConjunctionScorer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA6113EE9A2B0094E3FE /* ConjunctionScorer.cpp */; };
-		A954AC0213EE9E470094E3FE /* DateFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA6313EE9A2B0094E3FE /* DateFilter.cpp */; };
-		A954AC0313EE9E470094E3FE /* ExactPhraseScorer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA6513EE9A2B0094E3FE /* ExactPhraseScorer.cpp */; };
-		A954AC0413EE9E470094E3FE /* Explanation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA6713EE9A2B0094E3FE /* Explanation.cpp */; };
-		A954AC0513EE9E470094E3FE /* FieldCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA6913EE9A2B0094E3FE /* FieldCache.cpp */; };
-		A954AC0613EE9E470094E3FE /* FieldCacheImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA6B13EE9A2B0094E3FE /* FieldCacheImpl.cpp */; };
-		A954AC0713EE9E470094E3FE /* FieldDocSortedHitQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA6E13EE9A2B0094E3FE /* FieldDocSortedHitQueue.cpp */; };
-		A954AC0813EE9E470094E3FE /* FieldSortedHitQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA7013EE9A2B0094E3FE /* FieldSortedHitQueue.cpp */; };
-		A954AC0913EE9E470094E3FE /* FilteredTermEnum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA7313EE9A2B0094E3FE /* FilteredTermEnum.cpp */; };
-		A954AC0A13EE9E470094E3FE /* FuzzyQuery.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA7513EE9A2B0094E3FE /* FuzzyQuery.cpp */; };
-		A954AC0B13EE9E470094E3FE /* HitQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA7713EE9A2B0094E3FE /* HitQueue.cpp */; };
-		A954AC0C13EE9E470094E3FE /* Hits.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA7913EE9A2B0094E3FE /* Hits.cpp */; };
-		A954AC0D13EE9E470094E3FE /* IndexSearcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA7A13EE9A2B0094E3FE /* IndexSearcher.cpp */; };
-		A954AC0E13EE9E470094E3FE /* MultiSearcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA7C13EE9A2B0094E3FE /* MultiSearcher.cpp */; };
-		A954AC0F13EE9E470094E3FE /* MultiTermQuery.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA7E13EE9A2B0094E3FE /* MultiTermQuery.cpp */; };
-		A954AC1013EE9E470094E3FE /* PhrasePositions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA8013EE9A2B0094E3FE /* PhrasePositions.cpp */; };
-		A954AC1113EE9E470094E3FE /* PhraseQuery.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA8213EE9A2B0094E3FE /* PhraseQuery.cpp */; };
-		A954AC1213EE9E470094E3FE /* PhraseScorer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA8513EE9A2B0094E3FE /* PhraseScorer.cpp */; };
-		A954AC1313EE9E470094E3FE /* PrefixQuery.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA8713EE9A2B0094E3FE /* PrefixQuery.cpp */; };
-		A954AC1413EE9E470094E3FE /* QueryFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA8913EE9A2B0094E3FE /* QueryFilter.cpp */; };
-		A954AC1513EE9E470094E3FE /* RangeFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA8B13EE9A2B0094E3FE /* RangeFilter.cpp */; };
-		A954AC1613EE9E470094E3FE /* RangeQuery.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA8D13EE9A2B0094E3FE /* RangeQuery.cpp */; };
-		A954AC1713EE9E470094E3FE /* SearchHeader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA9013EE9A2B0094E3FE /* SearchHeader.cpp */; };
-		A954AC1813EE9E470094E3FE /* Similarity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA9213EE9A2B0094E3FE /* Similarity.cpp */; };
-		A954AC1913EE9E470094E3FE /* SloppyPhraseScorer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA9413EE9A2B0094E3FE /* SloppyPhraseScorer.cpp */; };
-		A954AC1A13EE9E470094E3FE /* Sort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA9613EE9A2B0094E3FE /* Sort.cpp */; };
-		A954AC1B13EE9E470094E3FE /* TermQuery.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA9813EE9A2B0094E3FE /* TermQuery.cpp */; };
-		A954AC1C13EE9E470094E3FE /* TermScorer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA9A13EE9A2B0094E3FE /* TermScorer.cpp */; };
-		A954AC1D13EE9E470094E3FE /* WildcardQuery.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA9C13EE9A2B0094E3FE /* WildcardQuery.cpp */; };
-		A954AC1E13EE9E470094E3FE /* WildcardTermEnum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AA9E13EE9A2B0094E3FE /* WildcardTermEnum.cpp */; };
-		A954AC1F13EE9E470094E3FE /* StdHeader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AAA013EE9A2B0094E3FE /* StdHeader.cpp */; };
-		A954AC2013EE9E470094E3FE /* FSDirectory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AAA413EE9A2B0094E3FE /* FSDirectory.cpp */; };
-		A954AC2113EE9E470094E3FE /* IndexInput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AAA613EE9A2B0094E3FE /* IndexInput.cpp */; };
-		A954AC2213EE9E470094E3FE /* IndexOutput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AAA813EE9A2B0094E3FE /* IndexOutput.cpp */; };
-		A954AC2313EE9E470094E3FE /* Lock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AAAB13EE9A2B0094E3FE /* Lock.cpp */; };
-		A954AC2413EE9E470094E3FE /* MMapInput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AAAD13EE9A2B0094E3FE /* MMapInput.cpp */; };
-		A954AC2513EE9E470094E3FE /* RAMDirectory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AAAF13EE9A2B0094E3FE /* RAMDirectory.cpp */; };
-		A954AC2613EE9E470094E3FE /* TransactionalRAMDirectory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AAB113EE9A2B0094E3FE /* TransactionalRAMDirectory.cpp */; };
-		A954AC2713EE9E470094E3FE /* BitSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AAB513EE9A2B0094E3FE /* BitSet.cpp */; };
-		A954AC2813EE9E470094E3FE /* dirent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AAB813EE9A2B0094E3FE /* dirent.cpp */; };
-		A954AC2913EE9E470094E3FE /* Equators.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AABA13EE9A2B0094E3FE /* Equators.cpp */; };
-		A954AC2A13EE9E470094E3FE /* FastCharStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AABC13EE9A2B0094E3FE /* FastCharStream.cpp */; };
-		A954AC2B13EE9E470094E3FE /* fileinputstream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AABE13EE9A2B0094E3FE /* fileinputstream.cpp */; };
-		A954AC2C13EE9E470094E3FE /* MD5Digester.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AAC313EE9A2B0094E3FE /* MD5Digester.cpp */; };
-		A954AC2D13EE9E470094E3FE /* Misc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AAC513EE9A2B0094E3FE /* Misc.cpp */; };
-		A954AC2E13EE9E470094E3FE /* Reader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AAC813EE9A2B0094E3FE /* Reader.cpp */; };
-		A954AC2F13EE9E470094E3FE /* StringBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AACB13EE9A2B0094E3FE /* StringBuffer.cpp */; };
-		A954AC3013EE9E470094E3FE /* StringIntern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AACD13EE9A2B0094E3FE /* StringIntern.cpp */; };
-		A954AC3113EE9E470094E3FE /* ThreadLocal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954AAD113EE9A2B0094E3FE /* ThreadLocal.cpp */; };
 		A954AC3A13EEA0C10094E3FE /* swdisp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954A80113EE98B30094E3FE /* swdisp.cpp */; };
 		A954AC3B13EEA0C10094E3FE /* swlog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954A80213EE98B30094E3FE /* swlog.cpp */; };
 		A954AC3C13EEA0C10094E3FE /* listkey.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A954A80913EE98B30094E3FE /* listkey.cpp */; };
@@ -1668,7 +1565,6 @@
 /* Begin PBXFileReference section */
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
-		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		32DBCF5E0370ADEE00C91783 /* ObjCSword_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjCSword_Prefix.pch; sourceTree = "<group>"; };
 		8C92C0124F354F4CB4F294F9 /* DefaultFilterProvider.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = DefaultFilterProvider.mm; path = src/DefaultFilterProvider.mm; sourceTree = "<group>"; };
@@ -2471,7 +2367,6 @@
 		A9015DFD19A9E8E900F7FC7D /* TrimmedArrayProcessor2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrimmedArrayProcessor2.h; sourceTree = "<group>"; };
 		A9015DFE19A9E8E900F7FC7D /* ValueRecords.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ValueRecords.cpp; sourceTree = "<group>"; };
 		A9015DFF19A9E8E900F7FC7D /* ValueRecords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueRecords.h; sourceTree = "<group>"; };
-		A90169D419AA15D500F7FC7D /* icudt53l.dat */ = {isa = PBXFileReference; lastKnownFileType = file; name = icudt53l.dat; path = dependencies/icu/source/data/in/icudt53l.dat; sourceTree = "<group>"; };
 		A90169D719AA16A600F7FC7D /* stubdata.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = stubdata.c; path = stubdata/stubdata.c; sourceTree = "<group>"; };
 		A917AF2516B1BE38006367FC /* Tests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		A918B8E211C6697400024D84 /* SwordModuleTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwordModuleTest.h; path = ../test/SwordModuleTest.h; sourceTree = "<group>"; };
@@ -2483,6 +2378,7 @@
 		A929619916B1BA240094E5BE /* SwordListKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwordListKey.h; path = src/SwordListKey.h; sourceTree = "<group>"; };
 		A929619A16B1BA240094E5BE /* SwordListKey.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SwordListKey.mm; path = src/SwordListKey.mm; sourceTree = "<group>"; };
 		A929619B16B1BA240094E5BE /* SwordVerseKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwordVerseKey.h; path = src/SwordVerseKey.h; sourceTree = "<group>"; };
+		A92B19912ED8E4A400C56A8A /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		A93EC16C1EA0F1AB001508A3 /* gbflatex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gbflatex.cpp; sourceTree = "<group>"; };
 		A93EC16D1EA0F1AB001508A3 /* osislatex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = osislatex.cpp; sourceTree = "<group>"; };
 		A93EC16E1EA0F1AB001508A3 /* teilatex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = teilatex.cpp; sourceTree = "<group>"; };
@@ -2651,239 +2547,6 @@
 		A954A8DA13EE98B30094E3FE /* url.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = url.cpp; sourceTree = "<group>"; };
 		A954A8DB13EE98B30094E3FE /* utilstr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utilstr.cpp; sourceTree = "<group>"; };
 		A954A8DC13EE98B30094E3FE /* utilxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utilxml.cpp; sourceTree = "<group>"; };
-		A954A9E413EE9A2B0094E3FE /* AnalysisHeader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnalysisHeader.cpp; sourceTree = "<group>"; };
-		A954A9E513EE9A2B0094E3FE /* AnalysisHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisHeader.h; sourceTree = "<group>"; };
-		A954A9E613EE9A2B0094E3FE /* Analyzers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Analyzers.cpp; sourceTree = "<group>"; };
-		A954A9E713EE9A2B0094E3FE /* Analyzers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Analyzers.h; sourceTree = "<group>"; };
-		A954A9E913EE9A2B0094E3FE /* StandardAnalyzer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StandardAnalyzer.cpp; sourceTree = "<group>"; };
-		A954A9EA13EE9A2B0094E3FE /* StandardAnalyzer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardAnalyzer.h; sourceTree = "<group>"; };
-		A954A9EB13EE9A2B0094E3FE /* StandardFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StandardFilter.cpp; sourceTree = "<group>"; };
-		A954A9EC13EE9A2B0094E3FE /* StandardFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardFilter.h; sourceTree = "<group>"; };
-		A954A9ED13EE9A2B0094E3FE /* StandardTokenizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StandardTokenizer.cpp; sourceTree = "<group>"; };
-		A954A9EE13EE9A2B0094E3FE /* StandardTokenizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardTokenizer.h; sourceTree = "<group>"; };
-		A954A9EF13EE9A2B0094E3FE /* StandardTokenizerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardTokenizerConstants.h; sourceTree = "<group>"; };
-		A954A9F013EE9A2B0094E3FE /* CLBackwards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLBackwards.h; sourceTree = "<group>"; };
-		A954A9F113EE9A2B0094E3FE /* CLConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLConfig.h; sourceTree = "<group>"; };
-		A954A9F213EE9A2B0094E3FE /* clucene-config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "clucene-config.h"; sourceTree = "<group>"; };
-		A954A9F413EE9A2B0094E3FE /* compiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = compiler.h; sourceTree = "<group>"; };
-		A954A9F513EE9A2B0094E3FE /* CompilerBcb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompilerBcb.h; sourceTree = "<group>"; };
-		A954A9F613EE9A2B0094E3FE /* CompilerGcc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompilerGcc.h; sourceTree = "<group>"; };
-		A954A9F713EE9A2B0094E3FE /* CompilerMsvc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompilerMsvc.h; sourceTree = "<group>"; };
-		A954A9F813EE9A2B0094E3FE /* define_std.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = define_std.h; sourceTree = "<group>"; };
-		A954A9F913EE9A2B0094E3FE /* gunichartables.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gunichartables.cpp; sourceTree = "<group>"; };
-		A954A9FA13EE9A2B0094E3FE /* gunichartables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gunichartables.h; sourceTree = "<group>"; };
-		A954A9FB13EE9A2B0094E3FE /* PlatformMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlatformMac.h; sourceTree = "<group>"; };
-		A954A9FC13EE9A2B0094E3FE /* PlatformUnix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlatformUnix.h; sourceTree = "<group>"; };
-		A954A9FD13EE9A2B0094E3FE /* PlatformWin32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlatformWin32.h; sourceTree = "<group>"; };
-		A954A9FE13EE9A2B0094E3FE /* repl_lltot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = repl_lltot.cpp; sourceTree = "<group>"; };
-		A954A9FF13EE9A2B0094E3FE /* repl_tchar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = repl_tchar.h; sourceTree = "<group>"; };
-		A954AA0013EE9A2B0094E3FE /* repl_tcscasecmp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = repl_tcscasecmp.cpp; sourceTree = "<group>"; };
-		A954AA0113EE9A2B0094E3FE /* repl_tcslwr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = repl_tcslwr.cpp; sourceTree = "<group>"; };
-		A954AA0213EE9A2B0094E3FE /* repl_tcstod.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = repl_tcstod.cpp; sourceTree = "<group>"; };
-		A954AA0313EE9A2B0094E3FE /* repl_tcstoll.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = repl_tcstoll.cpp; sourceTree = "<group>"; };
-		A954AA0413EE9A2B0094E3FE /* repl_tprintf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = repl_tprintf.cpp; sourceTree = "<group>"; };
-		A954AA0513EE9A2B0094E3FE /* repl_wchar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = repl_wchar.h; sourceTree = "<group>"; };
-		A954AA0613EE9A2B0094E3FE /* threadCSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = threadCSection.h; sourceTree = "<group>"; };
-		A954AA0713EE9A2B0094E3FE /* threadPthread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = threadPthread.h; sourceTree = "<group>"; };
-		A954AA0813EE9A2B0094E3FE /* threads.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = threads.cpp; sourceTree = "<group>"; };
-		A954AA0913EE9A2B0094E3FE /* utf8.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utf8.cpp; sourceTree = "<group>"; };
-		A954AA0B13EE9A2B0094E3FE /* condition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = condition.cpp; sourceTree = "<group>"; };
-		A954AA0C13EE9A2B0094E3FE /* condition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = condition.h; sourceTree = "<group>"; };
-		A954AA0D13EE9A2B0094E3FE /* error.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = error.cpp; sourceTree = "<group>"; };
-		A954AA0E13EE9A2B0094E3FE /* error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = error.h; sourceTree = "<group>"; };
-		A954AA0F13EE9A2B0094E3FE /* lucenebase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lucenebase.h; sourceTree = "<group>"; };
-		A954AA1013EE9A2B0094E3FE /* mem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mem.h; sourceTree = "<group>"; };
-		A954AA1113EE9A2B0094E3FE /* memtracking.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = memtracking.cpp; sourceTree = "<group>"; };
-		A954AA1313EE9A2B0094E3FE /* DateField.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DateField.cpp; sourceTree = "<group>"; };
-		A954AA1413EE9A2B0094E3FE /* DateField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateField.h; sourceTree = "<group>"; };
-		A954AA1513EE9A2B0094E3FE /* Document.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Document.cpp; sourceTree = "<group>"; };
-		A954AA1613EE9A2B0094E3FE /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
-		A954AA1713EE9A2B0094E3FE /* Field.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Field.cpp; sourceTree = "<group>"; };
-		A954AA1813EE9A2B0094E3FE /* Field.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Field.h; sourceTree = "<group>"; };
-		A954AA1A13EE9A2B0094E3FE /* CompoundFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CompoundFile.cpp; sourceTree = "<group>"; };
-		A954AA1B13EE9A2B0094E3FE /* CompoundFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompoundFile.h; sourceTree = "<group>"; };
-		A954AA1C13EE9A2B0094E3FE /* DocumentWriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DocumentWriter.cpp; sourceTree = "<group>"; };
-		A954AA1D13EE9A2B0094E3FE /* DocumentWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentWriter.h; sourceTree = "<group>"; };
-		A954AA1E13EE9A2B0094E3FE /* FieldInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldInfo.h; sourceTree = "<group>"; };
-		A954AA1F13EE9A2B0094E3FE /* FieldInfos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FieldInfos.cpp; sourceTree = "<group>"; };
-		A954AA2013EE9A2B0094E3FE /* FieldInfos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldInfos.h; sourceTree = "<group>"; };
-		A954AA2113EE9A2B0094E3FE /* FieldsReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FieldsReader.cpp; sourceTree = "<group>"; };
-		A954AA2213EE9A2B0094E3FE /* FieldsReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldsReader.h; sourceTree = "<group>"; };
-		A954AA2313EE9A2B0094E3FE /* FieldsWriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FieldsWriter.cpp; sourceTree = "<group>"; };
-		A954AA2413EE9A2B0094E3FE /* FieldsWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldsWriter.h; sourceTree = "<group>"; };
-		A954AA2513EE9A2B0094E3FE /* IndexModifier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IndexModifier.cpp; sourceTree = "<group>"; };
-		A954AA2613EE9A2B0094E3FE /* IndexModifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexModifier.h; sourceTree = "<group>"; };
-		A954AA2713EE9A2B0094E3FE /* IndexReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IndexReader.cpp; sourceTree = "<group>"; };
-		A954AA2813EE9A2B0094E3FE /* IndexReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexReader.h; sourceTree = "<group>"; };
-		A954AA2913EE9A2B0094E3FE /* IndexWriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IndexWriter.cpp; sourceTree = "<group>"; };
-		A954AA2A13EE9A2B0094E3FE /* IndexWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexWriter.h; sourceTree = "<group>"; };
-		A954AA2B13EE9A2B0094E3FE /* MultiReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MultiReader.cpp; sourceTree = "<group>"; };
-		A954AA2C13EE9A2B0094E3FE /* MultiReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiReader.h; sourceTree = "<group>"; };
-		A954AA2D13EE9A2B0094E3FE /* SegmentHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentHeader.h; sourceTree = "<group>"; };
-		A954AA2E13EE9A2B0094E3FE /* SegmentInfos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SegmentInfos.cpp; sourceTree = "<group>"; };
-		A954AA2F13EE9A2B0094E3FE /* SegmentInfos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentInfos.h; sourceTree = "<group>"; };
-		A954AA3013EE9A2B0094E3FE /* SegmentMergeInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SegmentMergeInfo.cpp; sourceTree = "<group>"; };
-		A954AA3113EE9A2B0094E3FE /* SegmentMergeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentMergeInfo.h; sourceTree = "<group>"; };
-		A954AA3213EE9A2B0094E3FE /* SegmentMergeQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SegmentMergeQueue.cpp; sourceTree = "<group>"; };
-		A954AA3313EE9A2B0094E3FE /* SegmentMergeQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentMergeQueue.h; sourceTree = "<group>"; };
-		A954AA3413EE9A2B0094E3FE /* SegmentMerger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SegmentMerger.cpp; sourceTree = "<group>"; };
-		A954AA3513EE9A2B0094E3FE /* SegmentMerger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentMerger.h; sourceTree = "<group>"; };
-		A954AA3613EE9A2B0094E3FE /* SegmentReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SegmentReader.cpp; sourceTree = "<group>"; };
-		A954AA3713EE9A2B0094E3FE /* SegmentTermDocs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SegmentTermDocs.cpp; sourceTree = "<group>"; };
-		A954AA3813EE9A2B0094E3FE /* SegmentTermEnum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SegmentTermEnum.cpp; sourceTree = "<group>"; };
-		A954AA3913EE9A2B0094E3FE /* SegmentTermEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentTermEnum.h; sourceTree = "<group>"; };
-		A954AA3A13EE9A2B0094E3FE /* SegmentTermPositions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SegmentTermPositions.cpp; sourceTree = "<group>"; };
-		A954AA3B13EE9A2B0094E3FE /* SegmentTermVector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SegmentTermVector.cpp; sourceTree = "<group>"; };
-		A954AA3C13EE9A2B0094E3FE /* Term.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Term.cpp; sourceTree = "<group>"; };
-		A954AA3D13EE9A2B0094E3FE /* Term.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Term.h; sourceTree = "<group>"; };
-		A954AA3E13EE9A2B0094E3FE /* TermInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TermInfo.cpp; sourceTree = "<group>"; };
-		A954AA3F13EE9A2B0094E3FE /* TermInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermInfo.h; sourceTree = "<group>"; };
-		A954AA4013EE9A2B0094E3FE /* TermInfosReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TermInfosReader.cpp; sourceTree = "<group>"; };
-		A954AA4113EE9A2B0094E3FE /* TermInfosReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermInfosReader.h; sourceTree = "<group>"; };
-		A954AA4213EE9A2B0094E3FE /* TermInfosWriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TermInfosWriter.cpp; sourceTree = "<group>"; };
-		A954AA4313EE9A2B0094E3FE /* TermInfosWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermInfosWriter.h; sourceTree = "<group>"; };
-		A954AA4413EE9A2B0094E3FE /* Terms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Terms.h; sourceTree = "<group>"; };
-		A954AA4513EE9A2B0094E3FE /* TermVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermVector.h; sourceTree = "<group>"; };
-		A954AA4613EE9A2B0094E3FE /* TermVectorReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TermVectorReader.cpp; sourceTree = "<group>"; };
-		A954AA4713EE9A2B0094E3FE /* TermVectorWriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TermVectorWriter.cpp; sourceTree = "<group>"; };
-		A954AA4813EE9A2B0094E3FE /* LuceneThreads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuceneThreads.h; sourceTree = "<group>"; };
-		A954AA4A13EE9A2B0094E3FE /* Lexer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Lexer.cpp; sourceTree = "<group>"; };
-		A954AA4B13EE9A2B0094E3FE /* Lexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lexer.h; sourceTree = "<group>"; };
-		A954AA4C13EE9A2B0094E3FE /* MultiFieldQueryParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MultiFieldQueryParser.cpp; sourceTree = "<group>"; };
-		A954AA4D13EE9A2B0094E3FE /* MultiFieldQueryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiFieldQueryParser.h; sourceTree = "<group>"; };
-		A954AA4E13EE9A2B0094E3FE /* QueryParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QueryParser.cpp; sourceTree = "<group>"; };
-		A954AA4F13EE9A2B0094E3FE /* QueryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryParser.h; sourceTree = "<group>"; };
-		A954AA5013EE9A2B0094E3FE /* QueryParserBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QueryParserBase.cpp; sourceTree = "<group>"; };
-		A954AA5113EE9A2B0094E3FE /* QueryParserBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryParserBase.h; sourceTree = "<group>"; };
-		A954AA5213EE9A2B0094E3FE /* QueryToken.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QueryToken.cpp; sourceTree = "<group>"; };
-		A954AA5313EE9A2B0094E3FE /* QueryToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryToken.h; sourceTree = "<group>"; };
-		A954AA5413EE9A2B0094E3FE /* TokenList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TokenList.cpp; sourceTree = "<group>"; };
-		A954AA5513EE9A2B0094E3FE /* TokenList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenList.h; sourceTree = "<group>"; };
-		A954AA5713EE9A2B0094E3FE /* BooleanClause.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooleanClause.h; sourceTree = "<group>"; };
-		A954AA5813EE9A2B0094E3FE /* BooleanQuery.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BooleanQuery.cpp; sourceTree = "<group>"; };
-		A954AA5913EE9A2B0094E3FE /* BooleanQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooleanQuery.h; sourceTree = "<group>"; };
-		A954AA5A13EE9A2B0094E3FE /* BooleanScorer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BooleanScorer.cpp; sourceTree = "<group>"; };
-		A954AA5B13EE9A2B0094E3FE /* BooleanScorer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooleanScorer.h; sourceTree = "<group>"; };
-		A954AA5C13EE9A2B0094E3FE /* CachingWrapperFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CachingWrapperFilter.cpp; sourceTree = "<group>"; };
-		A954AA5D13EE9A2B0094E3FE /* CachingWrapperFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CachingWrapperFilter.h; sourceTree = "<group>"; };
-		A954AA5E13EE9A2B0094E3FE /* ChainedFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ChainedFilter.cpp; sourceTree = "<group>"; };
-		A954AA5F13EE9A2B0094E3FE /* ChainedFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainedFilter.h; sourceTree = "<group>"; };
-		A954AA6013EE9A2B0094E3FE /* Compare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Compare.h; sourceTree = "<group>"; };
-		A954AA6113EE9A2B0094E3FE /* ConjunctionScorer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConjunctionScorer.cpp; sourceTree = "<group>"; };
-		A954AA6213EE9A2B0094E3FE /* ConjunctionScorer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConjunctionScorer.h; sourceTree = "<group>"; };
-		A954AA6313EE9A2B0094E3FE /* DateFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DateFilter.cpp; sourceTree = "<group>"; };
-		A954AA6413EE9A2B0094E3FE /* DateFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateFilter.h; sourceTree = "<group>"; };
-		A954AA6513EE9A2B0094E3FE /* ExactPhraseScorer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExactPhraseScorer.cpp; sourceTree = "<group>"; };
-		A954AA6613EE9A2B0094E3FE /* ExactPhraseScorer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExactPhraseScorer.h; sourceTree = "<group>"; };
-		A954AA6713EE9A2B0094E3FE /* Explanation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Explanation.cpp; sourceTree = "<group>"; };
-		A954AA6813EE9A2B0094E3FE /* Explanation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Explanation.h; sourceTree = "<group>"; };
-		A954AA6913EE9A2B0094E3FE /* FieldCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FieldCache.cpp; sourceTree = "<group>"; };
-		A954AA6A13EE9A2B0094E3FE /* FieldCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldCache.h; sourceTree = "<group>"; };
-		A954AA6B13EE9A2B0094E3FE /* FieldCacheImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FieldCacheImpl.cpp; sourceTree = "<group>"; };
-		A954AA6C13EE9A2B0094E3FE /* FieldCacheImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldCacheImpl.h; sourceTree = "<group>"; };
-		A954AA6D13EE9A2B0094E3FE /* FieldDoc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldDoc.h; sourceTree = "<group>"; };
-		A954AA6E13EE9A2B0094E3FE /* FieldDocSortedHitQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FieldDocSortedHitQueue.cpp; sourceTree = "<group>"; };
-		A954AA6F13EE9A2B0094E3FE /* FieldDocSortedHitQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldDocSortedHitQueue.h; sourceTree = "<group>"; };
-		A954AA7013EE9A2B0094E3FE /* FieldSortedHitQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FieldSortedHitQueue.cpp; sourceTree = "<group>"; };
-		A954AA7113EE9A2B0094E3FE /* FieldSortedHitQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldSortedHitQueue.h; sourceTree = "<group>"; };
-		A954AA7213EE9A2B0094E3FE /* Filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filter.h; sourceTree = "<group>"; };
-		A954AA7313EE9A2B0094E3FE /* FilteredTermEnum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FilteredTermEnum.cpp; sourceTree = "<group>"; };
-		A954AA7413EE9A2B0094E3FE /* FilteredTermEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilteredTermEnum.h; sourceTree = "<group>"; };
-		A954AA7513EE9A2B0094E3FE /* FuzzyQuery.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FuzzyQuery.cpp; sourceTree = "<group>"; };
-		A954AA7613EE9A2B0094E3FE /* FuzzyQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuzzyQuery.h; sourceTree = "<group>"; };
-		A954AA7713EE9A2B0094E3FE /* HitQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HitQueue.cpp; sourceTree = "<group>"; };
-		A954AA7813EE9A2B0094E3FE /* HitQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HitQueue.h; sourceTree = "<group>"; };
-		A954AA7913EE9A2B0094E3FE /* Hits.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hits.cpp; sourceTree = "<group>"; };
-		A954AA7A13EE9A2B0094E3FE /* IndexSearcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IndexSearcher.cpp; sourceTree = "<group>"; };
-		A954AA7B13EE9A2B0094E3FE /* IndexSearcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexSearcher.h; sourceTree = "<group>"; };
-		A954AA7C13EE9A2B0094E3FE /* MultiSearcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MultiSearcher.cpp; sourceTree = "<group>"; };
-		A954AA7D13EE9A2B0094E3FE /* MultiSearcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiSearcher.h; sourceTree = "<group>"; };
-		A954AA7E13EE9A2B0094E3FE /* MultiTermQuery.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MultiTermQuery.cpp; sourceTree = "<group>"; };
-		A954AA7F13EE9A2B0094E3FE /* MultiTermQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiTermQuery.h; sourceTree = "<group>"; };
-		A954AA8013EE9A2B0094E3FE /* PhrasePositions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhrasePositions.cpp; sourceTree = "<group>"; };
-		A954AA8113EE9A2B0094E3FE /* PhrasePositions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhrasePositions.h; sourceTree = "<group>"; };
-		A954AA8213EE9A2B0094E3FE /* PhraseQuery.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhraseQuery.cpp; sourceTree = "<group>"; };
-		A954AA8313EE9A2B0094E3FE /* PhraseQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhraseQuery.h; sourceTree = "<group>"; };
-		A954AA8413EE9A2B0094E3FE /* PhraseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhraseQueue.h; sourceTree = "<group>"; };
-		A954AA8513EE9A2B0094E3FE /* PhraseScorer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhraseScorer.cpp; sourceTree = "<group>"; };
-		A954AA8613EE9A2B0094E3FE /* PhraseScorer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhraseScorer.h; sourceTree = "<group>"; };
-		A954AA8713EE9A2B0094E3FE /* PrefixQuery.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PrefixQuery.cpp; sourceTree = "<group>"; };
-		A954AA8813EE9A2B0094E3FE /* PrefixQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixQuery.h; sourceTree = "<group>"; };
-		A954AA8913EE9A2B0094E3FE /* QueryFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QueryFilter.cpp; sourceTree = "<group>"; };
-		A954AA8A13EE9A2B0094E3FE /* QueryFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryFilter.h; sourceTree = "<group>"; };
-		A954AA8B13EE9A2B0094E3FE /* RangeFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RangeFilter.cpp; sourceTree = "<group>"; };
-		A954AA8C13EE9A2B0094E3FE /* RangeFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RangeFilter.h; sourceTree = "<group>"; };
-		A954AA8D13EE9A2B0094E3FE /* RangeQuery.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RangeQuery.cpp; sourceTree = "<group>"; };
-		A954AA8E13EE9A2B0094E3FE /* RangeQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RangeQuery.h; sourceTree = "<group>"; };
-		A954AA8F13EE9A2B0094E3FE /* Scorer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scorer.h; sourceTree = "<group>"; };
-		A954AA9013EE9A2B0094E3FE /* SearchHeader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SearchHeader.cpp; sourceTree = "<group>"; };
-		A954AA9113EE9A2B0094E3FE /* SearchHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchHeader.h; sourceTree = "<group>"; };
-		A954AA9213EE9A2B0094E3FE /* Similarity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Similarity.cpp; sourceTree = "<group>"; };
-		A954AA9313EE9A2B0094E3FE /* Similarity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Similarity.h; sourceTree = "<group>"; };
-		A954AA9413EE9A2B0094E3FE /* SloppyPhraseScorer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SloppyPhraseScorer.cpp; sourceTree = "<group>"; };
-		A954AA9513EE9A2B0094E3FE /* SloppyPhraseScorer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SloppyPhraseScorer.h; sourceTree = "<group>"; };
-		A954AA9613EE9A2B0094E3FE /* Sort.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sort.cpp; sourceTree = "<group>"; };
-		A954AA9713EE9A2B0094E3FE /* Sort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sort.h; sourceTree = "<group>"; };
-		A954AA9813EE9A2B0094E3FE /* TermQuery.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TermQuery.cpp; sourceTree = "<group>"; };
-		A954AA9913EE9A2B0094E3FE /* TermQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermQuery.h; sourceTree = "<group>"; };
-		A954AA9A13EE9A2B0094E3FE /* TermScorer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TermScorer.cpp; sourceTree = "<group>"; };
-		A954AA9B13EE9A2B0094E3FE /* TermScorer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermScorer.h; sourceTree = "<group>"; };
-		A954AA9C13EE9A2B0094E3FE /* WildcardQuery.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WildcardQuery.cpp; sourceTree = "<group>"; };
-		A954AA9D13EE9A2B0094E3FE /* WildcardQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WildcardQuery.h; sourceTree = "<group>"; };
-		A954AA9E13EE9A2B0094E3FE /* WildcardTermEnum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WildcardTermEnum.cpp; sourceTree = "<group>"; };
-		A954AA9F13EE9A2B0094E3FE /* WildcardTermEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WildcardTermEnum.h; sourceTree = "<group>"; };
-		A954AAA013EE9A2B0094E3FE /* StdHeader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StdHeader.cpp; sourceTree = "<group>"; };
-		A954AAA113EE9A2B0094E3FE /* StdHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StdHeader.h; sourceTree = "<group>"; };
-		A954AAA313EE9A2B0094E3FE /* Directory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Directory.h; sourceTree = "<group>"; };
-		A954AAA413EE9A2B0094E3FE /* FSDirectory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FSDirectory.cpp; sourceTree = "<group>"; };
-		A954AAA513EE9A2B0094E3FE /* FSDirectory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSDirectory.h; sourceTree = "<group>"; };
-		A954AAA613EE9A2B0094E3FE /* IndexInput.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IndexInput.cpp; sourceTree = "<group>"; };
-		A954AAA713EE9A2B0094E3FE /* IndexInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexInput.h; sourceTree = "<group>"; };
-		A954AAA813EE9A2B0094E3FE /* IndexOutput.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IndexOutput.cpp; sourceTree = "<group>"; };
-		A954AAA913EE9A2B0094E3FE /* IndexOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexOutput.h; sourceTree = "<group>"; };
-		A954AAAA13EE9A2B0094E3FE /* InputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputStream.h; sourceTree = "<group>"; };
-		A954AAAB13EE9A2B0094E3FE /* Lock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Lock.cpp; sourceTree = "<group>"; };
-		A954AAAC13EE9A2B0094E3FE /* Lock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lock.h; sourceTree = "<group>"; };
-		A954AAAD13EE9A2B0094E3FE /* MMapInput.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MMapInput.cpp; sourceTree = "<group>"; };
-		A954AAAE13EE9A2B0094E3FE /* OutputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputStream.h; sourceTree = "<group>"; };
-		A954AAAF13EE9A2B0094E3FE /* RAMDirectory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RAMDirectory.cpp; sourceTree = "<group>"; };
-		A954AAB013EE9A2B0094E3FE /* RAMDirectory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAMDirectory.h; sourceTree = "<group>"; };
-		A954AAB113EE9A2B0094E3FE /* TransactionalRAMDirectory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TransactionalRAMDirectory.cpp; sourceTree = "<group>"; };
-		A954AAB213EE9A2B0094E3FE /* TransactionalRAMDirectory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionalRAMDirectory.h; sourceTree = "<group>"; };
-		A954AAB413EE9A2B0094E3FE /* Arrays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Arrays.h; sourceTree = "<group>"; };
-		A954AAB513EE9A2B0094E3FE /* BitSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BitSet.cpp; sourceTree = "<group>"; };
-		A954AAB613EE9A2B0094E3FE /* BitSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitSet.h; sourceTree = "<group>"; };
-		A954AAB713EE9A2B0094E3FE /* bufferedstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bufferedstream.h; sourceTree = "<group>"; };
-		A954AAB813EE9A2B0094E3FE /* dirent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dirent.cpp; sourceTree = "<group>"; };
-		A954AAB913EE9A2B0094E3FE /* dirent2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dirent2.h; sourceTree = "<group>"; };
-		A954AABA13EE9A2B0094E3FE /* Equators.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Equators.cpp; sourceTree = "<group>"; };
-		A954AABB13EE9A2B0094E3FE /* Equators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Equators.h; sourceTree = "<group>"; };
-		A954AABC13EE9A2B0094E3FE /* FastCharStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FastCharStream.cpp; sourceTree = "<group>"; };
-		A954AABD13EE9A2B0094E3FE /* FastCharStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastCharStream.h; sourceTree = "<group>"; };
-		A954AABE13EE9A2B0094E3FE /* fileinputstream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fileinputstream.cpp; sourceTree = "<group>"; };
-		A954AABF13EE9A2B0094E3FE /* fileinputstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileinputstream.h; sourceTree = "<group>"; };
-		A954AAC013EE9A2B0094E3FE /* googlesparsemap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = googlesparsemap.h; sourceTree = "<group>"; };
-		A954AAC113EE9A2B0094E3FE /* inputstreambuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inputstreambuffer.h; sourceTree = "<group>"; };
-		A954AAC213EE9A2B0094E3FE /* jstreamsconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jstreamsconfig.h; sourceTree = "<group>"; };
-		A954AAC313EE9A2B0094E3FE /* MD5Digester.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MD5Digester.cpp; sourceTree = "<group>"; };
-		A954AAC413EE9A2B0094E3FE /* MD5Digester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD5Digester.h; sourceTree = "<group>"; };
-		A954AAC513EE9A2B0094E3FE /* Misc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Misc.cpp; sourceTree = "<group>"; };
-		A954AAC613EE9A2B0094E3FE /* Misc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Misc.h; sourceTree = "<group>"; };
-		A954AAC713EE9A2B0094E3FE /* PriorityQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriorityQueue.h; sourceTree = "<group>"; };
-		A954AAC813EE9A2B0094E3FE /* Reader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Reader.cpp; sourceTree = "<group>"; };
-		A954AAC913EE9A2B0094E3FE /* Reader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reader.h; sourceTree = "<group>"; };
-		A954AACA13EE9A2B0094E3FE /* streambase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = streambase.h; sourceTree = "<group>"; };
-		A954AACB13EE9A2B0094E3FE /* StringBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StringBuffer.cpp; sourceTree = "<group>"; };
-		A954AACC13EE9A2B0094E3FE /* StringBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringBuffer.h; sourceTree = "<group>"; };
-		A954AACD13EE9A2B0094E3FE /* StringIntern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StringIntern.cpp; sourceTree = "<group>"; };
-		A954AACE13EE9A2B0094E3FE /* StringIntern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringIntern.h; sourceTree = "<group>"; };
-		A954AACF13EE9A2B0094E3FE /* stringreader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stringreader.h; sourceTree = "<group>"; };
-		A954AAD013EE9A2B0094E3FE /* subinputstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = subinputstream.h; sourceTree = "<group>"; };
-		A954AAD113EE9A2B0094E3FE /* ThreadLocal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ThreadLocal.cpp; sourceTree = "<group>"; };
-		A954AAD213EE9A2B0094E3FE /* ThreadLocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadLocal.h; sourceTree = "<group>"; };
-		A954AAD313EE9A2B0094E3FE /* VoidList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoidList.h; sourceTree = "<group>"; };
-		A954AAD413EE9A2B0094E3FE /* VoidMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoidMap.h; sourceTree = "<group>"; };
-		A954AAD513EE9A2B0094E3FE /* CLucene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLucene.h; sourceTree = "<group>"; };
 		A954ABC313EE9AB00094E3FE /* libsword.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libsword.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		A954AC3213EE9F620094E3FE /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = SDKs/MacOSX10.7.sdk/usr/lib/libcurl.dylib; sourceTree = DEVELOPER_DIR; };
 		A954AC3413EE9FA10094E3FE /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = SDKs/MacOSX10.7.sdk/usr/lib/libicucore.dylib; sourceTree = DEVELOPER_DIR; };
@@ -3413,7 +3076,7 @@
 			children = (
 				A9D437CE11C52947007AFE83 /* locales.d */,
 				8DC2EF5A0486A6940098B216 /* Info.plist */,
-				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
+				A92B19912ED8E4A400C56A8A /* InfoPlist.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -4369,7 +4032,6 @@
 			children = (
 				A9F106621EA00387005AF2E9 /* sword */,
 				A90152A219A9E8E100F7FC7D /* icu */,
-				A954A9E013EE9A2B0094E3FE /* clucene */,
 			);
 			name = Deps;
 			sourceTree = "<group>";
@@ -4717,335 +4379,6 @@
 			path = utilfuns;
 			sourceTree = "<group>";
 		};
-		A954A9E013EE9A2B0094E3FE /* clucene */ = {
-			isa = PBXGroup;
-			children = (
-				A954A9E213EE9A2B0094E3FE /* CLucene */,
-				A954AAD513EE9A2B0094E3FE /* CLucene.h */,
-			);
-			name = clucene;
-			path = dependencies/clucene;
-			sourceTree = "<group>";
-		};
-		A954A9E213EE9A2B0094E3FE /* CLucene */ = {
-			isa = PBXGroup;
-			children = (
-				A954A9E313EE9A2B0094E3FE /* analysis */,
-				A954A9F013EE9A2B0094E3FE /* CLBackwards.h */,
-				A954A9F113EE9A2B0094E3FE /* CLConfig.h */,
-				A954A9F213EE9A2B0094E3FE /* clucene-config.h */,
-				A954A9F313EE9A2B0094E3FE /* config */,
-				A954AA0A13EE9A2B0094E3FE /* debug */,
-				A954AA1213EE9A2B0094E3FE /* document */,
-				A954AA1913EE9A2B0094E3FE /* index */,
-				A954AA4813EE9A2B0094E3FE /* LuceneThreads.h */,
-				A954AA4913EE9A2B0094E3FE /* queryParser */,
-				A954AA5613EE9A2B0094E3FE /* search */,
-				A954AAA013EE9A2B0094E3FE /* StdHeader.cpp */,
-				A954AAA113EE9A2B0094E3FE /* StdHeader.h */,
-				A954AAA213EE9A2B0094E3FE /* store */,
-				A954AAB313EE9A2B0094E3FE /* util */,
-			);
-			path = CLucene;
-			sourceTree = "<group>";
-		};
-		A954A9E313EE9A2B0094E3FE /* analysis */ = {
-			isa = PBXGroup;
-			children = (
-				A954A9E413EE9A2B0094E3FE /* AnalysisHeader.cpp */,
-				A954A9E513EE9A2B0094E3FE /* AnalysisHeader.h */,
-				A954A9E613EE9A2B0094E3FE /* Analyzers.cpp */,
-				A954A9E713EE9A2B0094E3FE /* Analyzers.h */,
-				A954A9E813EE9A2B0094E3FE /* standard */,
-			);
-			path = analysis;
-			sourceTree = "<group>";
-		};
-		A954A9E813EE9A2B0094E3FE /* standard */ = {
-			isa = PBXGroup;
-			children = (
-				A954A9E913EE9A2B0094E3FE /* StandardAnalyzer.cpp */,
-				A954A9EA13EE9A2B0094E3FE /* StandardAnalyzer.h */,
-				A954A9EB13EE9A2B0094E3FE /* StandardFilter.cpp */,
-				A954A9EC13EE9A2B0094E3FE /* StandardFilter.h */,
-				A954A9ED13EE9A2B0094E3FE /* StandardTokenizer.cpp */,
-				A954A9EE13EE9A2B0094E3FE /* StandardTokenizer.h */,
-				A954A9EF13EE9A2B0094E3FE /* StandardTokenizerConstants.h */,
-			);
-			path = standard;
-			sourceTree = "<group>";
-		};
-		A954A9F313EE9A2B0094E3FE /* config */ = {
-			isa = PBXGroup;
-			children = (
-				A954A9F413EE9A2B0094E3FE /* compiler.h */,
-				A954A9F513EE9A2B0094E3FE /* CompilerBcb.h */,
-				A954A9F613EE9A2B0094E3FE /* CompilerGcc.h */,
-				A954A9F713EE9A2B0094E3FE /* CompilerMsvc.h */,
-				A954A9F813EE9A2B0094E3FE /* define_std.h */,
-				A954A9F913EE9A2B0094E3FE /* gunichartables.cpp */,
-				A954A9FA13EE9A2B0094E3FE /* gunichartables.h */,
-				A954A9FB13EE9A2B0094E3FE /* PlatformMac.h */,
-				A954A9FC13EE9A2B0094E3FE /* PlatformUnix.h */,
-				A954A9FD13EE9A2B0094E3FE /* PlatformWin32.h */,
-				A954A9FE13EE9A2B0094E3FE /* repl_lltot.cpp */,
-				A954A9FF13EE9A2B0094E3FE /* repl_tchar.h */,
-				A954AA0013EE9A2B0094E3FE /* repl_tcscasecmp.cpp */,
-				A954AA0113EE9A2B0094E3FE /* repl_tcslwr.cpp */,
-				A954AA0213EE9A2B0094E3FE /* repl_tcstod.cpp */,
-				A954AA0313EE9A2B0094E3FE /* repl_tcstoll.cpp */,
-				A954AA0413EE9A2B0094E3FE /* repl_tprintf.cpp */,
-				A954AA0513EE9A2B0094E3FE /* repl_wchar.h */,
-				A954AA0613EE9A2B0094E3FE /* threadCSection.h */,
-				A954AA0713EE9A2B0094E3FE /* threadPthread.h */,
-				A954AA0813EE9A2B0094E3FE /* threads.cpp */,
-				A954AA0913EE9A2B0094E3FE /* utf8.cpp */,
-			);
-			path = config;
-			sourceTree = "<group>";
-		};
-		A954AA0A13EE9A2B0094E3FE /* debug */ = {
-			isa = PBXGroup;
-			children = (
-				A954AA0B13EE9A2B0094E3FE /* condition.cpp */,
-				A954AA0C13EE9A2B0094E3FE /* condition.h */,
-				A954AA0D13EE9A2B0094E3FE /* error.cpp */,
-				A954AA0E13EE9A2B0094E3FE /* error.h */,
-				A954AA0F13EE9A2B0094E3FE /* lucenebase.h */,
-				A954AA1013EE9A2B0094E3FE /* mem.h */,
-				A954AA1113EE9A2B0094E3FE /* memtracking.cpp */,
-			);
-			path = debug;
-			sourceTree = "<group>";
-		};
-		A954AA1213EE9A2B0094E3FE /* document */ = {
-			isa = PBXGroup;
-			children = (
-				A954AA1313EE9A2B0094E3FE /* DateField.cpp */,
-				A954AA1413EE9A2B0094E3FE /* DateField.h */,
-				A954AA1513EE9A2B0094E3FE /* Document.cpp */,
-				A954AA1613EE9A2B0094E3FE /* Document.h */,
-				A954AA1713EE9A2B0094E3FE /* Field.cpp */,
-				A954AA1813EE9A2B0094E3FE /* Field.h */,
-			);
-			path = document;
-			sourceTree = "<group>";
-		};
-		A954AA1913EE9A2B0094E3FE /* index */ = {
-			isa = PBXGroup;
-			children = (
-				A954AA1A13EE9A2B0094E3FE /* CompoundFile.cpp */,
-				A954AA1B13EE9A2B0094E3FE /* CompoundFile.h */,
-				A954AA1C13EE9A2B0094E3FE /* DocumentWriter.cpp */,
-				A954AA1D13EE9A2B0094E3FE /* DocumentWriter.h */,
-				A954AA1E13EE9A2B0094E3FE /* FieldInfo.h */,
-				A954AA1F13EE9A2B0094E3FE /* FieldInfos.cpp */,
-				A954AA2013EE9A2B0094E3FE /* FieldInfos.h */,
-				A954AA2113EE9A2B0094E3FE /* FieldsReader.cpp */,
-				A954AA2213EE9A2B0094E3FE /* FieldsReader.h */,
-				A954AA2313EE9A2B0094E3FE /* FieldsWriter.cpp */,
-				A954AA2413EE9A2B0094E3FE /* FieldsWriter.h */,
-				A954AA2513EE9A2B0094E3FE /* IndexModifier.cpp */,
-				A954AA2613EE9A2B0094E3FE /* IndexModifier.h */,
-				A954AA2713EE9A2B0094E3FE /* IndexReader.cpp */,
-				A954AA2813EE9A2B0094E3FE /* IndexReader.h */,
-				A954AA2913EE9A2B0094E3FE /* IndexWriter.cpp */,
-				A954AA2A13EE9A2B0094E3FE /* IndexWriter.h */,
-				A954AA2B13EE9A2B0094E3FE /* MultiReader.cpp */,
-				A954AA2C13EE9A2B0094E3FE /* MultiReader.h */,
-				A954AA2D13EE9A2B0094E3FE /* SegmentHeader.h */,
-				A954AA2E13EE9A2B0094E3FE /* SegmentInfos.cpp */,
-				A954AA2F13EE9A2B0094E3FE /* SegmentInfos.h */,
-				A954AA3013EE9A2B0094E3FE /* SegmentMergeInfo.cpp */,
-				A954AA3113EE9A2B0094E3FE /* SegmentMergeInfo.h */,
-				A954AA3213EE9A2B0094E3FE /* SegmentMergeQueue.cpp */,
-				A954AA3313EE9A2B0094E3FE /* SegmentMergeQueue.h */,
-				A954AA3413EE9A2B0094E3FE /* SegmentMerger.cpp */,
-				A954AA3513EE9A2B0094E3FE /* SegmentMerger.h */,
-				A954AA3613EE9A2B0094E3FE /* SegmentReader.cpp */,
-				A954AA3713EE9A2B0094E3FE /* SegmentTermDocs.cpp */,
-				A954AA3813EE9A2B0094E3FE /* SegmentTermEnum.cpp */,
-				A954AA3913EE9A2B0094E3FE /* SegmentTermEnum.h */,
-				A954AA3A13EE9A2B0094E3FE /* SegmentTermPositions.cpp */,
-				A954AA3B13EE9A2B0094E3FE /* SegmentTermVector.cpp */,
-				A954AA3C13EE9A2B0094E3FE /* Term.cpp */,
-				A954AA3D13EE9A2B0094E3FE /* Term.h */,
-				A954AA3E13EE9A2B0094E3FE /* TermInfo.cpp */,
-				A954AA3F13EE9A2B0094E3FE /* TermInfo.h */,
-				A954AA4013EE9A2B0094E3FE /* TermInfosReader.cpp */,
-				A954AA4113EE9A2B0094E3FE /* TermInfosReader.h */,
-				A954AA4213EE9A2B0094E3FE /* TermInfosWriter.cpp */,
-				A954AA4313EE9A2B0094E3FE /* TermInfosWriter.h */,
-				A954AA4413EE9A2B0094E3FE /* Terms.h */,
-				A954AA4513EE9A2B0094E3FE /* TermVector.h */,
-				A954AA4613EE9A2B0094E3FE /* TermVectorReader.cpp */,
-				A954AA4713EE9A2B0094E3FE /* TermVectorWriter.cpp */,
-			);
-			path = index;
-			sourceTree = "<group>";
-		};
-		A954AA4913EE9A2B0094E3FE /* queryParser */ = {
-			isa = PBXGroup;
-			children = (
-				A954AA4A13EE9A2B0094E3FE /* Lexer.cpp */,
-				A954AA4B13EE9A2B0094E3FE /* Lexer.h */,
-				A954AA4C13EE9A2B0094E3FE /* MultiFieldQueryParser.cpp */,
-				A954AA4D13EE9A2B0094E3FE /* MultiFieldQueryParser.h */,
-				A954AA4E13EE9A2B0094E3FE /* QueryParser.cpp */,
-				A954AA4F13EE9A2B0094E3FE /* QueryParser.h */,
-				A954AA5013EE9A2B0094E3FE /* QueryParserBase.cpp */,
-				A954AA5113EE9A2B0094E3FE /* QueryParserBase.h */,
-				A954AA5213EE9A2B0094E3FE /* QueryToken.cpp */,
-				A954AA5313EE9A2B0094E3FE /* QueryToken.h */,
-				A954AA5413EE9A2B0094E3FE /* TokenList.cpp */,
-				A954AA5513EE9A2B0094E3FE /* TokenList.h */,
-			);
-			path = queryParser;
-			sourceTree = "<group>";
-		};
-		A954AA5613EE9A2B0094E3FE /* search */ = {
-			isa = PBXGroup;
-			children = (
-				A954AA5713EE9A2B0094E3FE /* BooleanClause.h */,
-				A954AA5813EE9A2B0094E3FE /* BooleanQuery.cpp */,
-				A954AA5913EE9A2B0094E3FE /* BooleanQuery.h */,
-				A954AA5A13EE9A2B0094E3FE /* BooleanScorer.cpp */,
-				A954AA5B13EE9A2B0094E3FE /* BooleanScorer.h */,
-				A954AA5C13EE9A2B0094E3FE /* CachingWrapperFilter.cpp */,
-				A954AA5D13EE9A2B0094E3FE /* CachingWrapperFilter.h */,
-				A954AA5E13EE9A2B0094E3FE /* ChainedFilter.cpp */,
-				A954AA5F13EE9A2B0094E3FE /* ChainedFilter.h */,
-				A954AA6013EE9A2B0094E3FE /* Compare.h */,
-				A954AA6113EE9A2B0094E3FE /* ConjunctionScorer.cpp */,
-				A954AA6213EE9A2B0094E3FE /* ConjunctionScorer.h */,
-				A954AA6313EE9A2B0094E3FE /* DateFilter.cpp */,
-				A954AA6413EE9A2B0094E3FE /* DateFilter.h */,
-				A954AA6513EE9A2B0094E3FE /* ExactPhraseScorer.cpp */,
-				A954AA6613EE9A2B0094E3FE /* ExactPhraseScorer.h */,
-				A954AA6713EE9A2B0094E3FE /* Explanation.cpp */,
-				A954AA6813EE9A2B0094E3FE /* Explanation.h */,
-				A954AA6913EE9A2B0094E3FE /* FieldCache.cpp */,
-				A954AA6A13EE9A2B0094E3FE /* FieldCache.h */,
-				A954AA6B13EE9A2B0094E3FE /* FieldCacheImpl.cpp */,
-				A954AA6C13EE9A2B0094E3FE /* FieldCacheImpl.h */,
-				A954AA6D13EE9A2B0094E3FE /* FieldDoc.h */,
-				A954AA6E13EE9A2B0094E3FE /* FieldDocSortedHitQueue.cpp */,
-				A954AA6F13EE9A2B0094E3FE /* FieldDocSortedHitQueue.h */,
-				A954AA7013EE9A2B0094E3FE /* FieldSortedHitQueue.cpp */,
-				A954AA7113EE9A2B0094E3FE /* FieldSortedHitQueue.h */,
-				A954AA7213EE9A2B0094E3FE /* Filter.h */,
-				A954AA7313EE9A2B0094E3FE /* FilteredTermEnum.cpp */,
-				A954AA7413EE9A2B0094E3FE /* FilteredTermEnum.h */,
-				A954AA7513EE9A2B0094E3FE /* FuzzyQuery.cpp */,
-				A954AA7613EE9A2B0094E3FE /* FuzzyQuery.h */,
-				A954AA7713EE9A2B0094E3FE /* HitQueue.cpp */,
-				A954AA7813EE9A2B0094E3FE /* HitQueue.h */,
-				A954AA7913EE9A2B0094E3FE /* Hits.cpp */,
-				A954AA7A13EE9A2B0094E3FE /* IndexSearcher.cpp */,
-				A954AA7B13EE9A2B0094E3FE /* IndexSearcher.h */,
-				A954AA7C13EE9A2B0094E3FE /* MultiSearcher.cpp */,
-				A954AA7D13EE9A2B0094E3FE /* MultiSearcher.h */,
-				A954AA7E13EE9A2B0094E3FE /* MultiTermQuery.cpp */,
-				A954AA7F13EE9A2B0094E3FE /* MultiTermQuery.h */,
-				A954AA8013EE9A2B0094E3FE /* PhrasePositions.cpp */,
-				A954AA8113EE9A2B0094E3FE /* PhrasePositions.h */,
-				A954AA8213EE9A2B0094E3FE /* PhraseQuery.cpp */,
-				A954AA8313EE9A2B0094E3FE /* PhraseQuery.h */,
-				A954AA8413EE9A2B0094E3FE /* PhraseQueue.h */,
-				A954AA8513EE9A2B0094E3FE /* PhraseScorer.cpp */,
-				A954AA8613EE9A2B0094E3FE /* PhraseScorer.h */,
-				A954AA8713EE9A2B0094E3FE /* PrefixQuery.cpp */,
-				A954AA8813EE9A2B0094E3FE /* PrefixQuery.h */,
-				A954AA8913EE9A2B0094E3FE /* QueryFilter.cpp */,
-				A954AA8A13EE9A2B0094E3FE /* QueryFilter.h */,
-				A954AA8B13EE9A2B0094E3FE /* RangeFilter.cpp */,
-				A954AA8C13EE9A2B0094E3FE /* RangeFilter.h */,
-				A954AA8D13EE9A2B0094E3FE /* RangeQuery.cpp */,
-				A954AA8E13EE9A2B0094E3FE /* RangeQuery.h */,
-				A954AA8F13EE9A2B0094E3FE /* Scorer.h */,
-				A954AA9013EE9A2B0094E3FE /* SearchHeader.cpp */,
-				A954AA9113EE9A2B0094E3FE /* SearchHeader.h */,
-				A954AA9213EE9A2B0094E3FE /* Similarity.cpp */,
-				A954AA9313EE9A2B0094E3FE /* Similarity.h */,
-				A954AA9413EE9A2B0094E3FE /* SloppyPhraseScorer.cpp */,
-				A954AA9513EE9A2B0094E3FE /* SloppyPhraseScorer.h */,
-				A954AA9613EE9A2B0094E3FE /* Sort.cpp */,
-				A954AA9713EE9A2B0094E3FE /* Sort.h */,
-				A954AA9813EE9A2B0094E3FE /* TermQuery.cpp */,
-				A954AA9913EE9A2B0094E3FE /* TermQuery.h */,
-				A954AA9A13EE9A2B0094E3FE /* TermScorer.cpp */,
-				A954AA9B13EE9A2B0094E3FE /* TermScorer.h */,
-				A954AA9C13EE9A2B0094E3FE /* WildcardQuery.cpp */,
-				A954AA9D13EE9A2B0094E3FE /* WildcardQuery.h */,
-				A954AA9E13EE9A2B0094E3FE /* WildcardTermEnum.cpp */,
-				A954AA9F13EE9A2B0094E3FE /* WildcardTermEnum.h */,
-			);
-			path = search;
-			sourceTree = "<group>";
-		};
-		A954AAA213EE9A2B0094E3FE /* store */ = {
-			isa = PBXGroup;
-			children = (
-				A954AAA313EE9A2B0094E3FE /* Directory.h */,
-				A954AAA413EE9A2B0094E3FE /* FSDirectory.cpp */,
-				A954AAA513EE9A2B0094E3FE /* FSDirectory.h */,
-				A954AAA613EE9A2B0094E3FE /* IndexInput.cpp */,
-				A954AAA713EE9A2B0094E3FE /* IndexInput.h */,
-				A954AAA813EE9A2B0094E3FE /* IndexOutput.cpp */,
-				A954AAA913EE9A2B0094E3FE /* IndexOutput.h */,
-				A954AAAA13EE9A2B0094E3FE /* InputStream.h */,
-				A954AAAB13EE9A2B0094E3FE /* Lock.cpp */,
-				A954AAAC13EE9A2B0094E3FE /* Lock.h */,
-				A954AAAD13EE9A2B0094E3FE /* MMapInput.cpp */,
-				A954AAAE13EE9A2B0094E3FE /* OutputStream.h */,
-				A954AAAF13EE9A2B0094E3FE /* RAMDirectory.cpp */,
-				A954AAB013EE9A2B0094E3FE /* RAMDirectory.h */,
-				A954AAB113EE9A2B0094E3FE /* TransactionalRAMDirectory.cpp */,
-				A954AAB213EE9A2B0094E3FE /* TransactionalRAMDirectory.h */,
-			);
-			path = store;
-			sourceTree = "<group>";
-		};
-		A954AAB313EE9A2B0094E3FE /* util */ = {
-			isa = PBXGroup;
-			children = (
-				A954AAB413EE9A2B0094E3FE /* Arrays.h */,
-				A954AAB513EE9A2B0094E3FE /* BitSet.cpp */,
-				A954AAB613EE9A2B0094E3FE /* BitSet.h */,
-				A954AAB713EE9A2B0094E3FE /* bufferedstream.h */,
-				A954AAB813EE9A2B0094E3FE /* dirent.cpp */,
-				A954AAB913EE9A2B0094E3FE /* dirent2.h */,
-				A954AABA13EE9A2B0094E3FE /* Equators.cpp */,
-				A954AABB13EE9A2B0094E3FE /* Equators.h */,
-				A954AABC13EE9A2B0094E3FE /* FastCharStream.cpp */,
-				A954AABD13EE9A2B0094E3FE /* FastCharStream.h */,
-				A954AABE13EE9A2B0094E3FE /* fileinputstream.cpp */,
-				A954AABF13EE9A2B0094E3FE /* fileinputstream.h */,
-				A954AAC013EE9A2B0094E3FE /* googlesparsemap.h */,
-				A954AAC113EE9A2B0094E3FE /* inputstreambuffer.h */,
-				A954AAC213EE9A2B0094E3FE /* jstreamsconfig.h */,
-				A954AAC313EE9A2B0094E3FE /* MD5Digester.cpp */,
-				A954AAC413EE9A2B0094E3FE /* MD5Digester.h */,
-				A954AAC513EE9A2B0094E3FE /* Misc.cpp */,
-				A954AAC613EE9A2B0094E3FE /* Misc.h */,
-				A954AAC713EE9A2B0094E3FE /* PriorityQueue.h */,
-				A954AAC813EE9A2B0094E3FE /* Reader.cpp */,
-				A954AAC913EE9A2B0094E3FE /* Reader.h */,
-				A954AACA13EE9A2B0094E3FE /* streambase.h */,
-				A954AACB13EE9A2B0094E3FE /* StringBuffer.cpp */,
-				A954AACC13EE9A2B0094E3FE /* StringBuffer.h */,
-				A954AACD13EE9A2B0094E3FE /* StringIntern.cpp */,
-				A954AACE13EE9A2B0094E3FE /* StringIntern.h */,
-				A954AACF13EE9A2B0094E3FE /* stringreader.h */,
-				A954AAD013EE9A2B0094E3FE /* subinputstream.h */,
-				A954AAD113EE9A2B0094E3FE /* ThreadLocal.cpp */,
-				A954AAD213EE9A2B0094E3FE /* ThreadLocal.h */,
-				A954AAD313EE9A2B0094E3FE /* VoidList.h */,
-				A954AAD413EE9A2B0094E3FE /* VoidMap.h */,
-			);
-			path = util;
-			sourceTree = "<group>";
-		};
 		A975ECD211C7925B007C1532 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -5329,7 +4662,6 @@
 		A9BFB0A313EDF51000032679 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A90169D419AA15D500F7FC7D /* icudt53l.dat */,
 				A9B77D4319A3BB3B00F34557 /* liblzma.dylib */,
 				A982039B19A0A03A00DD808C /* libcurl.dylib */,
 				A982039919A0A02C00DD808C /* libz.dylib */,
@@ -6340,9 +5672,10 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0720;
 				LastTestingUpgradeCheck = 0610;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 2610;
 				TargetAttributes = {
 					8DC2EF4F0486A6940098B216 = {
 						DevelopmentTeam = 27XS5W9C3J;
@@ -6426,15 +5759,11 @@
 			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "ObjCSword" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
 				en,
-				ru,
+				Base,
 			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* ObjCSword */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
@@ -6472,7 +5801,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
+				A92B19922ED8E4A400C56A8A /* InfoPlist.strings in Resources */,
 				A9D4382311C52947007AFE83 /* locales.d in Resources */,
 				A917AF2616B1BE38006367FC /* Tests-Info.plist in Resources */,
 			);
@@ -6992,85 +6321,53 @@
 				A954ACC213EEA0C10094E3FE /* utilxml.cpp in Sources */,
 				A901633819A9E8EB00F7FC7D /* propname.cpp in Sources */,
 				A901655F19A9E8EB00F7FC7D /* tznames.cpp in Sources */,
-				A954ABCB13EE9E460094E3FE /* AnalysisHeader.cpp in Sources */,
 				A901648D19A9E8EB00F7FC7D /* collationdatareader.cpp in Sources */,
-				A954ABCC13EE9E460094E3FE /* Analyzers.cpp in Sources */,
 				A901632419A9E8EB00F7FC7D /* loclikely.cpp in Sources */,
 				A901661E19A9E8EB00F7FC7D /* CoverageTables.cpp in Sources */,
-				A954ABCD13EE9E470094E3FE /* StandardAnalyzer.cpp in Sources */,
 				A901650019A9E8EB00F7FC7D /* name2uni.cpp in Sources */,
-				A954ABCE13EE9E470094E3FE /* StandardFilter.cpp in Sources */,
-				A954ABCF13EE9E470094E3FE /* StandardTokenizer.cpp in Sources */,
 				A90163BF19A9E8EB00F7FC7D /* unames.cpp in Sources */,
 				A901636F19A9E8EB00F7FC7D /* ubidiln.c in Sources */,
 				A901639319A9E8EB00F7FC7D /* ucnv_lmb.c in Sources */,
 				A90166B119A9E8EC00F7FC7D /* SubtableProcessor2.cpp in Sources */,
 				A901647519A9E8EB00F7FC7D /* buddhcal.cpp in Sources */,
-				A954ABD013EE9E470094E3FE /* gunichartables.cpp in Sources */,
 				A90164FE19A9E8EB00F7FC7D /* msgfmt.cpp in Sources */,
 				A901639A19A9E8EB00F7FC7D /* ucnvdisp.c in Sources */,
-				A954ABD113EE9E470094E3FE /* repl_lltot.cpp in Sources */,
 				A901664B19A9E8EB00F7FC7D /* IndicReordering.cpp in Sources */,
 				A901649119A9E8EB00F7FC7D /* collationfastlatin.cpp in Sources */,
 				A901655519A9E8EB00F7FC7D /* toupptrn.cpp in Sources */,
-				A954ABD213EE9E470094E3FE /* repl_tcscasecmp.cpp in Sources */,
 				A90165F519A9E8EB00F7FC7D /* ucln_io.c in Sources */,
-				A954ABD313EE9E470094E3FE /* repl_tcslwr.cpp in Sources */,
-				A954ABD413EE9E470094E3FE /* repl_tcstod.cpp in Sources */,
 				A901630419A9E8EB00F7FC7D /* bytestriebuilder.cpp in Sources */,
-				A954ABD513EE9E470094E3FE /* repl_tcstoll.cpp in Sources */,
 				A9568D141EA0F0A200D758C4 /* ztext4.cpp in Sources */,
-				A954ABD613EE9E470094E3FE /* repl_tprintf.cpp in Sources */,
 				A901656719A9E8EB00F7FC7D /* ucol.cpp in Sources */,
-				A954ABD713EE9E470094E3FE /* threads.cpp in Sources */,
 				A901633219A9E8EB00F7FC7D /* normalizer2impl.cpp in Sources */,
 				A90166A019A9E8EC00F7FC7D /* SinglePositioningSubtables.cpp in Sources */,
-				A954ABD813EE9E470094E3FE /* utf8.cpp in Sources */,
 				A90166BC19A9E8EC00F7FC7D /* TrimmedArrayProcessor.cpp in Sources */,
 				A901653219A9E8EB00F7FC7D /* reldatefmt.cpp in Sources */,
 				A90164DB19A9E8EB00F7FC7D /* esctrn.cpp in Sources */,
-				A954ABD913EE9E470094E3FE /* condition.cpp in Sources */,
 				A901669C19A9E8EC00F7FC7D /* SimpleArrayProcessor.cpp in Sources */,
 				A901642E19A9E8EB00F7FC7D /* usc_impl.c in Sources */,
 				A901655219A9E8EB00F7FC7D /* tmutfmt.cpp in Sources */,
 				A901647C19A9E8EB00F7FC7D /* chnsecal.cpp in Sources */,
 				A901663A19A9E8EB00F7FC7D /* GXLayoutEngine.cpp in Sources */,
-				A954ABDA13EE9E470094E3FE /* error.cpp in Sources */,
 				A901667F19A9E8EB00F7FC7D /* MPreFixups.cpp in Sources */,
-				A954ABDB13EE9E470094E3FE /* memtracking.cpp in Sources */,
 				A901642419A9E8EB00F7FC7D /* uobject.cpp in Sources */,
 				A901655C19A9E8EB00F7FC7D /* tzfmt.cpp in Sources */,
 				A901667C19A9E8EB00F7FC7D /* MorphTables.cpp in Sources */,
-				A954ABDC13EE9E470094E3FE /* DateField.cpp in Sources */,
 				A901666B19A9E8EB00F7FC7D /* LookupProcessor.cpp in Sources */,
 				A90163A819A9E8EB00F7FC7D /* udataswp.c in Sources */,
 				A901631219A9E8EB00F7FC7D /* dictbe.cpp in Sources */,
 				A90164EF19A9E8EB00F7FC7D /* identifier_info.cpp in Sources */,
-				A954ABDD13EE9E470094E3FE /* Document.cpp in Sources */,
 				A9BB677A1C6BCDD700EB1A49 /* deflate.c in Sources */,
-				A954ABDE13EE9E470094E3FE /* Field.cpp in Sources */,
-				A954ABDF13EE9E470094E3FE /* CompoundFile.cpp in Sources */,
 				A90163B419A9E8EB00F7FC7D /* uiter.cpp in Sources */,
 				A90164B619A9E8EB00F7FC7D /* csrmbcs.cpp in Sources */,
-				A954ABE013EE9E470094E3FE /* DocumentWriter.cpp in Sources */,
 				A90163B019A9E8EB00F7FC7D /* uidna.cpp in Sources */,
 				A901632E19A9E8EB00F7FC7D /* messagepattern.cpp in Sources */,
-				A954ABE113EE9E470094E3FE /* FieldInfos.cpp in Sources */,
-				A954ABE213EE9E470094E3FE /* FieldsReader.cpp in Sources */,
-				A954ABE313EE9E470094E3FE /* FieldsWriter.cpp in Sources */,
 				A901638919A9E8EB00F7FC7D /* ucnv_cb.c in Sources */,
-				A954ABE413EE9E470094E3FE /* IndexModifier.cpp in Sources */,
 				A93EC1781EA0F1B2001508A3 /* teilatex.cpp in Sources */,
-				A954ABE513EE9E470094E3FE /* IndexReader.cpp in Sources */,
 				A901642219A9E8EB00F7FC7D /* unormcmp.cpp in Sources */,
-				A954ABE613EE9E470094E3FE /* IndexWriter.cpp in Sources */,
-				A954ABE713EE9E470094E3FE /* MultiReader.cpp in Sources */,
 				A90164C219A9E8EB00F7FC7D /* currunit.cpp in Sources */,
-				A954ABE813EE9E470094E3FE /* SegmentInfos.cpp in Sources */,
 				A901651519A9E8EB00F7FC7D /* plurrule.cpp in Sources */,
-				A954ABE913EE9E470094E3FE /* SegmentMergeInfo.cpp in Sources */,
 				A9BB677E1C6BCDD700EB1A49 /* gzwrite.c in Sources */,
-				A954ABEA13EE9E470094E3FE /* SegmentMergeQueue.cpp in Sources */,
 				A901649919A9E8EB00F7FC7D /* collationkeys.cpp in Sources */,
 				A901645319A9E8EB00F7FC7D /* uts46.cpp in Sources */,
 				A93EC1761EA0F1B2001508A3 /* gbflatex.cpp in Sources */,
@@ -7080,62 +6377,40 @@
 				A901651219A9E8EB00F7FC7D /* persncal.cpp in Sources */,
 				A901639C19A9E8EB00F7FC7D /* ucnvisci.c in Sources */,
 				A901634B19A9E8EB00F7FC7D /* rbbisetb.cpp in Sources */,
-				A954ABEB13EE9E470094E3FE /* SegmentMerger.cpp in Sources */,
 				A90165E019A9E8EB00F7FC7D /* utrans.cpp in Sources */,
-				A954ABEC13EE9E470094E3FE /* SegmentReader.cpp in Sources */,
 				A90165EE19A9E8EB00F7FC7D /* ztrans.cpp in Sources */,
 				A901638719A9E8EB00F7FC7D /* ucnv_bld.cpp in Sources */,
-				A954ABED13EE9E470094E3FE /* SegmentTermDocs.cpp in Sources */,
 				A901651919A9E8EB00F7FC7D /* quantityformatter.cpp in Sources */,
 				A901662819A9E8EB00F7FC7D /* GDEFMarkFilter.cpp in Sources */,
 				A901643C19A9E8EB00F7FC7D /* ustr_titlecase_brkiter.cpp in Sources */,
 				A901634219A9E8EB00F7FC7D /* rbbidata.cpp in Sources */,
-				A954ABEE13EE9E470094E3FE /* SegmentTermEnum.cpp in Sources */,
 				A901665119A9E8EB00F7FC7D /* KhmerReordering.cpp in Sources */,
 				A901639D19A9E8EB00F7FC7D /* ucnvlat1.c in Sources */,
 				A901631D19A9E8EB00F7FC7D /* listformatter.cpp in Sources */,
-				A954ABEF13EE9E470094E3FE /* SegmentTermPositions.cpp in Sources */,
-				A954ABF013EE9E470094E3FE /* SegmentTermVector.cpp in Sources */,
-				A954ABF113EE9E470094E3FE /* Term.cpp in Sources */,
 				A90164D619A9E8EB00F7FC7D /* dtitvfmt.cpp in Sources */,
 				A90165DB19A9E8EB00F7FC7D /* utf16collationiterator.cpp in Sources */,
 				A901647A19A9E8EB00F7FC7D /* cecal.cpp in Sources */,
 				A90165D619A9E8EB00F7FC7D /* uspoof_impl.cpp in Sources */,
 				A901661219A9E8EB00F7FC7D /* ClassDefinitionTables.cpp in Sources */,
-				A954ABF213EE9E470094E3FE /* TermInfo.cpp in Sources */,
 				A93EC17A1EA0F1B2001508A3 /* utf8scsu.cpp in Sources */,
-				A954ABF313EE9E470094E3FE /* TermInfosReader.cpp in Sources */,
-				A954ABF413EE9E470094E3FE /* TermInfosWriter.cpp in Sources */,
 				A901641F19A9E8EB00F7FC7D /* unistr_props.cpp in Sources */,
 				A901652419A9E8EB00F7FC7D /* rbt_set.cpp in Sources */,
-				A954ABF513EE9E470094E3FE /* TermVectorReader.cpp in Sources */,
 				A901667E19A9E8EB00F7FC7D /* MorphTables2.cpp in Sources */,
 				A901641B19A9E8EB00F7FC7D /* unistr.cpp in Sources */,
 				A901639E19A9E8EB00F7FC7D /* ucnvmbcs.c in Sources */,
-				A954ABF613EE9E470094E3FE /* TermVectorWriter.cpp in Sources */,
 				A901652C19A9E8EB00F7FC7D /* regexst.cpp in Sources */,
 				A90164CC19A9E8EB00F7FC7D /* decimalformatpattern.cpp in Sources */,
-				A954ABF713EE9E470094E3FE /* Lexer.cpp in Sources */,
-				A954ABF813EE9E470094E3FE /* MultiFieldQueryParser.cpp in Sources */,
 				A901641C19A9E8EB00F7FC7D /* unistr_case.cpp in Sources */,
-				A954ABF913EE9E470094E3FE /* QueryParser.cpp in Sources */,
 				A90164E019A9E8EB00F7FC7D /* fmtable.cpp in Sources */,
-				A954ABFA13EE9E470094E3FE /* QueryParserBase.cpp in Sources */,
-				A954ABFB13EE9E470094E3FE /* QueryToken.cpp in Sources */,
 				A901661A19A9E8EB00F7FC7D /* ContextualGlyphSubstProc2.cpp in Sources */,
 				A90164E619A9E8EB00F7FC7D /* fpositer.cpp in Sources */,
 				A901668619A9E8EB00F7FC7D /* NonContextualGlyphSubstProc2.cpp in Sources */,
 				A901636B19A9E8EB00F7FC7D /* ubidi_props.c in Sources */,
-				A954ABFC13EE9E470094E3FE /* TokenList.cpp in Sources */,
-				A954ABFD13EE9E470094E3FE /* BooleanQuery.cpp in Sources */,
 				A90163AB19A9E8EB00F7FC7D /* uenum.c in Sources */,
-				A954ABFE13EE9E470094E3FE /* BooleanScorer.cpp in Sources */,
 				A90165FD19A9E8EB00F7FC7D /* uprintf.c in Sources */,
 				A901637B19A9E8EB00F7FC7D /* ucharstrie.cpp in Sources */,
 				A901637E19A9E8EB00F7FC7D /* uchriter.cpp in Sources */,
-				A954ABFF13EE9E470094E3FE /* CachingWrapperFilter.cpp in Sources */,
 				A9568D131EA0F09700D758C4 /* zverse4.cpp in Sources */,
-				A954AC0013EE9E470094E3FE /* ChainedFilter.cpp in Sources */,
 				A901657219A9E8EB00F7FC7D /* uitercollationiterator.cpp in Sources */,
 				A901660019A9E8EB00F7FC7D /* uscanf.c in Sources */,
 				A901630E19A9E8EB00F7FC7D /* cstring.c in Sources */,
@@ -7143,58 +6418,34 @@
 				A901631F19A9E8EB00F7FC7D /* locavailable.cpp in Sources */,
 				A901637319A9E8EB00F7FC7D /* ucase.cpp in Sources */,
 				A901652A19A9E8EB00F7FC7D /* regeximp.cpp in Sources */,
-				A954AC0113EE9E470094E3FE /* ConjunctionScorer.cpp in Sources */,
 				A901647019A9E8EB00F7FC7D /* basictz.cpp in Sources */,
 				A90166AD19A9E8EC00F7FC7D /* SubstitutionLookups.cpp in Sources */,
-				A954AC0213EE9E470094E3FE /* DateFilter.cpp in Sources */,
 				A901654A19A9E8EB00F7FC7D /* stsearch.cpp in Sources */,
-				A954AC0313EE9E470094E3FE /* ExactPhraseScorer.cpp in Sources */,
-				A954AC0413EE9E470094E3FE /* Explanation.cpp in Sources */,
 				A901639619A9E8EB00F7FC7D /* ucnv_u32.c in Sources */,
-				A954AC0513EE9E470094E3FE /* FieldCache.cpp in Sources */,
 				A90166AA19A9E8EC00F7FC7D /* StateTableProcessor2.cpp in Sources */,
 				A901642919A9E8EB00F7FC7D /* uresbund.cpp in Sources */,
-				A954AC0613EE9E470094E3FE /* FieldCacheImpl.cpp in Sources */,
 				A90164EA19A9E8EB00F7FC7D /* gregocal.cpp in Sources */,
 				A90164F919A9E8EB00F7FC7D /* locdspnm.cpp in Sources */,
-				A954AC0713EE9E470094E3FE /* FieldDocSortedHitQueue.cpp in Sources */,
 				A90163A519A9E8EB00F7FC7D /* udata.cpp in Sources */,
-				A954AC0813EE9E470094E3FE /* FieldSortedHitQueue.cpp in Sources */,
-				A954AC0913EE9E470094E3FE /* FilteredTermEnum.cpp in Sources */,
-				A954AC0A13EE9E470094E3FE /* FuzzyQuery.cpp in Sources */,
 				A901648F19A9E8EB00F7FC7D /* collationdatawriter.cpp in Sources */,
-				A954AC0B13EE9E470094E3FE /* HitQueue.cpp in Sources */,
-				A954AC0C13EE9E470094E3FE /* Hits.cpp in Sources */,
-				A954AC0D13EE9E470094E3FE /* IndexSearcher.cpp in Sources */,
-				A954AC0E13EE9E470094E3FE /* MultiSearcher.cpp in Sources */,
-				A954AC0F13EE9E470094E3FE /* MultiTermQuery.cpp in Sources */,
 				A901639119A9E8EB00F7FC7D /* ucnv_io.cpp in Sources */,
-				A954AC1013EE9E470094E3FE /* PhrasePositions.cpp in Sources */,
 				A901649519A9E8EB00F7FC7D /* collationfcd.cpp in Sources */,
-				A954AC1113EE9E470094E3FE /* PhraseQuery.cpp in Sources */,
 				A901666F19A9E8EB00F7FC7D /* LookupTables.cpp in Sources */,
-				A954AC1213EE9E470094E3FE /* PhraseScorer.cpp in Sources */,
 				A901654519A9E8EB00F7FC7D /* sortkey.cpp in Sources */,
 				A90164DD19A9E8EB00F7FC7D /* ethpccal.cpp in Sources */,
 				A9568D151EA0F0BF00D758C4 /* zcom4.cpp in Sources */,
-				A954AC1313EE9E470094E3FE /* PrefixQuery.cpp in Sources */,
 				A90164CE19A9E8EB00F7FC7D /* decimfmt.cpp in Sources */,
 				A901668F19A9E8EB00F7FC7D /* ScriptAndLanguage.cpp in Sources */,
 				A901646C19A9E8EB00F7FC7D /* anytrans.cpp in Sources */,
 				A90164BE19A9E8EB00F7FC7D /* curramt.cpp in Sources */,
 				A901669719A9E8EB00F7FC7D /* SegmentSingleProcessor.cpp in Sources */,
 				A901636219A9E8EB00F7FC7D /* simplepatternformatter.cpp in Sources */,
-				A954AC1413EE9E470094E3FE /* QueryFilter.cpp in Sources */,
 				A90164AC19A9E8EB00F7FC7D /* cpdtrans.cpp in Sources */,
 				A901664D19A9E8EB00F7FC7D /* KernTable.cpp in Sources */,
 				A901648119A9E8EB00F7FC7D /* collation.cpp in Sources */,
-				A954AC1513EE9E470094E3FE /* RangeFilter.cpp in Sources */,
 				A901667219A9E8EB00F7FC7D /* MarkArrays.cpp in Sources */,
-				A954AC1613EE9E470094E3FE /* RangeQuery.cpp in Sources */,
-				A954AC1713EE9E470094E3FE /* SearchHeader.cpp in Sources */,
 				A901637619A9E8EB00F7FC7D /* ucasemap.cpp in Sources */,
 				A90164AE19A9E8EB00F7FC7D /* csdetect.cpp in Sources */,
-				A954AC1813EE9E470094E3FE /* Similarity.cpp in Sources */,
 				A90164E319A9E8EB00F7FC7D /* format.cpp in Sources */,
 				A901654619A9E8EB00F7FC7D /* strmatch.cpp in Sources */,
 				A901643219A9E8EB00F7FC7D /* uset.cpp in Sources */,
@@ -7204,63 +6455,38 @@
 				A901662719A9E8EB00F7FC7D /* Features.cpp in Sources */,
 				A90166B319A9E8EC00F7FC7D /* ThaiLayoutEngine.cpp in Sources */,
 				A901668D19A9E8EB00F7FC7D /* PairPositioningSubtables.cpp in Sources */,
-				A954AC1913EE9E470094E3FE /* SloppyPhraseScorer.cpp in Sources */,
 				A901666519A9E8EB00F7FC7D /* LigatureSubstProc2.cpp in Sources */,
 				A90166A619A9E8EC00F7FC7D /* SingleTableProcessor2.cpp in Sources */,
 				A90164E119A9E8EB00F7FC7D /* fmtable_cnv.cpp in Sources */,
 				A90165F019A9E8EB00F7FC7D /* locbund.cpp in Sources */,
-				A954AC1A13EE9E470094E3FE /* Sort.cpp in Sources */,
 				A901630219A9E8EB00F7FC7D /* bytestream.cpp in Sources */,
 				A901632A19A9E8EB00F7FC7D /* lrucache.cpp in Sources */,
 				A901635419A9E8EB00F7FC7D /* schriter.cpp in Sources */,
 				A901637719A9E8EB00F7FC7D /* ucasemap_titlecase_brkiter.cpp in Sources */,
 				A90164BF19A9E8EB00F7FC7D /* currfmt.cpp in Sources */,
 				A9BB677C1C6BCDD700EB1A49 /* gzlib.c in Sources */,
-				A954AC1B13EE9E470094E3FE /* TermQuery.cpp in Sources */,
-				A954AC1C13EE9E470094E3FE /* TermScorer.cpp in Sources */,
 				A90164C319A9E8EB00F7FC7D /* dangical.cpp in Sources */,
-				A954AC1D13EE9E470094E3FE /* WildcardQuery.cpp in Sources */,
 				A901637119A9E8EB00F7FC7D /* ubrk.cpp in Sources */,
 				A9BB67861C6BCDD700EB1A49 /* zutil.c in Sources */,
 				A90163AD19A9E8EB00F7FC7D /* uhash.c in Sources */,
-				A954AC1E13EE9E470094E3FE /* WildcardTermEnum.cpp in Sources */,
 				A901639519A9E8EB00F7FC7D /* ucnv_u16.c in Sources */,
 				A901634419A9E8EB00F7FC7D /* rbbinode.cpp in Sources */,
-				A954AC1F13EE9E470094E3FE /* StdHeader.cpp in Sources */,
-				A954AC2013EE9E470094E3FE /* FSDirectory.cpp in Sources */,
-				A954AC2113EE9E470094E3FE /* IndexInput.cpp in Sources */,
 				A901655319A9E8EB00F7FC7D /* tolowtrn.cpp in Sources */,
-				A954AC2213EE9E470094E3FE /* IndexOutput.cpp in Sources */,
 				A90164B819A9E8EB00F7FC7D /* csrsbcs.cpp in Sources */,
 				A901668819A9E8EB00F7FC7D /* OpenTypeLayoutEngine.cpp in Sources */,
 				A90163A619A9E8EB00F7FC7D /* udatamem.c in Sources */,
-				A954AC2313EE9E470094E3FE /* Lock.cpp in Sources */,
-				A954AC2413EE9E470094E3FE /* MMapInput.cpp in Sources */,
 				A90163B219A9E8EB00F7FC7D /* uinvchar.c in Sources */,
-				A954AC2513EE9E470094E3FE /* RAMDirectory.cpp in Sources */,
-				A954AC2613EE9E470094E3FE /* TransactionalRAMDirectory.cpp in Sources */,
 				A901657719A9E8EB00F7FC7D /* unesctrn.cpp in Sources */,
 				A90165CB19A9E8EB00F7FC7D /* unum.cpp in Sources */,
 				A901667A19A9E8EB00F7FC7D /* MirroredCharData.cpp in Sources */,
 				A9BB67851C6BCDD700EB1A49 /* untgz.c in Sources */,
-				A954AC2713EE9E470094E3FE /* BitSet.cpp in Sources */,
 				A90166B719A9E8EC00F7FC7D /* ThaiStateTables.cpp in Sources */,
-				A954AC2813EE9E470094E3FE /* dirent.cpp in Sources */,
 				A901632719A9E8EB00F7FC7D /* locresdata.cpp in Sources */,
-				A954AC2913EE9E470094E3FE /* Equators.cpp in Sources */,
 				A901654E19A9E8EB00F7FC7D /* titletrn.cpp in Sources */,
-				A954AC2A13EE9E470094E3FE /* FastCharStream.cpp in Sources */,
-				A954AC2B13EE9E470094E3FE /* fileinputstream.cpp in Sources */,
 				A901645C19A9E8EB00F7FC7D /* wintz.c in Sources */,
-				A954AC2C13EE9E470094E3FE /* MD5Digester.cpp in Sources */,
 				A901635D19A9E8EB00F7FC7D /* servrbf.cpp in Sources */,
-				A954AC2D13EE9E470094E3FE /* Misc.cpp in Sources */,
-				A954AC2E13EE9E470094E3FE /* Reader.cpp in Sources */,
-				A954AC2F13EE9E470094E3FE /* StringBuffer.cpp in Sources */,
-				A954AC3013EE9E470094E3FE /* StringIntern.cpp in Sources */,
 				A9BB67771C6BCDD700EB1A49 /* adler32.c in Sources */,
 				A901648319A9E8EB00F7FC7D /* collationbasedatabuilder.cpp in Sources */,
-				A954AC3113EE9E470094E3FE /* ThreadLocal.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7614,17 +6840,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		089C1666FE841158C02AAC07 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				089C1667FE841158C02AAC07 /* English */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		1DEB91AE08733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -7636,6 +6851,7 @@
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -7657,9 +6873,8 @@
 				INSTALL_PATH = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				MARKETING_VERSION = 1.8.1;
-				OBJROOT = "$(PROJECT_DIR)/Build/Intermediates";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DDEBUG";
 				OTHER_LDFLAGS = (
@@ -7670,7 +6885,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.crosswire.ObjCSword;
 				PRODUCT_NAME = ObjCSword;
 				SDKROOT = macosx;
-				SYMROOT = "$(PROJECT_DIR)/Build/Products";
 				WARNING_CFLAGS = "-Wall";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -7685,6 +6899,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -7707,9 +6922,8 @@
 				INSTALL_PATH = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				MARKETING_VERSION = 1.8.1;
-				OBJROOT = "$(PROJECT_DIR)/Build/Intermediates";
 				OTHER_CFLAGS = "-DRELEASE";
 				OTHER_LDFLAGS = (
 					"-lcurl",
@@ -7719,7 +6933,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.crosswire.ObjCSword;
 				PRODUCT_NAME = ObjCSword;
 				SDKROOT = macosx;
-				SYMROOT = "$(PROJECT_DIR)/Build/Products";
 				WARNING_CFLAGS = "-Wall";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -7748,8 +6961,10 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -7764,6 +6979,7 @@
 				OBJROOT = Build/Intermediates;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 			};
 			name = Debug;
 		};
@@ -7790,7 +7006,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_VERSION = "";
@@ -7803,7 +7021,9 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				OBJROOT = Build/Intermediates;
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
@@ -7817,6 +7037,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = c99;
@@ -7835,16 +7056,14 @@
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
-					"$(SRCROOT)/dependencies/clucene",
 				);
 				INSTALL_PATH = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
 					"-D__unix__",
-					"-DUSELUCENE",
 					"-DEXCLUDEXZ",
 					"-D_ICU_",
 					"-DU_COMMON_IMPLEMENTATION",
@@ -7868,6 +7087,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				EXECUTABLE_PREFIX = lib;
@@ -7882,17 +7102,15 @@
 					"$(SRCROOT)/dependencies/icu/source/i18n",
 					"$(SRCROOT)/dependencies/icu/source/common",
 					"$(SRCROOT)/dependencies/icu/source/io",
-					"$(SRCROOT)/dependencies/clucene",
 				);
 				INSTALL_PATH = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				OTHER_CFLAGS = (
 					"-DNS_BLOCK_ASSERTIONS=1",
 					"-DCURLAVAILABLE",
 					"-Dunix",
 					"-D__unix__",
-					"-DUSELUCENE",
 					"-DEXCLUDEXZ",
 					"-D_ICU_",
 					"-DU_COMMON_IMPLEMENTATION",
@@ -7913,6 +7131,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -7926,7 +7145,7 @@
 				);
 				INSTALL_PATH = /usr/local/bin;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -7952,6 +7171,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -7964,7 +7184,7 @@
 				);
 				INSTALL_PATH = /usr/local/bin;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -7991,6 +7211,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -8011,7 +7232,7 @@
 					"$(SRCROOT)/dependencies/clucene",
 				);
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -8035,6 +7256,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -8050,7 +7272,7 @@
 					"$(SRCROOT)/dependencies/clucene",
 				);
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -8077,6 +7299,7 @@
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -8096,7 +7319,11 @@
 					/Users/mbergmann/Development/Apps/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = "test/Tests-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.mabe.${PRODUCT_NAME:rfc1034identifier}";
@@ -8121,6 +7348,7 @@
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -8134,7 +7362,11 @@
 					/Users/mbergmann/Development/Apps/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = "test/Tests-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.mabe.${PRODUCT_NAME:rfc1034identifier}";
@@ -8155,6 +7387,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -8168,7 +7401,7 @@
 				);
 				INSTALL_PATH = /usr/local/bin;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -8194,6 +7427,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -8206,7 +7440,7 @@
 				);
 				INSTALL_PATH = /usr/local/bin;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -8233,6 +7467,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -8246,7 +7481,7 @@
 				);
 				INSTALL_PATH = /usr/local/bin;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -8272,6 +7507,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -8284,7 +7520,7 @@
 				);
 				INSTALL_PATH = /usr/local/bin;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -8311,6 +7547,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -8324,7 +7561,7 @@
 				);
 				INSTALL_PATH = /usr/local/bin;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -8350,6 +7587,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -8362,7 +7600,7 @@
 				);
 				INSTALL_PATH = /usr/local/bin;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -8389,6 +7627,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -8402,7 +7641,7 @@
 				);
 				INSTALL_PATH = /usr/local/bin;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -8428,6 +7667,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -8440,7 +7680,7 @@
 				);
 				INSTALL_PATH = /usr/local/bin;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -8467,6 +7707,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -8480,7 +7721,7 @@
 				);
 				INSTALL_PATH = /usr/local/bin;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -8506,6 +7747,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -8518,7 +7760,7 @@
 				);
 				INSTALL_PATH = /usr/local/bin;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -8545,6 +7787,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -8558,7 +7801,7 @@
 				);
 				INSTALL_PATH = /usr/local/bin;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -8584,6 +7827,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -8596,7 +7840,7 @@
 				);
 				INSTALL_PATH = /usr/local/bin;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -8623,6 +7867,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -8636,7 +7881,7 @@
 				);
 				INSTALL_PATH = /usr/local/bin;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -8662,6 +7907,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -8674,7 +7920,7 @@
 				);
 				INSTALL_PATH = /usr/local/bin;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -8701,6 +7947,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -8721,7 +7968,7 @@
 					"$(SRCROOT)/dependencies/clucene",
 				);
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -8745,6 +7992,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -8760,7 +8008,7 @@
 					"$(SRCROOT)/dependencies/clucene",
 				);
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -8784,6 +8032,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -8804,7 +8053,7 @@
 					"$(SRCROOT)/dependencies/clucene",
 				);
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -8828,6 +8077,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -8843,7 +8093,7 @@
 					"$(SRCROOT)/dependencies/clucene",
 				);
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -8867,6 +8117,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -8887,7 +8138,7 @@
 					"$(SRCROOT)/dependencies/clucene",
 				);
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -8911,6 +8162,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -8926,7 +8178,7 @@
 					"$(SRCROOT)/dependencies/clucene",
 				);
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -8950,6 +8202,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -8970,7 +8223,7 @@
 					"$(SRCROOT)/dependencies/clucene",
 				);
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -8994,6 +8247,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -9009,7 +8263,7 @@
 					"$(SRCROOT)/dependencies/clucene",
 				);
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -9033,6 +8287,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -9053,7 +8308,7 @@
 					"$(SRCROOT)/dependencies/clucene",
 				);
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -9077,6 +8332,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -9092,7 +8348,7 @@
 					"$(SRCROOT)/dependencies/clucene",
 				);
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -9116,6 +8372,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -9136,7 +8393,7 @@
 					"$(SRCROOT)/dependencies/clucene",
 				);
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -9160,6 +8417,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -9175,7 +8433,7 @@
 					"$(SRCROOT)/dependencies/clucene",
 				);
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -9199,6 +8457,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -9219,7 +8478,7 @@
 					"$(SRCROOT)/dependencies/clucene",
 				);
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -9243,6 +8502,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 27XS5W9C3J;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -9258,7 +8518,7 @@
 					"$(SRCROOT)/dependencies/clucene",
 				);
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../../Frameworks/ObjCSword.framework/Versions/A/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = (
 					"-DCURLAVAILABLE",
 					"-Dunix",
@@ -9280,7 +8540,8 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				DEAD_CODE_STRIPPING = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -9290,7 +8551,8 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				DEAD_CODE_STRIPPING = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -9302,6 +8564,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -9339,6 +8602,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_HARDENED_RUNTIME = YES;
 				HEADER_SEARCH_PATHS = (
@@ -9390,6 +8654,7 @@
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -9412,8 +8677,12 @@
 					"$(PROJECT_DIR)/../../include",
 				);
 				INFOPLIST_FILE = LongRunningTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.mabe.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -9441,6 +8710,7 @@
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -9459,8 +8729,12 @@
 					"$(PROJECT_DIR)/../../include",
 				);
 				INFOPLIST_FILE = LongRunningTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.mabe.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
