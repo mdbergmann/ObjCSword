@@ -1031,10 +1031,6 @@
 		A975EEE511C79308007C1532 /* mod2osis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A975EDAC11C7925C007C1532 /* mod2osis.cpp */; };
 		A982036D19A08B7C00DD808C /* osisreferencelinks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A96C2355176AF19C008D714B /* osisreferencelinks.cpp */; };
 		A982038F19A09C3C00DD808C /* osisxlit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A982037B19A09B7800DD808C /* osisxlit.cpp */; };
-		A982039419A09FFD00DD808C /* libbz2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A982039319A09FFD00DD808C /* libbz2.dylib */; };
-		A982039819A0A02300DD808C /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A982039719A0A02300DD808C /* libstdc++.dylib */; };
-		A982039A19A0A02C00DD808C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A982039919A0A02C00DD808C /* libz.dylib */; };
-		A982039C19A0A03A00DD808C /* libcurl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A982039B19A0A03A00DD808C /* libcurl.dylib */; };
 		A982039F19A0A5FA00DD808C /* scsuutf8.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A982039D19A0A5FA00DD808C /* scsuutf8.cpp */; };
 		A995E6241C876E8900843E13 /* TestModules in Resources */ = {isa = PBXBuildFile; fileRef = A995E6231C876E8900843E13 /* TestModules */; };
 		A995E6271C877DD000843E13 /* SwordManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A995E6261C877DD000843E13 /* SwordManagerTest.m */; };
@@ -1238,7 +1234,6 @@
 		A9BB67841C6BCDD700EB1A49 /* uncompr.c in Sources */ = {isa = PBXBuildFile; fileRef = A9BB67551C6BCD9600EB1A49 /* uncompr.c */; };
 		A9BB67851C6BCDD700EB1A49 /* untgz.c in Sources */ = {isa = PBXBuildFile; fileRef = A9BB67561C6BCD9600EB1A49 /* untgz.c */; };
 		A9BB67861C6BCDD700EB1A49 /* zutil.c in Sources */ = {isa = PBXBuildFile; fileRef = A9BB67591C6BCD9600EB1A49 /* zutil.c */; };
-		A9BFB0A713EDF51100032679 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9BFB0A613EDF51100032679 /* Cocoa.framework */; };
 		A9BFB0BD13EDF5C900032679 /* SwordModuleTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A918B8E311C6697400024D84 /* SwordModuleTest.m */; };
 		A9BFB0BE13EDF5C900032679 /* SwordListKeyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFA771207F9F00067ED5B /* SwordListKeyTest.m */; };
 		A9BFB0BF13EDF5D500032679 /* ObjCSword.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* ObjCSword.framework */; };
@@ -2548,10 +2543,6 @@
 		A954A8DB13EE98B30094E3FE /* utilstr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utilstr.cpp; sourceTree = "<group>"; };
 		A954A8DC13EE98B30094E3FE /* utilxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utilxml.cpp; sourceTree = "<group>"; };
 		A954ABC313EE9AB00094E3FE /* libsword.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libsword.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		A954AC3213EE9F620094E3FE /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = SDKs/MacOSX10.7.sdk/usr/lib/libcurl.dylib; sourceTree = DEVELOPER_DIR; };
-		A954AC3413EE9FA10094E3FE /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = SDKs/MacOSX10.7.sdk/usr/lib/libicucore.dylib; sourceTree = DEVELOPER_DIR; };
-		A954AC3513EE9FA10094E3FE /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "SDKs/MacOSX10.7.sdk/usr/lib/libstdc++.dylib"; sourceTree = DEVELOPER_DIR; };
-		A954AC3613EE9FA10094E3FE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = SDKs/MacOSX10.7.sdk/usr/lib/libz.dylib; sourceTree = DEVELOPER_DIR; };
 		A9568D0F1EA0E7DB00D758C4 /* xzcomprs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = xzcomprs.cpp; sourceTree = "<group>"; };
 		A96C2351176AF188008D714B /* remotetrans.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = remotetrans.cpp; sourceTree = "<group>"; };
 		A96C2353176AF19C008D714B /* osisenum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = osisenum.cpp; sourceTree = "<group>"; };
@@ -2579,11 +2570,6 @@
 		A982037719A09B5C00DD808C /* zverse4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = zverse4.cpp; sourceTree = "<group>"; };
 		A982037B19A09B7800DD808C /* osisxlit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = osisxlit.cpp; sourceTree = "<group>"; };
 		A982038819A09BC000DD808C /* ztext4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ztext4.cpp; sourceTree = "<group>"; };
-		A982039319A09FFD00DD808C /* libbz2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libbz2.dylib; path = usr/lib/libbz2.dylib; sourceTree = SDKROOT; };
-		A982039519A0A01200DD808C /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
-		A982039719A0A02300DD808C /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
-		A982039919A0A02C00DD808C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		A982039B19A0A03A00DD808C /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = usr/lib/libcurl.dylib; sourceTree = SDKROOT; };
 		A982039D19A0A5FA00DD808C /* scsuutf8.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scsuutf8.cpp; sourceTree = "<group>"; };
 		A9921A1911FD9CA8002DAA72 /* libSword.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libSword.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		A995E60B1C87678B00843E13 /* TestGlobals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestGlobals.h; sourceTree = "<group>"; };
@@ -2778,7 +2764,6 @@
 		A9A94A351DCB21AB00F69260 /* canon_calvin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = canon_calvin.h; sourceTree = "<group>"; };
 		A9A94A361DCB21AB00F69260 /* canon_darbyfr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = canon_darbyfr.h; sourceTree = "<group>"; };
 		A9A94A371DCB21AB00F69260 /* canon_segond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = canon_segond.h; sourceTree = "<group>"; };
-		A9B77D4319A3BB3B00F34557 /* liblzma.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = liblzma.dylib; path = usr/lib/liblzma.dylib; sourceTree = SDKROOT; };
 		A9BB67401C6BCD9600EB1A49 /* adler32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = adler32.c; sourceTree = "<group>"; };
 		A9BB67411C6BCD9600EB1A49 /* compress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = compress.c; sourceTree = "<group>"; };
 		A9BB67421C6BCD9600EB1A49 /* crc32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = crc32.c; sourceTree = "<group>"; };
@@ -2800,10 +2785,6 @@
 		A9BDFA7A1207FA2F0067ED5B /* SwordModuleLongRunTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwordModuleLongRunTest.h; path = ../test/SwordModuleLongRunTest.h; sourceTree = "<group>"; };
 		A9BDFA7B1207FA2F0067ED5B /* SwordModuleLongRunTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SwordModuleLongRunTest.mm; path = ../test/SwordModuleLongRunTest.mm; sourceTree = "<group>"; };
 		A9BFB0A213EDF51000032679 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9BFB0A613EDF51100032679 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		A9BFB0A913EDF51100032679 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		A9BFB0AA13EDF51100032679 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		A9BFB0AB13EDF51100032679 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A9C2856D11C446B700803CB5 /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Configuration.h; path = src/services/Configuration.h; sourceTree = "<group>"; };
 		A9C2857111C4471400803CB5 /* OSXConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OSXConfiguration.h; path = src/services/OSXConfiguration.h; sourceTree = "<group>"; };
 		A9C2857211C4471400803CB5 /* OSXConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OSXConfiguration.m; path = src/services/OSXConfiguration.m; sourceTree = "<group>"; };
@@ -2850,10 +2831,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A982039C19A0A03A00DD808C /* libcurl.dylib in Frameworks */,
-				A982039A19A0A02C00DD808C /* libz.dylib in Frameworks */,
-				A982039819A0A02300DD808C /* libstdc++.dylib in Frameworks */,
-				A982039419A09FFD00DD808C /* libbz2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2878,7 +2855,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9BFB0BF13EDF5D500032679 /* ObjCSword.framework in Frameworks */,
-				A9BFB0A713EDF51100032679 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3056,7 +3032,6 @@
 				A995E6251C876E9700843E13 /* TestResources */,
 				A9BFB0AC13EDF51100032679 /* Tests */,
 				A9EE8A8C19E286E500CFFE6A /* LongRunningTests */,
-				A9BFB0A313EDF51000032679 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
 			);
 			name = ObjCSword;
@@ -3139,10 +3114,6 @@
 		1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A954AC3413EE9FA10094E3FE /* libicucore.dylib */,
-				A954AC3513EE9FA10094E3FE /* libstdc++.dylib */,
-				A954AC3613EE9FA10094E3FE /* libz.dylib */,
-				A954AC3213EE9F620094E3FE /* libcurl.dylib */,
 				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -4657,31 +4628,6 @@
 				A9BB67591C6BCD9600EB1A49 /* zutil.c */,
 			);
 			path = zlib;
-			sourceTree = "<group>";
-		};
-		A9BFB0A313EDF51000032679 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A9B77D4319A3BB3B00F34557 /* liblzma.dylib */,
-				A982039B19A0A03A00DD808C /* libcurl.dylib */,
-				A982039919A0A02C00DD808C /* libz.dylib */,
-				A982039719A0A02300DD808C /* libstdc++.dylib */,
-				A982039519A0A01200DD808C /* libicucore.dylib */,
-				A982039319A09FFD00DD808C /* libbz2.dylib */,
-				A9BFB0A613EDF51100032679 /* Cocoa.framework */,
-				A9BFB0A813EDF51100032679 /* Other Frameworks */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A9BFB0A813EDF51100032679 /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A9BFB0A913EDF51100032679 /* AppKit.framework */,
-				A9BFB0AA13EDF51100032679 /* CoreData.framework */,
-				A9BFB0AB13EDF51100032679 /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
 		A9BFB0AC13EDF51100032679 /* Tests */ = {
@@ -7071,6 +7017,10 @@
 					"-DU_I18N_IMPLEMENTATION",
 				);
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
+				OTHER_LDFLAGS = (
+					"-lcurl",
+					"-lbz2",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -7118,6 +7068,10 @@
 					"-DU_I18N_IMPLEMENTATION",
 				);
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
+				OTHER_LDFLAGS = (
+					"-lcurl",
+					"-lbz2",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "";
